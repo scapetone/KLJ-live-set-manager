@@ -34,10 +34,13 @@ Statuts :
 
 | D-019 | 2026-11-02 | **Validée** | La commande principale ON/OFF de la grille pilote **l'activateur de piste de Live (Track Activator)**, pas le bouton On/Off d'un instrument ou effet. L'API Max for Live expose cette commande comme `Track.mute` (1 = piste désactivée, 0 = activée). | Le musicien a montré précisément ce contrôle dans Live. Cette commande est simple à piloter, mais **ne garantit pas** une baisse de CPU ; la performance doit être mesurée séparément. |
 
+| D-020 | 2026-11-02 | **Validée** | **Deux rôles MIDI pour KLJ :** (1) clavier externe avec `MIDI From` assigné au matériel : les pistes correspondantes jouent lorsque leur Track Activator est ON et leur monitoring accepte le MIDI ; plusieurs pistes peuvent être actives simultanément ; (2) Push 2 : activation de la piste correspondante **plus sélection automatique de la piste jouée** (équivalent `SEL` dans ClyphX). Les actions Push de mode et de gamme sont distinctes de cette sélection. | Le musicien a explicité le cas réel de `HOW_DARE_YOU_A` : instruments sur les pistes MIDI 11 et 14, `MON IN` sur les deux et `SEL` sur 14 pour Push. |
+| D-021 | 2026-11-02 | **Validée** | **Ne pas imposer d'armement explicite comme mécanisme de bascule en V1.** Conserver la logique fonctionnelle actuelle fondée sur le routage MIDI fixé dans Live, le monitoring IN, le Track Activator et la sélection Push. | Les macros existantes n'utilisent pas `ARM`; avec Monitor IN, Live accepte l'entrée MIDI indépendamment de l'armement. Push 2 peut également armer automatiquement une piste sélectionnée selon son fonctionnement natif. |
+
 ## Points **non tranchés**
 
 - Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
-- Routage MIDI optimal (monitoring, armement, racks, autre) pour clavier et Push 2.
+- **Rôles MIDI validés (D-020/D-021) :** clavier routé sur des entrées fixes, Push piloté par sélection de piste, monitoring IN. Reste à préciser si le plugin doit **écrire** le monitoring IN à chaque déclenchement ou s'il est configuré une fois dans Live, et à tester la réception MIDI de Push après sélection dans le Set.
 - Gestion CPU : souhait d'optimiser les pistes inutilisées (D-011), mais **Track Activator n'est pas une garantie d'économie CPU** (D-019). Conserver comme point de test et ne pas imposer la désactivation générale des devices pour l'instant.
 - Apparition automatique des colonnes à l'ajout d'une piste (D-016) ; valeur initiale des cellules non renseignées, traitement des suppressions/renommages et référencement des pistes à préciser.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
