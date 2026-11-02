@@ -22,9 +22,11 @@ Statuts :
 | D-010 | 2026-11-02 | **Validée** | **Push 2 en V1, option B :** la sélection automatique du bon instrument / de la piste de jeu est indispensable. L'imposition des modes de jeu, dispositions avancées (dont 64 pads) et personnalisations d'affichage est souhaitée mais **non bloquante**, sous réserve d'une faisabilité vérifiée sur Live 12/Push 2. | Livrer le moteur principal sans le bloquer sur une fonction avancée dépendant des limites de l'intégration Push. |
 | D-011 | 2026-11-02 | **Validée** | **Gestion CPU V1 — option A :** une configuration doit permettre de gérer automatiquement les instruments inutilisés, avec des protections visant à préserver la continuité audio. | Éviter d'énumérer dans chaque configuration toutes les pistes à désactiver lors de l'ajout d'un instrument, tout en limitant les ressources inutiles. |
 
+| D-012 | 2026-11-02 | **Validée** | Un seul mode : chaque clip déclenche une configuration complète du périmètre géré. Pour changer uniquement le tempo, on duplique la configuration et modifie le BPM. Pas de mode action ponctuelle distinct. | Simplicité et reproductibilité des réglages. |
+
 ## Points **non tranchés**
 
-- Système de snapshots complets, d'actions ponctuelles ou hybride.
+- Configuration complète validée (D-012). Reste à définir le périmètre géré et les exceptions.
 - Routage MIDI optimal (monitoring, armement, racks, autre) pour clavier et Push 2.
 - Gestion CPU : **principe automatique validé (D-011)** ; restent à trancher les instruments concernés, la notion « inutilisé », la granularité (piste/device), les délais et protections de continuité.
 - Manière exacte d'intégrer les nouveaux instruments et de référencer les pistes.
