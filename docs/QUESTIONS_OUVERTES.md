@@ -11,6 +11,10 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 3. Que doit-il se passer si un clip déclencheur est lancé une seconde fois, s'il est inconnu, ou si sa configuration fait référence à une piste disparue ?
 4. Faut-il conserver les noms de déclencheurs historiques `$TRUE_PEAK_A$`, `$BREATHE$`, etc. ou définir un format plus simple ?
 
+**D-025 — validé :** ajouter un champ de commandes avancées facultatif à chaque ligne, plutôt qu'une interface graphique dédiée pour True Peak.
+
+**À décider sur ce champ :** langage (JavaScript direct avec une petite API, syntaxe proche ClyphX, ou commandes minimales), ordre d'exécution avec les réglages classiques, gestion des erreurs, comportement lors d'un déclenchement répété et fiabilité scénique.
+
 ## B. Instruments et contrôleurs
 
 5. **Orientation D-022 à valider :** le routage MIDI et Monitor IN restent préconfigurés dans Live ; le plugin n'écrit plus MON OFF / MON IN. **Test requis :** s'assurer que le clavier ne joue que ses pistes actives, et que Push ne joue que sa piste sélectionnée, même quand le changement est déclenché par l'API Live plutôt que par une touche de Push.
@@ -42,6 +46,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine discussion :** préciser les effets spéciaux à piloter depuis le panneau de détails (ex. True Peak) puis le référencement des pistes lors des renommages/suppressions. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
+**Prochaine discussion :** choisir la **syntaxe et la portée du champ de commandes avancées** (D-025), en évitant de recréer un interpréteur ClyphX complet. Puis préciser les références des pistes/devices en cas de renommage ou déplacement. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
 
 Aucune réponse ci-dessus n'est présumée acquise.
