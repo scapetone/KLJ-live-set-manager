@@ -41,10 +41,10 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 - Déclenchement manuel par lancement d'une scène **ou** automatique par Follow Action : même comportement.
 - Plusieurs clips peuvent invoquer la même configuration.
 - Plusieurs configurations peuvent exister au sein d'un même morceau.
-- Les clips déclencheurs peuvent aussi représenter des changements ponctuels, comme le tempo, sans changement de morceau.
+- Un changement qui ne concerne que le tempo se prépare en **dupliquant une configuration complète** et en changeant son BPM ; pas de mode ponctuel distinct (D-012).
 - Les scènes, stems et Follow Actions restent gérés nativement par Ableton.
 
-La forme exacte des noms, la syntaxe et la stratégie de sauvegarde restent à décider.
+**D-012 — Mode unique de configuration complète :** chaque clip applique l'état souhaité de tous les éléments du périmètre géré par le plugin. Les pistes et devices non gérés restent inchangés. L'interface devra offrir une duplication rapide des configurations ; à l'exécution, éviter les actions redondantes sera étudié pour préserver la continuité audio. Le périmètre précis, le format des noms et la sauvegarde restent à définir.
 
 ## 5. Besoins exprimés à prendre en charge
 
@@ -65,7 +65,7 @@ La forme exacte des noms, la syntaxe et la stratégie de sauvegarde restent à d
   - **Contrainte :** ne pas assimiler `Track.mute` à une économie CPU garantie ; ne pas arrêter automatiquement les stems ou d'autres traitements non concernés.
   - **Validation requise :** mesures de charge, temps de réactivation, notes tenues/queues d'effets et transitions dans Ableton réel.
 - **Maintenance :** détecter ou intégrer facilement des pistes nouvellement ajoutées sans éditer toutes les configurations.
-- **Interface :** tableau de configurations associé aux noms de clips, avec une visualisation compréhensible des pistes et actions.
+- **Interface :** tableau de configurations complètes associé aux noms de clips, duplication simple d'une configuration et visualisation compréhensible des pistes et paramètres.
 
 Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
