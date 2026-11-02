@@ -57,7 +57,7 @@ La forme exacte des noms, la syntaxe et la stratégie de sauvegarde restent à d
 
 ### Besoins importants, détail à préciser
 
-- **Push 2 :** disposition de jeu adaptée (notamment « 64 pads »), gamme, fondamentale, mode/affichage si accessible de façon fiable.
+- **Push 2 — choix V1 validé (option B) :** sélection automatique du bon instrument / de la piste jouée **indispensable** ; modes avancés, disposition « 64 pads » et personnalisation d'affichage **souhaitables, non bloquants et conditionnés à une faisabilité confirmée** sur Live 12/Push 2. Les réglages de gamme/fondamentale restent à détailler dans le catalogue des actions. La sélection seule doit avoir un comportement utile même si les modes avancés ne sont pas réalisables.
 - **Tempo et réglages musicaux :** actions globales ou attachées à une configuration, y compris paliers de tempo pendant une transition.
 - **Effets et devices :** possibilité de les activer/désactiver à certains moments d'un morceau.
 - **CPU :** gérer l'inactivité des instruments/effets inutilisés ; stratégie précise et impact sur les reprises sonores à tester.
