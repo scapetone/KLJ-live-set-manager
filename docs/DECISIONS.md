@@ -39,6 +39,8 @@ Statuts :
 
 | D-022 | 2026-11-02 | **Orientation retenue — validation matérielle requise** | Pour simplifier la V1, laisser les pistes d'instruments jouées en live sur **Monitor IN permanent**, configuré une fois dans Ableton. Le plugin ne réécrit pas les états de monitoring à chaque configuration ; il pilote l'activateur des pistes MIDI et la sélection de la piste Push. | Avec Monitor IN, Live laisse passer l'entrée indépendamment de l'armement. À valider sur le Set KLJ : routage séparé clavier/Push, pas de déclenchement de mauvaises pistes, sélection distante de Push bien suivie et cas d'instruments simultanés. |
 
+| D-023 | 2026-11-02 | **Validée** | **Interface en deux niveaux :** (1) tableau principal compact, une ligne par configuration/nom de clip, avec tempo, ON/OFF des pistes instrumentales et piste sélectionnée pour Push ; (2) panneau de détails de la ligne choisie pour les réglages moins courants (gamme, fondamentale, In Key, modes Push si disponibles, effets spécifiques). Les réglages doivent pouvoir être modifiés sans exposer toutes les colonnes en permanence. | L'utilisateur a validé la proposition « tableau + panneau de détails » pour limiter l'encombrement et accélérer l'édition du Set KLJ. |
+
 ## Points **non tranchés**
 
 - Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
@@ -46,7 +48,7 @@ Statuts :
 - Gestion CPU : souhait d'optimiser les pistes inutilisées (D-011), mais **Track Activator n'est pas une garantie d'économie CPU** (D-019). Conserver comme point de test et ne pas imposer la désactivation générale des devices pour l'instant.
 - Apparition automatique des colonnes à l'ajout d'une piste (D-016) ; valeur initiale des cellules non renseignées, traitement des suppressions/renommages et référencement des pistes à préciser.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
-- Format définitif du tableau de configurations, persistance, import et export.
+- **Structure tableau + panneau validée (D-023)** ; restent à préciser les interactions détaillées, la visibilité des pistes audio de stems (pilotées via APC), les valeurs par défaut, la sauvegarde et l'ergonomie dans Max for Live.
 - Limites précises de la V1.
 
 **Règle de travail :** toute nouvelle décision validée est ajoutée ici avec date et justification ; les hypothèses restent dans les questions ouvertes.
