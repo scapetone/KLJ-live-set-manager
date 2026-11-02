@@ -2,7 +2,7 @@
 
 **Statut : cadrage produit / discovery — pas encore de développement.**
 
-Projet de Max for Live pour simplifier et fiabiliser le pilotage des configurations d'un live Ableton de **Kiss La Joue (KLJ)**.
+Projet de Max for Live pour simplifier et fiabiliser le pilotage des configurations du live Ableton de **Kiss La Joue (KLJ)**. **Objectif V1 : répondre au besoin de KLJ le plus rapidement possible**, sans développer d'abord un produit universel.
 
 ## Vision
 
@@ -11,6 +11,8 @@ Conserver la progression musicale actuelle d'Ableton Live (Session View, scènes
 **Principe central validé :** lorsqu'un clip portant un nom de déclencheur donné entre en lecture sur une piste dédiée, le gestionnaire applique la configuration correspondante. Ce déclenchement fonctionne aussi bien après un lancement manuel de scène qu'après une Follow Action.
 
 Le projet n'a **pas** pour objectif de recréer le moteur de séquencement des clips ni de reproduire les commandes ClyphX à l'identique.
+
+**Interface visée :** une ligne par configuration complète et une colonne par piste audio ou MIDI ; activation configurable sur toutes les pistes et armement MIDI uniquement. L'ajout d'une piste ajoute une colonne à renseigner ligne par ligne.
 
 ## Documentation produit
 
