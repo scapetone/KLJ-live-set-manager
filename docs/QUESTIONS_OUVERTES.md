@@ -22,10 +22,10 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 **Décision prise (D-011) : gestion automatique des instruments inutilisés en V1, avec protections audio.** Ce choix ne préjuge pas du mécanisme Max for Live.
 
-9. **D-017 : Device ON/OFF est privilégié pour le CPU.** Quels instruments et effets ont réellement un coût significatif ? Quels devices précis associer à chaque colonne de piste ?
+9. **D-019 : la grille ON/OFF pilote Track Activator, non Device On/Off** ; ce réglage ne garantit pas une baisse CPU. Quelle réduction réelle obtient-on sur les instruments utilisés par KLJ ? Des mesures sont nécessaires avant de promettre une optimisation CPU.
 10. À quel moment peut-on couper un device sans couper une note tenue, une réverbération ou une transition ? Faut-il différer l'arrêt / réactiver avant l'utilisation ?
 11. Quel compromis accepte-t-on entre économie CPU, latence de réactivation et continuité sonore ? Comment définit-on « instrument inutilisé » dans le périmètre d'une configuration complète ?
-12. **Résolu par D-018 pour le mixage :** volumes et Mute des stems audio sont contrôlés manuellement par APC. Si des effets audio sont pilotés via Device ON/OFF, quelles protections évitent les coupures non voulues ?
+12. **D-018 maintenue :** volumes et activation/Mute des stems audio restent contrôlés manuellement via APC ; le gestionnaire ne doit pas les modifier au cours du live KLJ. Les éventuels effets pilotés séparément restent à définir.
 
 ## D. Maintenance et interface
 
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine décision :** préciser les devices visés par la commande d'activation des pistes (instrument seul, chaîne complète ou sélection de devices), notamment pour éviter d'interrompre des effets en cours. Le Mute et le volume audio sont exclus de la V1 (D-018).
+**Prochaine discussion :** préciser les autres commandes d'une colonne MIDI : armement et monitoring, qui ne sont pas équivalents. Les anciennes macros KLJ utilisaient MON IN et MUTE, mais pas ARM. Décider les comportements réellement nécessaires avant de rédiger les specs Codex.
 
 Aucune réponse ci-dessus n'est présumée acquise.
