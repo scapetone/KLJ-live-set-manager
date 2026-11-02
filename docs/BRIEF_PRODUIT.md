@@ -597,6 +597,12 @@ Références :
 - **Comportement de sécurité proposé, à intégrer aux tests :** un nom sans correspondance ne provoque aucune action de changement d'instrument ou de script et donne une indication exploitable dans le device ; aucun message gênant bloquant pendant le concert.
 - **Amélioration d'ergonomie envisagée :** créer une ligne de configuration depuis le nom d'un clip, sans saisie manuelle redondante (à préciser selon faisabilité API et place dans la V1).
 
+### Duplication des configurations (D-029)
+
+**À inclure en V1 si faible coût de développement :** un bouton `Dupliquer` dans la table. Il crée une **nouvelle configuration indépendante** par copie de toutes les données de la ligne source : tempo, ON/OFF des instruments, piste sélectionnée pour Push, fondamentale/gamme et script JavaScript avancé. L'utilisateur renomme et ajuste la copie. Le nouveau nom doit être unique et doit correspondre au nom du clip qui déclenchera cette configuration.
+
+**Contraintes de simplicité :** utiliser le clonage des données déjà stockées, sans fenêtre de comparaison ni mécanisme de variantes héritées. Si cela nécessite une architecture spéciale ou retarde fortement la V1, le reclasser en amélioration ultérieure après retour utilisateur.
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
