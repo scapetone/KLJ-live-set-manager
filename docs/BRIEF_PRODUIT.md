@@ -126,6 +126,18 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
 **À définir :** quels effets doivent être pilotables séparément (ex. True Peak) ? Quelle valeur initiale pour les nouvelles cellules ? Comment mesurer l'effet CPU réel de Track Activator, et faut-il une optimisation supplémentaire sans complexifier la V1 ?
 
+### Organisation de l'interface — D-023 validée
+
+**Deux niveaux d'édition :**
+
+1. **Tableau principal :** une ligne par configuration complète liée à un nom de clip, avec des colonnes immédiatement utiles pour comparer les configurations KLJ : BPM, états ON/OFF des pistes d'instruments MIDI, piste sélectionnée pour Push. L'utilisateur doit pouvoir repérer les changements d'instruments d'un seul coup d'œil.
+2. **Panneau de détails de la ligne sélectionnée :** édition des paramètres plus rares ou spécifiques : fondamentale, gamme, In Key, modes Push conditionnés à leur faisabilité, actions individuelles sur certains effets (exemple True Peak).
+3. **Édition rapide :** la duplication d'une ligne permet de préparer une variation d'un même morceau en modifiant un BPM, un instrument ou un effet. Une nouvelle piste crée une colonne à renseigner dans les configurations.
+
+**Important :** cette validation concerne l'organisation « tableau + panneau », pas une disposition graphique pixel par pixel ni une exclusion générale des pistes audio. Les stems étant contrôlés manuellement par APC (D-018), ils n'ont pas besoin d'encombrer la vue compacte ; la représentation éventuelle des pistes audio, des effets qui s'y trouvent et du filtre de colonnes reste à préciser. Aucune commande Mute ou volume des stems ne doit être exécutée par ce device.
+
+**Point d'ergonomie encore ouvert :** comment initialiser les nouvelles cellules lorsqu'une piste apparaît dans le Set, sans déclencher d'action dangereuse avant leur configuration ?
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
