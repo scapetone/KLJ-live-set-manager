@@ -22,7 +22,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 **Décision prise (D-011) : gestion automatique des instruments inutilisés en V1, avec protections audio.** Ce choix ne préjuge pas du mécanisme Max for Live.
 
-9. Quels instruments et effets ont un coût CPU réellement problématique dans le Set ? Comment désigner les pistes/devices **gérés** sans toucher à l'ensemble du Live Set ?
+9. **D-017 : Device ON/OFF est privilégié pour le CPU.** Quels instruments et effets ont réellement un coût significatif ? Quels devices précis associer à chaque colonne de piste ?
 10. À quel moment peut-on couper un device sans couper une note tenue, une réverbération ou une transition ? Faut-il différer l'arrêt / réactiver avant l'utilisation ?
 11. Quel compromis accepte-t-on entre économie CPU, latence de réactivation et continuité sonore ? Comment définit-on « instrument inutilisé » dans le périmètre d'une configuration complète ?
 12. Les stems A/B figurent maintenant dans le tableau : quelles protections évitent les coupures non voulues lors des changements de configuration ?
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Préciser le sens d'activation/désactivation :** mute/unmute d'une piste, activation du device, ou deux contrôles séparés. Puis définir l'état des nouvelles colonnes et le lien avec la gestion CPU.
+**Prochaine décision :** pour les pistes audio contenant des stems, faut-il uniquement activer/désactiver les effets (en laissant passer le son brut), ou également proposer un Mute distinct ? Puis préciser le choix des devices par piste et les valeurs initiales des nouvelles colonnes.
 
 Aucune réponse ci-dessus n'est présumée acquise.
