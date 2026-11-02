@@ -37,7 +37,13 @@ La réduction de la consommation CPU liée aux instruments et effets inutilisés
 
 **Exemple fonctionnel issu de `HOW_DARE_YOU_A` :** pistes 11 et 14 activées et en monitoring `IN`, piste 14 sélectionnée pour Push, tempo 120 et gamme de Do mineur. Les commandes de mode/scale Push sont des souhaits complémentaires, dont le support sans legacy reste à vérifier.
 
-**À préciser :** le plugin doit-il réappliquer systématiquement `Monitor IN` aux pistes MIDI pertinentes, ou les conserver préconfigurées dans Live ? Le routage `MIDI From` lui-même est actuellement préparé manuellement.
+**D-022 — simplification envisagée (à confirmer par test dans le Set réel) :** configurer une fois `Monitor IN` sur les pistes MIDI de jeu, ainsi que leur `MIDI From` propre à chaque contrôleur. Le plugin gère uniquement l'état Track Activator et la sélection de piste Push, sans automatiser les commandes `MON OFF / MON IN` historiques de ClyphX.
+
+**Justification :** Live 12 indique que Monitor IN transmet en permanence l'entrée indépendamment de l'armement. **Attention :** Monitor IN supprime la lecture des clips MIDI hébergés sur ces pistes ; acceptable uniquement pour les pistes employées comme instruments joués en direct.
+
+**Critère de vérification avant gel des specs :** lorsque plusieurs pistes MIDI sont sur Monitor IN, le clavier doit jouer seulement ses instruments actifs et Push doit jouer seulement la piste visée (y compris quand elle est sélectionnée via l'API, pas manuellement sur Push). Tester aussi deux pistes clavier actives en parallèle et les transitions par Follow Actions. Si le test échoue, réévaluer la gestion du monitoring sans réintroduire tout le reset global de ClyphX. Le routage `MIDI From` est pour l'instant préparé manuellement.
+
+Sources officielles : https://www.ableton.com/en/live-manual/12/routing-and-i-o/ et https://www.ableton.com/en/manual/using-push-2/.
 
 
 ## 3. Progression musicale — mécanisme existant à préserver
