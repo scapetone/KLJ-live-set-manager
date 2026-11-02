@@ -14,6 +14,7 @@ Le projet n'a **pas** pour objectif de recréer le moteur de séquencement des c
 
 ## Documentation produit
 
+- [Plan de cadrage en 7 étapes](docs/PLAN_CADRAGE.md) — méthode, livrables et suivi
 - [Brief produit (en construction)](docs/BRIEF_PRODUIT.md)
 - [Décisions prises](docs/DECISIONS.md)
 - [Questions ouvertes / discovery](docs/QUESTIONS_OUVERTES.md)
