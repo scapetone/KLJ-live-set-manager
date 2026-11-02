@@ -25,7 +25,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 9. **D-017 : Device ON/OFF est privilégié pour le CPU.** Quels instruments et effets ont réellement un coût significatif ? Quels devices précis associer à chaque colonne de piste ?
 10. À quel moment peut-on couper un device sans couper une note tenue, une réverbération ou une transition ? Faut-il différer l'arrêt / réactiver avant l'utilisation ?
 11. Quel compromis accepte-t-on entre économie CPU, latence de réactivation et continuité sonore ? Comment définit-on « instrument inutilisé » dans le périmètre d'une configuration complète ?
-12. Les stems A/B figurent maintenant dans le tableau : quelles protections évitent les coupures non voulues lors des changements de configuration ?
+12. **Résolu par D-018 pour le mixage :** volumes et Mute des stems audio sont contrôlés manuellement par APC. Si des effets audio sont pilotés via Device ON/OFF, quelles protections évitent les coupures non voulues ?
 
 ## D. Maintenance et interface
 
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine décision :** pour les pistes audio contenant des stems, faut-il uniquement activer/désactiver les effets (en laissant passer le son brut), ou également proposer un Mute distinct ? Puis préciser le choix des devices par piste et les valeurs initiales des nouvelles colonnes.
+**Prochaine décision :** préciser les devices visés par la commande d'activation des pistes (instrument seul, chaîne complète ou sélection de devices), notamment pour éviter d'interrompre des effets en cours. Le Mute et le volume audio sont exclus de la V1 (D-018).
 
 Aucune réponse ci-dessus n'est présumée acquise.
