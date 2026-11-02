@@ -6,7 +6,7 @@
 
 ## Principes directeurs
 
-- **Un produit générique.** Kiss La Joue (KLJ) est le cas d'usage et le banc de validation de référence, pas une architecture imposée. Aucun nombre de pistes, ordre, nom d'instrument, contrôleur, nombre de stems ou piste de déclenchement ne doit être codé en dur.
+- **Livrer vite pour KLJ.** Le besoin du Live Set Kiss La Joue est le périmètre de V1. La réutilisation par d'autres musiciens serait un bonus, non une exigence qui doit ralentir le projet. La structure actuelle de KLJ sert de point de départ.
 - **Préserver le moteur musical natif de Live.** Les scènes, clips, boucles, Follow Actions et transitions A/B restent pilotés par Ableton.
 - **Garder la logique de déclenchement ClyphX, pas ses contraintes techniques.** Un clip nommé, lu sur une piste choisie par l'utilisateur, applique la configuration associée, qu'il soit lancé par une scène ou par une Follow Action.
 - **Ne pas reproduire mécaniquement l'existant.** Repartir des besoins, proposer les approches natives Ableton/Max for Live les plus simples et robustes.
@@ -19,7 +19,7 @@
 
 **Objectif :** répertorier toutes les fonctions attendues et ce qui est explicitement exclu.
 
-**À traiter :** configurations via clips ; instruments MIDI/clavier/Push ; monitoring, mute, armement, sélection, devices/effets ; tempo, fondamentale, gamme ; impact CPU ; maintenance des pistes ; comportements spécifiques Push ; besoins vraiment génériques vs propres à KLJ.
+**À traiter :** configurations via clips ; instruments MIDI/clavier/Push ; monitoring, mute, armement, sélection, devices/effets ; tempo, fondamentale, gamme ; impact CPU ; maintenance des pistes ; comportements spécifiques Push ; fonctions nécessaires au live KLJ ; éviter les fonctionnalités supplémentaires non indispensables.
 
 **Sortie :** catalogue priorisé en **indispensable V1**, **souhaitable/non bloquant**, **hors périmètre**.
 
@@ -41,17 +41,17 @@
 
 **Objectif :** définir ce qu'une configuration contient et la façon dont ses actions s'appliquent.
 
-**À traiter :** snapshot complet, actions ponctuelles ou hybride ; paramètres globaux (BPM, root, gamme) ; état et routage des pistes MIDI ; sélection Push ; activation/désactivation de devices ; gestion CPU ; règle « ne pas modifier » ; ajout et déplacement de pistes ; plusieurs instruments simultanés (Breathe).
+**À traiter :** mode unique de configuration complète (D-012) ; matrice avec colonnes de pistes audio/MIDI (D-014) ; armement MIDI uniquement (D-015) ; paramètres globaux (BPM, root, gamme) ; état et routage des pistes MIDI ; sélection Push ; activation/désactivation de devices ; gestion CPU ; sémantique d'activation à préciser ; création automatique d'une colonne quand une piste est ajoutée (D-016) ; plusieurs instruments simultanés (Breathe).
 
 **Sortie :** modèle conceptuel des données et catalogue des actions avec paramètres, effet attendu, défauts et limites.
 
-**Critère de validation :** pouvoir représenter fidèlement des scénarios comme True Peak A/B, Breathe et une transition avec palier de tempo, sans numéro de piste codé en dur.
+**Critère de validation :** pouvoir représenter fidèlement des scénarios comme True Peak A/B, Breathe et une transition avec palier de tempo, en s'appuyant sur les pistes identifiées dans le Set KLJ.
 
 ### 04 — Interface et parcours utilisateur
 
 **Objectif :** rendre le paramétrage compréhensible pour un musicien non développeur.
 
-**À traiter :** sélection de la piste de contrôle ; tableau des configurations/déclencheurs ; choix des pistes/devices ; édition, duplication, suppression, sauvegarde ; retour visuel sur la dernière configuration ; erreurs visibles ; usage dans un Live Set de structure différente.
+**À traiter :** sélection de la piste de contrôle ; tableau des configurations/déclencheurs ; choix des pistes/devices ; édition, duplication, suppression, sauvegarde ; retour visuel sur la dernière configuration ; erreurs visibles ; lisibilité des colonnes audio/MIDI et ajout de pistes dans le Set KLJ.
 
 **Sortie :** maquette validée et règles d'interaction (pas encore du code).
 
@@ -73,7 +73,7 @@
 
 **À traiter :**
 - **KLJ :** lecture par scène, Follow Action, boucle puis reprise, True Peak A/B, Breathe avec deux instruments clavier, transitions A/B, changements de tempo et Push 2 ;
-- **Générique :** Set avec structure et nombre de pistes différents, sans Push, sans stems ;
+- **Structure KLJ :** ajout et déplacement de nouvelles pistes et modification de leurs états dans toutes les configurations ;
 - **Robustesse :** ajout/retrait/réordonnancement de pistes, clip inconnu, renommage, répétitions, sauvegarde/réouverture, absence de device, continuité audio et coût CPU.
 
 **Sortie :** scénarios Given/When/Then ou équivalents, avec résultats observables et critères de réussite.
