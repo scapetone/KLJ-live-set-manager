@@ -44,7 +44,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 - Un changement qui ne concerne que le tempo se prépare en **dupliquant une configuration complète** et en changeant son BPM ; pas de mode ponctuel distinct (D-012).
 - Les scènes, stems et Follow Actions restent gérés nativement par Ableton.
 
-**D-012 — Mode unique de configuration complète :** chaque clip applique l'état souhaité de tous les éléments du périmètre géré par le plugin. Les pistes et devices non gérés restent inchangés. L'interface devra offrir une duplication rapide des configurations ; à l'exécution, éviter les actions redondantes sera étudié pour préserver la continuité audio. Le périmètre précis, le format des noms et la sauvegarde restent à définir.
+**D-012 — Mode unique de configuration complète :** chaque clip applique l'état prévu par sa ligne de configuration. **D-014 :** les pistes audio et MIDI figurent toutes dans le tableau, et l'activation/désactivation est configurable pour les deux types. L'interface devra offrir une duplication rapide des configurations ; à l'exécution, éviter les actions redondantes sera étudié pour préserver la continuité audio. Le périmètre précis, le format des noms et la sauvegarde restent à définir.
 
 ## 5. Besoins exprimés à prendre en charge
 
@@ -52,7 +52,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 
 - Configurer automatiquement le **bon instrument joué depuis Push 2** à chaque déclenchement concerné.
 - Configurer le ou les **instruments joués depuis le clavier MIDI**, y compris le cas où deux pistes doivent jouer en parallèle.
-- Ne pas perturber la lecture des huit pistes audio ni les transitions A/B.
+- Préserver la progression musicale et les transitions A/B. Les pistes audio participent au tableau d'activation, mais les actions ne doivent pas provoquer de coupures imprévues.
 - Permettre une progression autonome lors des Follow Actions tout en gardant la reprise en main par lancement manuel de scène.
 
 ### Besoins importants, détail à préciser
@@ -60,12 +60,12 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 - **Push 2 — choix V1 validé (option B) :** sélection automatique du bon instrument / de la piste jouée **indispensable** ; modes avancés, disposition « 64 pads » et personnalisation d'affichage **souhaitables, non bloquants et conditionnés à une faisabilité confirmée** sur Live 12/Push 2. Les réglages de gamme/fondamentale restent à détailler dans le catalogue des actions. La sélection seule doit avoir un comportement utile même si les modes avancés ne sont pas réalisables.
 - **Tempo et réglages musicaux :** actions globales ou attachées à une configuration, y compris paliers de tempo pendant une transition.
 - **Effets et devices :** possibilité de les activer/désactiver à certains moments d'un morceau.
-- **CPU — option A validée pour la V1 (D-011) :** gestion **automatique** des instruments inutilisés, avec protections pour éviter les coupures ou perturbations sonores. L'utilisateur ne doit pas avoir à ajouter à chaque configuration une liste exhaustive de nouveaux instruments à désactiver. Cette fonction doit rester générique, sans structure de pistes KLJ codée en dur.
+- **CPU — option A validée pour la V1 (D-011) :** gestion **automatique** des instruments inutilisés, avec protections pour éviter les coupures ou perturbations sonores. Cette intention reste à articuler avec le nouveau modèle de grille explicite (D-014). L'utilisateur ne doit pas avoir à ajouter à chaque configuration une liste exhaustive de nouveaux instruments à désactiver. La priorité est une réalisation simple pour KLJ.
   - **Non décidé :** comment délimiter les instruments pris en charge ; comment déterminer qu'un instrument est « inutilisé » ; faut-il désactiver l'instrument, la piste ou certains effets ; faut-il un délai, une exception ou une préactivation avant le jeu.
   - **Contrainte :** ne pas assimiler `Track.mute` à une économie CPU garantie ; ne pas arrêter automatiquement les stems ou d'autres traitements non concernés.
   - **Validation requise :** mesures de charge, temps de réactivation, notes tenues/queues d'effets et transitions dans Ableton réel.
-- **Maintenance :** détecter ou intégrer facilement des pistes nouvellement ajoutées sans éditer toutes les configurations.
-- **Interface :** tableau de configurations complètes associé aux noms de clips, duplication simple d'une configuration et visualisation compréhensible des pistes et paramètres.
+- **Maintenance :** lorsqu'une piste apparaît dans Live, ajouter une colonne au tableau ; l'utilisateur configure ses états ligne par ligne sans modifier de macros.
+- **Interface :** tableau de configurations complètes associé aux noms de clips, duplication simple d'une configuration, colonnes de pistes audio/MIDI et commandes d'armement sur MIDI uniquement.
 
 Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
@@ -78,18 +78,24 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 - **Réactivité :** les changements doivent intervenir suffisamment vite pour ne pas gêner le jeu. Les timings acceptables restent à mesurer.
 - **Robustesse :** comportement lors d'une relance du même clip, d'une piste absente et d'un changement de structure à définir.
 
-## 7. Réutilisabilité — orientation validée
+## 7. Priorité KLJ et matrice de pistes — décisions D-013 à D-016
 
-Le gestionnaire doit être **un outil générique**, dont Kiss La Joue constitue un jeu de scénarios de validation. La configuration du live KLJ n'est **pas** une convention imposée aux autres utilisateurs.
+**La V1 vise exclusivement le besoin du live KLJ, avec une livraison la plus rapide possible.** Une utilisation par d'autres musiciens reste un bonus, pas une exigence produit. On n'ajoute pas de systèmes génériques si cela ralentit la livraison.
 
-- Ne fixer dans le code ni le nombre de pistes ni leur ordre ni leurs noms.
-- Ne pas supposer deux decks A/B, quatre stems par morceau, une piste de déclenchement à l'indice 9, ni même la présence de stems.
-- La piste surveillée pour les clips déclencheurs doit être **choisie par l'utilisateur**.
-- Les pistes et devices ciblés doivent être **choisis/configurés dans l'interface**, sans modifier le code pour adapter un Live Set.
-- Les noms de déclencheurs doivent être libres ; on peut réutiliser un déclencheur dans plusieurs clips.
-- Push 2 et le clavier MIDI sont des cas d'usage importants de KLJ, **pas** des prérequis universels du logiciel.
+### Modèle d'interface validé
 
-Le mécanisme exact de référencement des pistes/devices et l'étendue des fonctions spécifiquement Push restent à explorer.
+- Une **ligne** représente une configuration complète correspondant à un nom de clip déclencheur.
+- Une **colonne** représente une piste du Set Ableton, **audio ou MIDI**.
+- L'utilisateur configure pour chaque ligne l'état d'**activation/désactivation** de chaque piste, qu'elle soit audio ou MIDI.
+- Le réglage **d'armement est réservé aux pistes MIDI** dans l'interface KLJ.
+- Une nouvelle piste ajoutée à Ableton doit produire **une nouvelle colonne** dans le tableau. L'utilisateur renseigne ensuite les valeurs pour chaque configuration existante, sans modifier manuellement des macros.
+- Tempo, fondamentale/gamme, sélection Push et états spécifiques de devices doivent aussi être représentables dans les configurations, selon une mise en page à concevoir.
+
+**À définir :** « activation » signifie-t-elle mute/unmute de la piste, on/off du device, ou deux réglages distincts ? Quelle valeur initiale affecter aux nouvelles cellules en attendant leur configuration ? Comment concilier D-011 (gestion CPU automatique) avec les états saisis explicitement dans le tableau ?
+
+### Cas d'usage de référence
+
+Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
 
 ## 8. Cible de livraison pour Codex
 
