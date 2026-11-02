@@ -280,9 +280,35 @@ Le premier visuel du tableau était **illustratif et volontairement réduit à q
 **Répartition Push proposée (à confirmer avec l'utilisateur) :**
 - **Colonne `Push` du tableau :** piste instrument MIDI jouée par Push, choisie par numéro + nom ; la sélection effective de piste est indispensable à la V1 (D-010/D-020).
 - **Dans les détails de la configuration :** fondamentale (ex. C), gamme (ex. Minor), puis les réglages de disposition `In Key`, mode `Note` ou `64 Pads` **uniquement si disponibles de manière fiable via Live 12 / Push 2 sans Remote Script legacy**.
-- **Option d'ergonomie suggérée, non encore validée :** une petite colonne `KEY` du tableau montrant `C Minor`, car Live 12 expose les paramètres de fondamentale/gamme au niveau du Set et non du seul Push.
+- **D-035 :** ajout de deux colonnes `KEY` et `PUSH MODE` **demandé et retenu pour la maquette**, mais ne pas confondre présence du choix et possibilité de changer effectivement le mode Push : voir ci-dessous.
 - Ne pas dupliquer inutilement le choix de piste Push entre tableau et détails : les deux zones doivent afficher/modifier une **même donnée**.
 - Vérifier sur Push réel que les réglages de gamme de Live se reflètent dans la disposition des pads. Les modes avancés ne doivent pas bloquer la livraison V1.
+
+### Paramètres Push visibles dans le tableau (D-035, recherche officielle)
+
+**Présentation demandée :** ajouter à chaque ligne du tableau les deux colonnes directement éditables `KEY` et `PUSH MODE` (en plus de `PUSH`, qui désigne la piste instrumentale sélectionnée). La valeur `KEY` est par exemple `C Minor` ; elle correspond au couple `Song.root_note` / `Song.scale_name`, **modifiables dans l'API Live**.
+
+**Les quatre choix du champ `PUSH MODE` représentent l'intention musicale :**
+
+| Valeur UI | Push 2 attendu | Disposition Live documentée |
+|---|---|---|
+| `NOTE` | Jeu mélodique chromatique, toutes les notes | `note.melodic.64_notes` avec option Push Chromatic |
+| `NOTE IN KEY` | Jeu mélodique limité à la gamme `KEY` | `note.melodic.64_notes` avec option Push In Key |
+| `PADS` | Drum Rack, mode classique avec zone de pads / séquenceur | `note.drums.loop_selector` (interprétation à valider avec KLJ) |
+| `64 PADS` | Drum Rack, grille complète 8x8 | `note.drums.64_pads` |
+
+**Limitation fondamentale :** l'API LOM actuelle expose `ControlSurface.pad_layout` en **`get observe` uniquement**, sans écriture ni fonction publique documentée pour changer la disposition native de Push 2. Le manuel Ableton confirme que ces dispositions existent et qu'elles peuvent être choisies **physiquement sur Push**, pas qu'un device M4L peut les imposer. La fonction `Song.scale_mode` agit sur le mode de gamme de Live / son éditeur MIDI : **elle ne commande pas directement In Key / Chromatic sur Push**.
+
+**Historique ClyphX :** ses commandes `PUSH MODE NOTE` et `PUSH MODE 64PADS`, ainsi que `PUSH SCL INKEY`, sont documentées, mais la documentation ClyphX prévient que ses Push Actions ne fonctionnent pas avec l'implémentation native Push 2 de Live 12 ; elles nécessitent le Remote Script legacy. **Ne pas imposer le legacy** pour KLJ compte tenu des redémarrages Push observés.
+
+**Action Codex prioritaire :** effectuer un test ciblé sur Live 12 / Push 2 avec les commandes `Song.View.selected_track`, `Song.root_note`, `Song.scale_name` et la lecture/observation `ControlSurface.pad_layout`. Rechercher seulement une voie officielle fiable pour imposer les modes ; éviter d'envoyer du MIDI arbitraire aux contrôles Push ou de prendre le contrôle de la surface sans preuve d'absence d'effets secondaires. Si aucune API d'écriture n'existe, **dire clairement que la sélection `PUSH MODE` ne serait qu'une consigne de configuration et pas une automatisation** ; ne pas livrer des boutons qui promettent une fonction inopérante. Le besoin ayant été explicitement réaffirmé, la dégradation fonctionnelle doit être arbitrée avec l'utilisateur.
+
+**Sources :**
+- [Ableton — manuel Push 2 / Live 12](https://www.ableton.com/fr/manual/using-push-2/)
+- [Cycling '74 — ControlSurface.pad_layout (lecture et observation)](https://docs.cycling74.com/apiref/lom/controlsurface/)
+- [Cycling '74 — Song.root_note, scale_name, scale_mode](https://docs.cycling74.com/apiref/lom/song/)
+- [ClyphX Pro — Push Actions et avertissement Live 12](https://www.cxpman.com/action-reference/push-actions/)
+- [Ableton — notes de version Push 12 (ajout pad_layout observable)](https://www.ableton.com/en/release-notes/push-12/)
 
 ### Cas d'usage de référence
 
