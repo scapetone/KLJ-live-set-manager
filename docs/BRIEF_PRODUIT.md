@@ -273,6 +273,17 @@ Le premier visuel du tableau était **illustratif et volontairement réduit à q
 
 **Limite du contrôle de couverture :** il confirme l'interface par rapport aux décisions produit documentées ; il **ne remplace pas une comparaison exhaustive avec toutes les anciennes macros ClyphX**, ni les essais Push/Max for Live indispensables. Les résultats de P1/P2/P3 restent ouverts.
 
+### Direction graphique et emplacement des réglages Push (D-034)
+
+**Direction graphique validée :** reprendre le style de la maquette « KLJ / Live Manager » : fenêtre sombre indépendante, tableau en premier, textes lisibles, codes couleur ON/OFF discrets et panneau avancé dépliable dans la même fenêtre. Le device dans Live reste compact. La maquette est une référence visuelle, pas une obligation de reproduire son code ni ses valeurs illustratives.
+
+**Répartition Push proposée (à confirmer avec l'utilisateur) :**
+- **Colonne `Push` du tableau :** piste instrument MIDI jouée par Push, choisie par numéro + nom ; la sélection effective de piste est indispensable à la V1 (D-010/D-020).
+- **Dans les détails de la configuration :** fondamentale (ex. C), gamme (ex. Minor), puis les réglages de disposition `In Key`, mode `Note` ou `64 Pads` **uniquement si disponibles de manière fiable via Live 12 / Push 2 sans Remote Script legacy**.
+- **Option d'ergonomie suggérée, non encore validée :** une petite colonne `KEY` du tableau montrant `C Minor`, car Live 12 expose les paramètres de fondamentale/gamme au niveau du Set et non du seul Push.
+- Ne pas dupliquer inutilement le choix de piste Push entre tableau et détails : les deux zones doivent afficher/modifier une **même donnée**.
+- Vérifier sur Push réel que les réglages de gamme de Live se reflètent dans la disposition des pads. Les modes avancés ne doivent pas bloquer la livraison V1.
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
