@@ -6,7 +6,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## A. Parcours et configurations
 
-1. **Résolu par D-012 :** mode unique de configuration complète. Reste à définir le périmètre géré (quelles pistes, quels devices) et les exceptions.
+1. **Résolu par D-012/D-014 :** une configuration est complète et le tableau comporte toutes les pistes audio et MIDI. Reste à définir les réglages exacts de chaque colonne et leur comportement.
 2. Comment rendre la duplication d'une configuration complète rapide, même lorsqu'on ne modifie qu'un BPM ou l'état d'un effet ?
 3. Que doit-il se passer si un clip déclencheur est lancé une seconde fois, s'il est inconnu, ou si sa configuration fait référence à une piste disparue ?
 4. Faut-il conserver les noms de déclencheurs historiques `$TRUE_PEAK_A$`, `$BREATHE$`, etc. ou définir un format plus simple ?
@@ -25,12 +25,12 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 9. Quels instruments et effets ont un coût CPU réellement problématique dans le Set ? Comment désigner les pistes/devices **gérés** sans toucher à l'ensemble du Live Set ?
 10. À quel moment peut-on couper un device sans couper une note tenue, une réverbération ou une transition ? Faut-il différer l'arrêt / réactiver avant l'utilisation ?
 11. Quel compromis accepte-t-on entre économie CPU, latence de réactivation et continuité sonore ? Comment définit-on « instrument inutilisé » dans le périmètre d'une configuration complète ?
-12. Faut-il garantir que les pistes de stems A/B sont toujours hors du périmètre des actions de réinitialisation globale ?
+12. Les stems A/B figurent maintenant dans le tableau : quelles protections évitent les coupures non voulues lors des changements de configuration ?
 
 ## D. Maintenance et interface
 
-13. Comment identifier durablement les pistes/devices quand l'ordre du Set change ou qu'une nouvelle piste est ajoutée ?
-14. Comment représenter un tableau de déclencheurs lisible sans afficher des dizaines de colonnes à chaque ligne ?
+13. Une nouvelle piste ajoute une colonne (D-016) : quelle valeur provisoire pour ses cellules non renseignées ? Comment gérer ensuite renommage, déplacement et suppression ?
+14. La représentation par colonnes de pistes est validée (D-014). Comment afficher clairement activation des pistes audio/MIDI, armement MIDI, Push, tempo et devices ?
 15. Comment enregistrer, dupliquer, comparer et réappliquer les configurations ? Que souhaite-t-on sauvegarder dans le Live Set ?
 16. Comment vérifier avant concert qu'aucun déclencheur ne référence un instrument introuvable ?
 
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Explorer le modèle de configuration / édition :** ce que représente une ligne du tableau, comment les instruments y sont associés et quels états doivent être appliqués ou laissés inchangés.
+**Préciser le sens d'activation/désactivation :** mute/unmute d'une piste, activation du device, ou deux contrôles séparés. Puis définir l'état des nouvelles colonnes et le lien avec la gestion CPU.
 
 Aucune réponse ci-dessus n'est présumée acquise.
