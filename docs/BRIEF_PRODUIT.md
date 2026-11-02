@@ -603,6 +603,16 @@ Références :
 
 **Contraintes de simplicité :** utiliser le clonage des données déjà stockées, sans fenêtre de comparaison ni mécanisme de variantes héritées. Si cela nécessite une architecture spéciale ou retarde fortement la V1, le reclasser en amélioration ultérieure après retour utilisateur.
 
+### Sauvegarde avec le Live Set (D-030)
+
+**Décision validée :** toutes les données de configurations doivent être enregistrées **à l'intérieur du Set Ableton Live (.als)** avec le device Max for Live, **sans fichier de configurations externe** à rechercher ni à synchroniser.
+
+Le contenu à restaurer comprend notamment les noms et l'ordre des configurations, les états ON/OFF des pistes instrumentales, le tempo, les réglages de sélection Push et de gamme, ainsi que **l'intégralité du code JavaScript propre à chaque configuration**, caractères spéciaux et retours à la ligne compris.
+
+**Piste de mise en œuvre :** `pattr` / `pattrstorage` correctement configuré pour la sauvegarde de paramètres Max for Live dans le Live Set, ou équivalent fiable compatible Live. Le choix définitif relève de l'implémentation.
+
+**Test d'acceptation obligatoire :** créer plusieurs configurations distinctes, enregistrer le Set, quitter Live, rouvrir le même Set et contrôler l'identité exacte des données et scripts. Les configurations doivent rester disponibles sans devoir charger un fichier annexe. Tester la sauvegarde après duplication et après ajout d'une piste.
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
