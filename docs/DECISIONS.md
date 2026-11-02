@@ -47,6 +47,8 @@ Statuts :
 
 | D-026 | 2026-11-02 | **Validée** | Le champ « Commandes avancées » de chaque configuration doit contenir du **JavaScript natif de Max**, utilisant directement les API documentées de Max/Max for Live (notamment `LiveAPI`). **Aucune syntaxe ClyphX, aucun langage de commandes maison, aucune liste fermée de fonctions/commandes prédéfinies à inventer.** Le script est exécuté lors du déclenchement du clip. | L'utilisateur préfère pouvoir écrire librement quelques lignes de JavaScript pour un cas particulier, plutôt que maintenir des commandes spécialisées ou multiplier les composants d'interface. **L'exécution dynamique de texte JS éditable et sauvegardé dans un .amxd doit encore être validée techniquement.** |
 
+| D-027 | 2026-11-02 | **Validée avec contrôle technique à réaliser** | **Le KLJ Live Manager s'installe directement sur la piste des clips déclencheurs** ; il identifie sa piste via `this_device canonical_parent` et surveille les lancements réels des clips (scènes manuelles et Follow Actions), sans paramètre pour désigner une autre piste. **La répétition naturelle d'une boucle ne redéclenche pas la configuration**, même si une Follow Action attend plusieurs tours. Une transition vers un autre clip, y compris de même nom, déclenche une nouvelle application. Une véritable relance du même slot, notamment `Play Again`, doit être testée et distinguée d'un simple bouclage. | L'utilisateur valide explicitement la colocalisation du device et souligne que des boucles peuvent tourner plusieurs fois avec les Follow Actions. La seule observation de `Track.playing_slot_index` ne garantit pas la détection d'une relance du même slot. |
+
 ## Points **non tranchés**
 
 - Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
@@ -55,6 +57,7 @@ Statuts :
 - Ajout d'une piste MIDI : colonne automatique et cellules OFF validées (D-016/D-024). Reste à préciser le traitement des suppressions/renommages, la référence stable des pistes, et les éventuelles colonnes audio.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
 - **Structure tableau + panneau validée (D-023)** ; champ script par configuration (D-025), **JavaScript Max natif uniquement (D-026)**. Restent à vérifier le mécanisme d'exécution dynamique en V8 dans un device Max for Live, la persistance, l'ordre d'exécution et le signalement d'erreurs ; aucune grammaire de commandes spécifique au plugin.
+- **Déclenchement sur la piste du device validé (D-027)** : tester les Follow Actions, les boucles multiples et le cas `Play Again` sur le même slot. L'API `playing_slot_index` seule ne suffit pas pour certifier la détection des relances sans changement de slot.
 - Limites précises de la V1.
 
 **Règle de travail :** toute nouvelle décision validée est ajoutée ici avec date et justification ; les hypothèses restent dans les questions ouvertes.
