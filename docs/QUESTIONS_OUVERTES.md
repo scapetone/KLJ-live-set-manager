@@ -15,6 +15,10 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 **D-026 résolu :** champ en **JavaScript natif Max (V8 / LiveAPI)**, sans mini-langage, sans interpréteur ClyphX, sans commandes propriétaires. **À vérifier techniquement :** exécution dynamique du texte par ligne dans le `.amxd`, persistance, ordre relatif aux réglages de configuration, gestion des erreurs, comportement lors d'un déclenchement répété et fiabilité scénique.
 
+**D-027 — installation validée :** le device est placé sur la piste contenant les clips déclencheurs. Une boucle naturelle ne relance pas la configuration ; une vraie transition de slot le fait.
+
+**Essais à prévoir :** observer `playing_slot_index` et `playing_status` sur un Set de test ; confirmer que Follow Actions Linked après plusieurs boucles et Play Again/relance manuelle du même clip sont bien différenciés des boucles naturelles. `playing_slot_index` seul ne change pas lors d'un relancement sur le même slot.
+
 ## B. Instruments et contrôleurs
 
 5. **Orientation D-022 à valider :** le routage MIDI et Monitor IN restent préconfigurés dans Live ; le plugin n'écrit plus MON OFF / MON IN. **Test requis :** s'assurer que le clavier ne joue que ses pistes actives, et que Push ne joue que sa piste sélectionnée, même quand le changement est déclenché par l'API Live plutôt que par une touche de Push.
