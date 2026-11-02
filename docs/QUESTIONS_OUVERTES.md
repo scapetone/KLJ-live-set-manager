@@ -15,8 +15,8 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 5. Dans les conditions réelles du Set, quelle méthode est la plus robuste pour assigner clavier et Push aux instruments : monitoring, armement, routage, racks ou autre ?
 6. Pour Breathe, faut-il toujours faire jouer deux instruments simultanément avec le clavier, sans split de notes, ou y a-t-il des cas particuliers ?
-7. Lorsqu'une configuration s'applique, faut-il que Push change automatiquement de **piste sélectionnée**, de **mode de jeu**, de **disposition**, ou certains seulement ?
-8. Quels comportements Push 2 sont réalisables de façon fiable avec Live 12 / Max for Live sans ancien Remote Script ? Le « 64 pads » est un test prioritaire à envisager.
+7. **Arbitrage V1 rendu (D-010)** : sélection du bon instrument/piste indispensable ; modes et disposition avancés non bloquants. Préciser les comportements attendus pour « sélectionner » (piste sélectionnée dans Live, instrument effectivement jouable au Push, suivi de la sélection par Push).
+8. **À vérifier techniquement** : quels comportements Push 2 sont réalisables de façon fiable avec Live 12 / Max for Live sans ancien Remote Script ? Tester notamment le « 64 pads » ; le résultat ne doit pas bloquer la V1.
 
 ## C. CPU, continuité sonore et stabilité
 
