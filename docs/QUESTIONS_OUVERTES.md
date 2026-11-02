@@ -50,7 +50,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 13. **Résolu pour l'ajout MIDI (D-024) :** colonne automatique, OFF dans les configurations existantes. Restent à définir les renommages, déplacements, suppressions et la manière de distinguer les pistes MIDI d'instrument des autres pistes.
 14. La représentation par colonnes de pistes est validée (D-014). Comment afficher clairement activation des pistes audio/MIDI, armement MIDI, Push, tempo et devices ?
-15. **D-029 — duplication validée si simple :** copie indépendante d'une configuration complète et renommage, sans gestion de variantes. Restent à préciser la sauvegarde avec le Live Set, l'éventuel export/import et le comportement des données lors de la réouverture.
+15. **D-029/D-030 — résolu en produit :** duplication indépendante si simple, stockage complet avec le Live Set (`.als`), sans fichier externe. **À valider en PoC :** restauration exacte après sauvegarde, fermeture et réouverture, y compris scripts JavaScript multilignes. L'export/import dédié n'est pas requis en V1.
 16. Comment vérifier avant concert qu'aucun déclencheur ne référence un instrument introuvable ?
 
 ## E. Validation progressive
