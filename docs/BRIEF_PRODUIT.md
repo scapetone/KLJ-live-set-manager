@@ -60,7 +60,10 @@ La forme exacte des noms, la syntaxe et la stratégie de sauvegarde restent à d
 - **Push 2 — choix V1 validé (option B) :** sélection automatique du bon instrument / de la piste jouée **indispensable** ; modes avancés, disposition « 64 pads » et personnalisation d'affichage **souhaitables, non bloquants et conditionnés à une faisabilité confirmée** sur Live 12/Push 2. Les réglages de gamme/fondamentale restent à détailler dans le catalogue des actions. La sélection seule doit avoir un comportement utile même si les modes avancés ne sont pas réalisables.
 - **Tempo et réglages musicaux :** actions globales ou attachées à une configuration, y compris paliers de tempo pendant une transition.
 - **Effets et devices :** possibilité de les activer/désactiver à certains moments d'un morceau.
-- **CPU :** gérer l'inactivité des instruments/effets inutilisés ; stratégie précise et impact sur les reprises sonores à tester.
+- **CPU — option A validée pour la V1 (D-011) :** gestion **automatique** des instruments inutilisés, avec protections pour éviter les coupures ou perturbations sonores. L'utilisateur ne doit pas avoir à ajouter à chaque configuration une liste exhaustive de nouveaux instruments à désactiver. Cette fonction doit rester générique, sans structure de pistes KLJ codée en dur.
+  - **Non décidé :** comment délimiter les instruments pris en charge ; comment déterminer qu'un instrument est « inutilisé » ; faut-il désactiver l'instrument, la piste ou certains effets ; faut-il un délai, une exception ou une préactivation avant le jeu.
+  - **Contrainte :** ne pas assimiler `Track.mute` à une économie CPU garantie ; ne pas arrêter automatiquement les stems ou d'autres traitements non concernés.
+  - **Validation requise :** mesures de charge, temps de réactivation, notes tenues/queues d'effets et transitions dans Ableton réel.
 - **Maintenance :** détecter ou intégrer facilement des pistes nouvellement ajoutées sans éditer toutes les configurations.
 - **Interface :** tableau de configurations associé aux noms de clips, avec une visualisation compréhensible des pistes et actions.
 
