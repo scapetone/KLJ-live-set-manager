@@ -144,17 +144,30 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
 - Via le Live Object Model, parcourir les `Track.devices`, identifier le device de la piste ciblée, retrouver son paramètre **Device On**, puis modifier `DeviceParameter.value` avec `live.object` ou `LiveAPI` JavaScript.
 - Ne pas tenter d'écrire directement `Device.is_active` : la propriété est **en lecture seule** et sert à connaître l'état effectif, y compris lorsqu'un rack parent est désactivé.
-- L'interface envisagée permettrait de **choisir l'effet par son nom** dans le panneau de détails au lieu de saisir son index (`DEV(3)`). Le référencement exact après déplacement/renommage d'un device est à définir.
+- **D-025 :** ne pas développer d'éditeur graphique spécialisé pour ce cas. Chaque configuration dispose plutôt d'un **champ texte « Commandes avancées / Script »**, facultatif, exécuté lors du lancement de son clip, en complément de l'état complet défini dans la grille. La syntaxe finale n'est pas encore définie. L'exemple historique `16/DEV(3) OFF` illustre l'effet voulu, mais n'est **pas encore garanti comme syntaxe directement acceptée** par le futur device.
 - La configuration doit respecter les états de l'effet prévus par chaque ligne sans redémarrer inutilement un effet déjà à la bonne valeur.
 - **Limites à vérifier sur les devices réels :** disponibilité du paramètre Device On sur l'effet concerné, devices imbriqués dans des racks, automation concurrente éventuelle et coupure de queues de reverb/delay à la désactivation.
 
-**Important :** ce constat valide la **faisabilité de l'action**, pas encore le détail d'interface ni la prise en charge universelle de chaque plugin tiers. L'activation de **l'effet** est distincte de l'activation de **la piste** (D-019).
+**Important :** ce constat valide la **faisabilité de l'action via Live API**, pas la compatibilité avec la syntaxe historique de ClyphX ni la possibilité d'exécuter sans contraintes n'importe quel code fourni par l'utilisateur. L'activation de **l'effet** est distincte de l'activation de **la piste** (D-019).
 
 Références officielles :
 - [Cycling '74 — Live API](https://docs.cycling74.com/userguide/m4l/live_api/)
 - [Cycling '74 — Device et paramètres](https://docs.cycling74.com/apiref/lom/device/)
 - [Cycling '74 — DeviceParameter.value](https://docs.cycling74.com/apiref/lom/deviceparameter/)
 - [Ableton Live 12 — Activateur des devices](https://www.ableton.com/en/manual/working-with-instruments-and-effects/)
+
+### Commandes avancées — champ libre par configuration (D-025)
+
+- Le panneau de détails comporte un champ de texte, éventuellement multiligne, **facultatif**, propre à chaque configuration.
+- Le contenu est lancé **lorsque le clip associé démarre** (déclenchement de scène manuel ou Follow Action), conjointement aux réglages standards de la configuration.
+- Usage visé : commandes spécialisées peu fréquentes, comme le basculement de l'effet n° 3 de la piste 16 entre True Peak A et B, sans ajouter un nouvel élément graphique au tableau.
+- **Non tranché :** langage retenu et API exposée (petit langage de commandes, forme proche de ClyphX, ou JavaScript avec accès aux commandes Live), ordre exact par rapport au snapshot, niveau de liberté, validation syntaxique, feedback d'erreur, tolérance aux modifications du Set.
+- **Principe de fiabilité attendu :** une erreur dans le champ personnalisé ne doit pas faire planter le device ni bloquer la progression musicale. Éviter d'exécuter aveuglément du code incontrôlé sans mécanisme de diagnostic.
+- On ne prévoit pas de reproduire intégralement le moteur ClyphX ni de construire un éditeur graphique pour chaque commande exceptionnelle.
+
+**Piste technique, pas architecture validée :** Max propose un moteur JavaScript V8 et une API JavaScript LiveAPI. Ces briques rendent envisageable un champ de script avancé, mais son mode d'évaluation et ses contraintes doivent être spécifiés/testés avant Codex.
+
+Documentation : https://docs.cycling74.com/reference/v8/ ; https://docs.cycling74.com/apiref/js/liveapi/
 
 ### Cas d'usage de référence
 
