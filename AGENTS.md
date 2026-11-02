@@ -1,34 +1,14 @@
-# Instructions pour Codex — KLJ Live Set Manager
+# KLJ Live Set Manager — consignes pour Codex
 
-## Première action attendue : PLAN, pas code
+**Mission : produire une première version utilisable, pas refaire le cadrage.**
 
-Ce dépôt contient **une spécification et des recherches**, mais **pas encore de device Max for Live ni de tests matériels réussis**. Commencer par lire dans cet ordre :
+1. Lis **uniquement** [docs/SPEC_CODEX_V1.md](docs/SPEC_CODEX_V1.md) pour les exigences. Consulte [docs/MAQUETTE_UI.md](docs/MAQUETTE_UI.md) pour le visuel si nécessaire.
+2. Les autres fichiers `docs/` sont des archives/recherches : **ne les lis que si une difficulté précise le justifie**. La spécification V1 prime en cas de contradiction.
+3. Implémente de bout en bout la solution Max for Live **la plus simple et robuste** possible, sans framework générique, sans langage ClyphX et sans installer spontanément des skills, MCP ou autres dépendances.
+4. Ne t'arrête pas à un plan ou à des PoC théoriques : livre les patchs, le code et des instructions courtes pour que le musicien teste dans **Ableton Live 12 + Push 2**. Réalise les validations automatiques faisables dans ton environnement ; ne prétends pas avoir testé le matériel absent.
+5. **Règle absolue : ne touche jamais au volume ou au Track Activator/Mute des huit stems audio** (APC). Contrôle uniquement les Track Activators des instruments MIDI. Pas de commande ARM/Monitor dynamique sans nécessité démontrée.
+6. **Push :** la sélection de piste est indispensable. Les quatre modes demandés sont documentés mais **leur changement automatique n'est pas confirmé** via l'API publique. Implémente ce qui est faisable ; une option non pilotable doit être clairement signalée, jamais présentée comme fonctionnelle.
+7. **Script JavaScript libre :** pas de DSL ; implémente l'évaluation dynamique et la persistance si faisables. Capte les exceptions. Ne remplace pas un blocage technique par une fonctionnalité factice.
+8. À la fin, fournis : **fichiers livrés, installation, tests à faire dans Live, limites connues**. N'interroge l'utilisateur que pour un vrai blocage empêchant d'avancer.
 
-1. [Spécification V1 — source de vérité](docs/SPEC_CODEX_V1.md)
-2. [Journal des décisions D-001 à D-036](docs/DECISIONS.md)
-3. [Protocole de tests P1/P2/P3](docs/VALIDATION_TECHNIQUE_CODEX.md)
-4. [Faisabilité JS libre](docs/FAISABILITE_SCRIPTS_JS.md)
-5. [Référence UI](docs/MAQUETTE_UI.md)
-
-[Brief produit](docs/BRIEF_PRODUIT.md), [questions ouvertes](docs/QUESTIONS_OUVERTES.md) et [plan de cadrage](docs/PLAN_CADRAGE.md) contiennent **aussi des propositions exploratoires anciennes**. En cas de divergence, suivre la **spécification consolidée** puis les décisions récentes. Ne pas réintroduire des choix remplacés sans en parler.
-
-## Invariants du produit
-
-- **Ne jamais modifier le volume, le Mute/Track Activator ou le mixage des huit stems audio A/B** : l'APC les gère manuellement.
-- La matrice ON/OFF pilote les **Track Activators des pistes MIDI d'instruments** (`Track.mute` : 0 = actif, 1 = inactif). **Ne pas confondre avec `Device On`**.
-- Le device est installé sur la **piste des clips déclencheurs**, identifiée automatiquement. Les scènes et Follow Actions restent natives dans Live.
-- Un lancement réel applique **une configuration complète** ; une boucle naturelle ne doit **pas** relancer le script. Le cas *Play Again* sur le même slot nécessite un test.
-- Clavier Vortex : plusieurs pistes MIDI actives en parallèle ; Push 2 : sélection automatique de la piste instrumentale voulue. Monitor IN et MIDI From sont **préconfigurés**, sous réserve d'essais matériels.
-- **Pas d'ARM automatique** tant que les tests ne montrent pas qu'il est nécessaire.
-- **Pas de Remote Script Push 2 legacy**, pas de DSL ClyphX, pas d'interpréteur de commandes propriétaire.
-- **KEY** et **PUSH MODE** font partie du tableau. Les quatre modes Push désirés sont `NOTE`, `NOTE IN KEY`, `PADS` (Drum Rack 16 pads + séquenceur), `64 PADS`. **Leur automatisation via l'API publique n'est pas démontrée.** `ControlSurface.pad_layout` est en lecture/observation seulement : ne pas simuler un contrôle fonctionnel.
-- Script JavaScript natif libre propre à chaque ligne ; mécanisme d'évaluation dynamique et persistance dans `.als` **à prouver par PoC**, pas à supposer.
-- Privilégier une solution simple et maintenable, adaptée au Live Set KLJ. Le choix d'une UI custom ne doit pas détourner le projet d'un tableau éditable et fiable.
-
-## Livrable demandé en mode Plan
-
-Produire **un seul plan d'implémentation cohérent** : architecture Max/Max for Live minimale, structures de données, composants UI, persistance dans `.als`, observation des clips, application des configurations, scripts JS, chemins de fichiers livrables, cas d'erreur, séquence de PoC et critères d'acceptation.
-
-Séparer nettement **(A) API documentée, (B) tests Live/Push nécessaires, (C) limitations possibles, (D) décisions produit vraiment bloquantes**. Ne déclarer aucun résultat matériel comme acquis. Après validation du plan, viser une V1 de bout en bout puis des tests **dans Ableton Live 12 avec Push 2**.
-
-Les captures d'écran, le vrai Live Set et le fichier `Macros.txt` historique **ne sont pas présents dans ce dépôt**. Ne pas les inventer et signaler uniquement si leur absence bloque une vérification précise.
+**Philosophie : première implémentation complète → essai par le musicien → corrections ciblées.**
