@@ -43,6 +43,8 @@ Statuts :
 
 | D-024 | 2026-11-02 | **Validée** | Quand une nouvelle **piste MIDI d'instrument** apparaît dans Live, sa colonne est créée automatiquement et ses cellules Track Activator sont initialisées à **OFF dans toutes les configurations existantes**. Le musicien active ensuite cette piste uniquement sur les lignes pertinentes. | Éviter l'activation accidentelle d'un nouvel instrument et supprimer la nécessité de réécrire les macros existantes. Ce réglage initial ne signifie pas nécessairement que l'état réel de la piste Live doit être modifié immédiatement à sa création. |
 
+| D-025 | 2026-11-02 | **Validée** | Pour les besoins particuliers comme True Peak, préférer dans le panneau de détails **un champ texte « Commandes avancées / Script » par configuration**, plutôt qu'un éditeur graphique dédié aux effets. Le contenu doit être exécuté au déclenchement du clip correspondant, en complément des réglages normaux. | Un seul exemple d'effet à piloter ne justifie pas une interface spécialisée ; permettre des actions complémentaires avec un peu de code écrit par l'utilisateur. **Syntaxe / moteur d'exécution / limites non décidés.** |
+
 ## Points **non tranchés**
 
 - Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
@@ -50,7 +52,7 @@ Statuts :
 - Gestion CPU : souhait d'optimiser les pistes inutilisées (D-011), mais **Track Activator n'est pas une garantie d'économie CPU** (D-019). Conserver comme point de test et ne pas imposer la désactivation générale des devices pour l'instant.
 - Ajout d'une piste MIDI : colonne automatique et cellules OFF validées (D-016/D-024). Reste à préciser le traitement des suppressions/renommages, la référence stable des pistes, et les éventuelles colonnes audio.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
-- **Structure tableau + panneau validée (D-023)** ; restent à préciser les interactions détaillées, la visibilité des pistes audio de stems (pilotées via APC), les valeurs par défaut, la sauvegarde et l'ergonomie dans Max for Live.
+- **Structure tableau + panneau validée (D-023)** ; le panneau dispose d'un **champ texte de commandes avancées par configuration (D-025)**. Restent à trancher la syntaxe (JavaScript, mini-langage, compatibilité partielle ClyphX), les API exposées, l'ordre d'exécution, la gestion d'erreurs et la persistance.
 - Limites précises de la V1.
 
 **Règle de travail :** toute nouvelle décision validée est ajoutée ici avec date et justification ; les hypothèses restent dans les questions ouvertes.
