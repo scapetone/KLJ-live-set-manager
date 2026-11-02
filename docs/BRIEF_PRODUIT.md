@@ -294,7 +294,7 @@ Le premier visuel du tableau était **illustratif et volontairement réduit à q
 |---|---|---|
 | `NOTE` | Jeu mélodique chromatique, toutes les notes | `note.melodic.64_notes` avec option Push Chromatic |
 | `NOTE IN KEY` | Jeu mélodique limité à la gamme `KEY` | `note.melodic.64_notes` avec option Push In Key |
-| `PADS` | Drum Rack, mode classique avec zone de pads / séquenceur | `note.drums.loop_selector` (interprétation à valider avec KLJ) |
+| `PADS` | **Drum Rack classique : 16 pads de jeu + séquenceur**, confirmé pour KLJ | `note.drums.loop_selector` (correspondance API précise à tester sur Push 2) |
 | `64 PADS` | Drum Rack, grille complète 8x8 | `note.drums.64_pads` |
 
 **Limitation fondamentale :** l'API LOM actuelle expose `ControlSurface.pad_layout` en **`get observe` uniquement**, sans écriture ni fonction publique documentée pour changer la disposition native de Push 2. Le manuel Ableton confirme que ces dispositions existent et qu'elles peuvent être choisies **physiquement sur Push**, pas qu'un device M4L peut les imposer. La fonction `Song.scale_mode` agit sur le mode de gamme de Live / son éditeur MIDI : **elle ne commande pas directement In Key / Chromatic sur Push**.
