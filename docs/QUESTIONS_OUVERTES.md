@@ -20,9 +20,11 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## C. CPU, continuité sonore et stabilité
 
-9. Quels instruments et effets ont un coût CPU réellement problématique dans le Set ?
-10. À quel moment peut-on couper un device sans couper une note tenue, une réverbération ou une transition ?
-11. Quel compromis accepte-t-on entre économie CPU, latence de réactivation et continuité sonore ?
+**Décision prise (D-011) : gestion automatique des instruments inutilisés en V1, avec protections audio.** Ce choix ne préjuge pas du mécanisme Max for Live.
+
+9. Quels instruments et effets ont un coût CPU réellement problématique dans le Set ? Comment désigner les pistes/devices **gérés** sans toucher à l'ensemble du Live Set ?
+10. À quel moment peut-on couper un device sans couper une note tenue, une réverbération ou une transition ? Faut-il différer l'arrêt / réactiver avant l'utilisation ?
+11. Quel compromis accepte-t-on entre économie CPU, latence de réactivation et continuité sonore ? Comment définit-on « instrument inutilisé » dans une configuration partielle ?
 12. Faut-il garantir que les pistes de stems A/B sont toujours hors du périmètre des actions de réinitialisation globale ?
 
 ## D. Maintenance et interface
