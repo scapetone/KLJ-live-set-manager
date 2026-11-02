@@ -13,7 +13,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## B. Instruments et contrôleurs
 
-5. **Résolu fonctionnellement par D-020/D-021 :** le clavier utilise des entrées MIDI fixes et des pistes activées ; Push nécessite la sélection de sa piste. Pas d'armement explicite demandé. **Question restante :** le plugin réapplique-t-il Monitor IN à chaque configuration ou ce réglage reste-t-il préparé dans Live ?
+5. **Orientation D-022 à valider :** le routage MIDI et Monitor IN restent préconfigurés dans Live ; le plugin n'écrit plus MON OFF / MON IN. **Test requis :** s'assurer que le clavier ne joue que ses pistes actives, et que Push ne joue que sa piste sélectionnée, même quand le changement est déclenché par l'API Live plutôt que par une touche de Push.
 6. Pour Breathe, faut-il toujours faire jouer deux instruments simultanément avec le clavier, sans split de notes, ou y a-t-il des cas particuliers ?
 7. **D-010/D-020 :** sélectionner la piste destinée à Push est indispensable (équivalent `14/SEL`). Vérifier sur le matériel que sélection dans Live + réglages existants rendent immédiatement l'instrument jouable, sans gestion d'ARM ajoutée.
 8. **À vérifier techniquement** : quels comportements Push 2 sont réalisables de façon fiable avec Live 12 / Max for Live sans ancien Remote Script ? Tester notamment le « 64 pads » ; le résultat ne doit pas bloquer la V1.
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine discussion :** choisir si `Monitor IN` doit être réappliqué automatiquement par le plugin pour les pistes MIDI de la configuration, ou réglé une seule fois dans Live. Les deux rôles clavier/Push sont désormais explicités (D-020/D-021) ; l'armement ne fait pas partie des actions nécessaires de V1.
+**Prochaine discussion :** définir exactement le contenu des cellules de la matrice, les valeurs par défaut des nouvelles colonnes et le comportement des effets spéciaux. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
 
 Aucune réponse ci-dessus n'est présumée acquise.
