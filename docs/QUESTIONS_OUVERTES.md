@@ -13,9 +13,9 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## B. Instruments et contrôleurs
 
-5. Dans les conditions réelles du Set, quelle méthode est la plus robuste pour assigner clavier et Push aux instruments : monitoring, armement, routage, racks ou autre ?
+5. **Résolu fonctionnellement par D-020/D-021 :** le clavier utilise des entrées MIDI fixes et des pistes activées ; Push nécessite la sélection de sa piste. Pas d'armement explicite demandé. **Question restante :** le plugin réapplique-t-il Monitor IN à chaque configuration ou ce réglage reste-t-il préparé dans Live ?
 6. Pour Breathe, faut-il toujours faire jouer deux instruments simultanément avec le clavier, sans split de notes, ou y a-t-il des cas particuliers ?
-7. **Arbitrage V1 rendu (D-010)** : sélection du bon instrument/piste indispensable ; modes et disposition avancés non bloquants. Préciser les comportements attendus pour « sélectionner » (piste sélectionnée dans Live, instrument effectivement jouable au Push, suivi de la sélection par Push).
+7. **D-010/D-020 :** sélectionner la piste destinée à Push est indispensable (équivalent `14/SEL`). Vérifier sur le matériel que sélection dans Live + réglages existants rendent immédiatement l'instrument jouable, sans gestion d'ARM ajoutée.
 8. **À vérifier techniquement** : quels comportements Push 2 sont réalisables de façon fiable avec Live 12 / Max for Live sans ancien Remote Script ? Tester notamment le « 64 pads » ; le résultat ne doit pas bloquer la V1.
 
 ## C. CPU, continuité sonore et stabilité
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine discussion :** préciser les autres commandes d'une colonne MIDI : armement et monitoring, qui ne sont pas équivalents. Les anciennes macros KLJ utilisaient MON IN et MUTE, mais pas ARM. Décider les comportements réellement nécessaires avant de rédiger les specs Codex.
+**Prochaine discussion :** choisir si `Monitor IN` doit être réappliqué automatiquement par le plugin pour les pistes MIDI de la configuration, ou réglé une seule fois dans Live. Les deux rôles clavier/Push sont désormais explicités (D-020/D-021) ; l'armement ne fait pas partie des actions nécessaires de V1.
 
 Aucune réponse ci-dessus n'est présumée acquise.
