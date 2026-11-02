@@ -144,7 +144,7 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
 - Via le Live Object Model, parcourir les `Track.devices`, identifier le device de la piste ciblée, retrouver son paramètre **Device On**, puis modifier `DeviceParameter.value` avec `live.object` ou `LiveAPI` JavaScript.
 - Ne pas tenter d'écrire directement `Device.is_active` : la propriété est **en lecture seule** et sert à connaître l'état effectif, y compris lorsqu'un rack parent est désactivé.
-- **D-025 :** ne pas développer d'éditeur graphique spécialisé pour ce cas. Chaque configuration dispose plutôt d'un **champ texte « Commandes avancées / Script »**, facultatif, exécuté lors du lancement de son clip, en complément de l'état complet défini dans la grille. La syntaxe finale n'est pas encore définie. L'exemple historique `16/DEV(3) OFF` illustre l'effet voulu, mais n'est **pas encore garanti comme syntaxe directement acceptée** par le futur device.
+- **D-025/D-026 :** ne pas développer d'éditeur graphique spécialisé pour ce cas. Chaque configuration dispose plutôt d'un **champ texte « Script JavaScript »**, facultatif, dont le contenu est exécuté au lancement de son clip, en complément de la configuration complète. **Le langage est le JavaScript natif pris en charge par Max (V8), avec accès direct aux API Max for Live telles que `LiveAPI`.** Aucune compatibilité de syntaxe avec `16/DEV(3) OFF` n'est demandée.
 - La configuration doit respecter les états de l'effet prévus par chaque ligne sans redémarrer inutilement un effet déjà à la bonne valeur.
 - **Limites à vérifier sur les devices réels :** disponibilité du paramètre Device On sur l'effet concerné, devices imbriqués dans des racks, automation concurrente éventuelle et coupure de queues de reverb/delay à la désactivation.
 
@@ -156,16 +156,18 @@ Références officielles :
 - [Cycling '74 — DeviceParameter.value](https://docs.cycling74.com/apiref/lom/deviceparameter/)
 - [Ableton Live 12 — Activateur des devices](https://www.ableton.com/en/manual/working-with-instruments-and-effects/)
 
-### Commandes avancées — champ libre par configuration (D-025)
+### Script JavaScript natif par configuration (D-025/D-026)
 
-- Le panneau de détails comporte un champ de texte, éventuellement multiligne, **facultatif**, propre à chaque configuration.
+- Le panneau de détails comporte un **éditeur texte multiligne facultatif**, propre à chaque configuration, dans lequel le musicien peut saisir de courtes instructions **JavaScript natives de Max**.
 - Le contenu est lancé **lorsque le clip associé démarre** (déclenchement de scène manuel ou Follow Action), conjointement aux réglages standards de la configuration.
 - Usage visé : commandes spécialisées peu fréquentes, comme le basculement de l'effet n° 3 de la piste 16 entre True Peak A et B, sans ajouter un nouvel élément graphique au tableau.
-- **Non tranché :** langage retenu et API exposée (petit langage de commandes, forme proche de ClyphX, ou JavaScript avec accès aux commandes Live), ordre exact par rapport au snapshot, niveau de liberté, validation syntaxique, feedback d'erreur, tolérance aux modifications du Set.
+- **Langage validé : JavaScript V8 / `LiveAPI`** et, selon faisabilité, les API natives Max pertinentes. **Exclusions explicites :** aucune mini-syntaxe spécifique KLJ, aucun interpréteur ClyphX, aucune liste fermée de « commandes avancées » propre au gestionnaire, aucune obligation de passer par des fonctions utilitaires inventées par le produit.
+- **À vérifier avant la spécification Codex :** comment exécuter *dynamiquement au déclenchement* du texte JavaScript différent pour chaque ligne, depuis un champ utilisateur sauvegardé dans un device `.amxd`. La présence d'un objet `v8` permettant d'exécuter du JavaScript ne prouve pas, à elle seule, que l'évaluation arbitraire d'un champ éditable fonctionne directement. Prévoir un essai technique minimal.
+- **Non tranché :** ordre d'exécution par rapport à la configuration standard, diagnostic et affichage des erreurs, persistance du texte et comportement d'un script invalide.
 - **Principe de fiabilité attendu :** une erreur dans le champ personnalisé ne doit pas faire planter le device ni bloquer la progression musicale. Éviter d'exécuter aveuglément du code incontrôlé sans mécanisme de diagnostic.
 - On ne prévoit pas de reproduire intégralement le moteur ClyphX ni de construire un éditeur graphique pour chaque commande exceptionnelle.
 
-**Piste technique, pas architecture validée :** Max propose un moteur JavaScript V8 et une API JavaScript LiveAPI. Ces briques rendent envisageable un champ de script avancé, mais son mode d'évaluation et ses contraintes doivent être spécifiés/testés avant Codex.
+**Base technique documentée :** Max propose `v8`/`v8.codebox` (JavaScript moderne) et `LiveAPI`. **Le point encore à tester est l'exécution de contenu JavaScript fourni à l'exécution par une cellule du tableau**, et sa conservation avec le Live Set. Ce test doit se limiter au fonctionnement du moteur, sans développement d'une surcouche de commandes.
 
 Documentation : https://docs.cycling74.com/reference/v8/ ; https://docs.cycling74.com/apiref/js/liveapi/
 
