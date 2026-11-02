@@ -29,14 +29,16 @@ Statuts :
 | D-015 | 2026-11-02 | **Validée** | La commande d'armement concerne uniquement les pistes MIDI ; elle ne doit pas être proposée pour les pistes audio dans ce produit. | Simplifier l'interface et refléter les besoins KLJ. |
 | D-016 | 2026-11-02 | **Validée** | Lorsqu'une piste est ajoutée au Set, une nouvelle colonne apparaît dans le tableau ; l'utilisateur renseigne les états de cette piste configuration par configuration. | Éviter toute réécriture de macros existantes et permettre une édition visuelle directe. |
 
-| D-017 | 2026-11-02 | **Orientation fonctionnelle confirmée** | Pour réduire le CPU, privilégier l'activation/désactivation **des instruments et effets (Device ON/OFF)** plutôt que le seul mute de piste. Le tableau comprend des pistes audio et MIDI, mais couper un device audio ne coupe pas forcément le signal de la piste. | Ableton Live 12 indique qu'un device désactivé cesse de consommer des cycles CPU de traitement. Il faut distinguer clairement Device ON/OFF et Mute. |
+| D-017 | 2026-11-02 | **Remplacée par D-019** | Privilégier Device ON/OFF plutôt que le mute de piste pour le contrôle principal de la grille. | Correction après désignation explicite par l'utilisateur de l'activateur de piste de Live. |
 | D-018 | 2026-11-02 | **Validée** | Les volumes et le Mute des pistes audio de stems restent entièrement gérés manuellement via un contrôleur APC. La V1 n'a pas à automatiser les volumes ni le Mute de ces pistes. | Le mixage audio est déjà assuré efficacement pendant le live ; éviter les commandes inutiles et tout risque de coupure. L'éventuel pilotage Device ON/OFF sur ces pistes est une question distincte. |
+
+| D-019 | 2026-11-02 | **Validée** | La commande principale ON/OFF de la grille pilote **l'activateur de piste de Live (Track Activator)**, pas le bouton On/Off d'un instrument ou effet. L'API Max for Live expose cette commande comme `Track.mute` (1 = piste désactivée, 0 = activée). | Le musicien a montré précisément ce contrôle dans Live. Cette commande est simple à piloter, mais **ne garantit pas** une baisse de CPU ; la performance doit être mesurée séparément. |
 
 ## Points **non tranchés**
 
-- Configurations complètes validées (D-012). Pistes audio/MIDI dans le tableau (D-014) ; **Device ON/OFF privilégié pour le CPU (D-017)**. Reste à choisir les devices concernés par piste ; contrôle Mute/volume audio exclu de la V1 par D-018.
+- Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
 - Routage MIDI optimal (monitoring, armement, racks, autre) pour clavier et Push 2.
-- Gestion CPU : **principe automatique validé (D-011)**, à articuler avec la configuration manuelle ligne par ligne (D-014/D-016), sans actions surprises sur les pistes audio.
+- Gestion CPU : souhait d'optimiser les pistes inutilisées (D-011), mais **Track Activator n'est pas une garantie d'économie CPU** (D-019). Conserver comme point de test et ne pas imposer la désactivation générale des devices pour l'instant.
 - Apparition automatique des colonnes à l'ajout d'une piste (D-016) ; valeur initiale des cellules non renseignées, traitement des suppressions/renommages et référencement des pistes à préciser.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
 - Format définitif du tableau de configurations, persistance, import et export.
