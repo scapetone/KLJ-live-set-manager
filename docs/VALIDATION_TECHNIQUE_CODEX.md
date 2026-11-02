@@ -12,6 +12,7 @@
 | Trouver la piste du device installé | `this_device canonical_parent` | API disponible |
 | Voir le clip actuellement joué sur la piste | `Track.playing_slot_index`, `Clip.playing_status`, `Track.fired_slot_index` | API disponible, événements limites à tester |
 | Sélectionner la piste jouée par Push | `Song.View.selected_track` (get/set/observe) | API disponible ; comportement matériel Push 2 à tester |
+| Lire le mode de pads actif Push 2 | `ControlSurface.pad_layout` (get/observe **sans set**) | API de lecture disponible ; aucun changement automatique natif documenté |
 | Diagnostiquer l'armement implicite de Push | `Track.implicit_arm` (get/set/observe), `Track.arm` | API disponible ; **ne pas ajouter une commande ARM en V1 sans besoin démontré** |
 | Tempo, fondamentale, gamme | `Song.tempo`, `Song.root_note`, `Song.scale_name`, `Song.scale_mode` | API disponible ; synchronisation de la disposition Push à vérifier |
 | Activer/désactiver les instruments MIDI | `Track.mute` (`0` = Track Activator ON, `1` = OFF) | API disponible ; aucun contrôle Mute/volume des 8 stems APC |
@@ -44,7 +45,7 @@
 2. Vérifier `Track.implicit_arm` et `Track.arm` avant et après la sélection, **sans imposer leur modification** en première approche.
 3. Clavier : deux instruments actifs simultanément doivent jouer depuis le clavier, sans faire jouer un instrument réservé à Push.
 4. Modifier `Song.root_note` / `Song.scale_name` / `Song.scale_mode` : vérifier le rendu **sur les pads Push**, pas seulement l'affichage Live.
-5. Option seulement si facile : vérifier disposition Note / 64 pads / In Key via le comportement natif ; **ne pas installer d'ancien script Push legacy ni bloquer la V1 sur 64 pads**.
+5. **D-035 — besoin explicite réaffirmé :** vérifier les quatre modes demandés dans le tableau : `NOTE`, `NOTE IN KEY`, `PADS` (Drum Rack classique) et `64 PADS`. Lire `ControlSurface.pad_layout` avant/après le changement physique de modes sur Push. Cette propriété est **get/observe seulement**, pas une commande permettant de les imposer. Vérifier l'effet des changements de `Song.root_note` et `Song.scale_name` sur le jeu réel ; ne pas confondre `Song.scale_mode` avec le bouton Push In Key. Ne pas installer d'ancien script Push legacy ni envoyer des commandes MIDI non documentées ; si l'automatisation est impossible, rendre la limite explicite à l'utilisateur avant de figer le comportement V1.
 
 **Réussite :** sélection fiable et correcte des instruments joués par les deux musiciens, sans manipulations manuelles supplémentaires au changement de configuration. Si sélection API + Monitor IN ne suffisent pas, documenter exactement ce qui manque avant d'ajouter une action d'armement ou de monitoring.
 
