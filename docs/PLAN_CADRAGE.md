@@ -1,6 +1,6 @@
 # Plan de cadrage produit — KLJ Live Set Manager
 
-**Statut : cadrage fonctionnel largement avancé ; essais techniques ciblés restant à réaliser**  
+**Statut : spécification consolidée remise à Codex en entrée de mode Plan ; essais techniques ciblés restant à réaliser**  
 **Date d'ouverture : 2026-11-02**  
 **Objectif final :** disposer d'un brief suffisamment complet et non ambigu pour demander à Codex un plan d'implémentation, puis viser le développement d'une première version fonctionnelle en une passe, suivie de tests réels dans Ableton.
 
@@ -116,10 +116,11 @@ Pour chaque étape :
 | 04 — Interface | **Structure validée** | Tableau + panneau D-023, détails UI à préciser |
 | 05 — Faisabilité | **Documentation vérifiée, P1/P2/P3 à exécuter** | [Protocole](VALIDATION_TECHNIQUE_CODEX.md) |
 | 06 — Tests | **Trame créée** | Trois POC + scénarios KLJ |
-| 07 — Codex | **À préparer** | Brief consolidé / plan d'implémentation |
+| 07 — Codex | **Brief V1 consolidé, mode Plan à lancer** | [Spécification Codex V1](SPEC_CODEX_V1.md) / plan d'implémentation à produire |
 
 ## Références
 
+- [Spécification consolidée pour Codex](SPEC_CODEX_V1.md)
 - [Brief produit](BRIEF_PRODUIT.md)
 - [Décisions](DECISIONS.md)
 - [Questions ouvertes](QUESTIONS_OUVERTES.md)
