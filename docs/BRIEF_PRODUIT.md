@@ -167,7 +167,7 @@ Références officielles :
 - **Principe de fiabilité attendu :** une erreur dans le champ personnalisé ne doit pas faire planter le device ni bloquer la progression musicale. Éviter d'exécuter aveuglément du code incontrôlé sans mécanisme de diagnostic.
 - On ne prévoit pas de reproduire intégralement le moteur ClyphX ni de construire un éditeur graphique pour chaque commande exceptionnelle.
 
-**Base technique documentée :** Max propose `v8`/`v8.codebox` (JavaScript moderne) et `LiveAPI`. **Le point encore à tester est l'exécution de contenu JavaScript fourni à l'exécution par une cellule du tableau**, et sa conservation avec le Live Set. Ce test doit se limiter au fonctionnement du moteur, sans développement d'une surcouche de commandes.
+**Recherche technique (2026-11-02) :** Max propose `v8` pour l'exécution, `text.codebox`/`textedit` pour l'édition de texte et `pattr`/`pattrstorage` en Parameter Mode pour la conservation avec le Live Set. Le chemin d'implémentation paraît viable **sans créer de langage propriétaire**. Il faut toutefois prouver la disponibilité d'une évaluation dynamique de texte en `v8` (candidats : `eval(source)` / `new Function(source)`) ayant accès à `LiveAPI` dans un vrai device. Voir [étude de faisabilité des scripts JavaScript](FAISABILITE_SCRIPTS_JS.md), incluant sources et test minimal avant développement.
 
 Documentation : https://docs.cycling74.com/reference/v8/ ; https://docs.cycling74.com/apiref/js/liveapi/
 
