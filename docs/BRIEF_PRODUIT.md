@@ -41,6 +41,8 @@ La réduction de la consommation CPU liée aux instruments et effets inutilisés
 
 **Justification :** Live 12 indique que Monitor IN transmet en permanence l'entrée indépendamment de l'armement. **Attention :** Monitor IN supprime la lecture des clips MIDI hébergés sur ces pistes ; acceptable uniquement pour les pistes employées comme instruments joués en direct.
 
+**Information confirmée sur le Set KLJ :** aucune piste MIDI d'instrument ne contient actuellement de clip MIDI. Le conflit entre Monitor IN et la lecture de clips MIDI n'est donc pas un problème pour l'usage actuel. Cela ne valide pas encore la distribution du MIDI de Push vers une seule piste lorsque plusieurs pistes sont sur Monitor IN.
+
 **Critère de vérification avant gel des specs :** lorsque plusieurs pistes MIDI sont sur Monitor IN, le clavier doit jouer seulement ses instruments actifs et Push doit jouer seulement la piste visée (y compris quand elle est sélectionnée via l'API, pas manuellement sur Push). Tester aussi deux pistes clavier actives en parallèle et les transitions par Follow Actions. Si le test échoue, réévaluer la gestion du monitoring sans réintroduire tout le reset global de ClyphX. Le routage `MIDI From` est pour l'instant préparé manuellement.
 
 Sources officielles : https://www.ableton.com/en/live-manual/12/routing-and-i-o/ et https://www.ableton.com/en/manual/using-push-2/.
