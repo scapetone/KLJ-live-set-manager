@@ -8,11 +8,11 @@ Projet de Max for Live pour simplifier et fiabiliser le pilotage des configurati
 
 Conserver la progression musicale actuelle d'Ableton Live (Session View, scènes, clips, Follow Actions et transitions entre deux decks de stems), tout en remplaçant la gestion manuelle des macros ClyphX par un éditeur visuel de configurations.
 
-**Principe central validé :** lorsqu'un clip portant un nom de déclencheur donné entre en lecture sur une piste dédiée, le gestionnaire applique la configuration correspondante. Ce déclenchement fonctionne aussi bien après un lancement manuel de scène qu'après une Follow Action.
+**Principe central validé :** le device est placé directement sur la piste contenant les clips déclencheurs. Lorsqu'un clip nommé commence effectivement à jouer (scène lancée manuellement ou Follow Action), le gestionnaire applique sa configuration. Les tours d'une boucle naturelle ne réexécutent pas la configuration. Les scripts JavaScript utilisateur, s'il y en a, sont propres à chaque configuration.
 
 Le projet n'a **pas** pour objectif de recréer le moteur de séquencement des clips ni de reproduire les commandes ClyphX à l'identique.
 
-**Interface visée :** une ligne par configuration complète et une colonne par piste audio ou MIDI ; activation configurable sur toutes les pistes et armement MIDI uniquement. L'ajout d'une piste ajoute une colonne à renseigner ligne par ligne.
+**Interface V1 validée :** tableau compact (une ligne par configuration, une colonne par instrument MIDI) avec panneau de détails (tempo, sélection Push, gamme et JavaScript libre). Les stems audio des deux decks restent contrôlés manuellement par l'APC : le device **ne change ni leur volume ni leur Track Activator**. Une nouvelle piste MIDI ajoute une colonne OFF par défaut ; les colonnes affichent leur numéro et nom et suivent l'ordre des pistes Live. **Pas d'armement MIDI explicite requis en V1**, sous réserve des essais avec Push 2.
 
 ## Documentation produit
 
@@ -20,6 +20,8 @@ Le projet n'a **pas** pour objectif de recréer le moteur de séquencement des c
 - [Brief produit (en construction)](docs/BRIEF_PRODUIT.md)
 - [Décisions prises](docs/DECISIONS.md)
 - [Questions ouvertes / discovery](docs/QUESTIONS_OUVERTES.md)
+- [Validation technique ciblée avant Codex](docs/VALIDATION_TECHNIQUE_CODEX.md) — 3 essais POC Live/Push/JS
+- [Étude JavaScript dynamique](docs/FAISABILITE_SCRIPTS_JS.md)
 
 ## Méthode
 
@@ -27,7 +29,7 @@ Le projet n'a **pas** pour objectif de recréer le moteur de séquencement des c
 2. Distinguer les décisions validées des hypothèses.
 3. Examiner les options natives Ableton / Max for Live, avec des tests ciblés quand nécessaire.
 4. Valider ensemble les parcours utilisateurs et le périmètre d'une première version.
-5. **Seulement ensuite**, rédiger des spécifications techniques et des tâches de développement exploitables par Codex.
+5. Soumettre le brief consolidé à Codex en mode Plan, lever les trois points techniques ciblés, puis développer la V1 et tester dans le vrai Set.
 
 Les captures du Set et le fichier `Macros.txt` ont servi à comprendre l'existant ; ils ne sont pas publiés dans ce dépôt.
 
