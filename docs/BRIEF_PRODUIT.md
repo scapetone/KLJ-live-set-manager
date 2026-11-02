@@ -21,6 +21,25 @@ La réduction de la consommation CPU liée aux instruments et effets inutilisés
 - Le fichier `Macros.txt` fourni comporte des réglages de tempo, mute/monitoring MIDI, sélection de piste, réglages Push et activation d'un device. Il décrit le fonctionnement historique, **pas une implémentation à copier**.
 - Dans les macros existantes, les commandes de pistes utilisent principalement `MUTE` et `MON`, **pas `ARM`** : monitoring, mute et armement doivent être distingués lors du cadrage.
 
+### Deux musiciens MIDI : rôles distincts (D-020 / D-021)
+
+**Musicien au clavier externe :**
+- Le `MIDI From` de chaque piste concernée est affecté au clavier dans Live, selon le routage établi pour le concert.
+- Lorsque plusieurs instruments clavier sont nécessaires, plusieurs pistes peuvent être actives simultanément (ex. Breathe).
+- Le jeu dépend de la réception MIDI (monitoring `IN`) et de l'activateur de piste ; la sélection visuelle de la piste n'est pas nécessaire.
+- Le plugin ne doit pas exiger de commande `ARM` pour passer d'un instrument à l'autre.
+
+**Musicien au Push 2 :**
+- La configuration active la piste MIDI devant être jouée **et sélectionne cette piste dans Live** (équivalent de `14/SEL` dans le cas `HOW_DARE_YOU_A`).
+- Push suit la piste sélectionnée pour l'accès à l'instrument ; ses modes de jeu, fondamentale, gamme et réglages avancés sont des paramètres supplémentaires distincts.
+- Le monitoring `IN` est présent dans les macros de référence ; il faut tester le résultat réel avec Push 2, notamment l'auto-armement natif lors de la sélection.
+- **Aucun moteur d'armement explicite n'est demandé en V1** sur la base du fonctionnement observé.
+
+**Exemple fonctionnel issu de `HOW_DARE_YOU_A` :** pistes 11 et 14 activées et en monitoring `IN`, piste 14 sélectionnée pour Push, tempo 120 et gamme de Do mineur. Les commandes de mode/scale Push sont des souhaits complémentaires, dont le support sans legacy reste à vérifier.
+
+**À préciser :** le plugin doit-il réappliquer systématiquement `Monitor IN` aux pistes MIDI pertinentes, ou les conserver préconfigurées dans Live ? Le routage `MIDI From` lui-même est actuellement préparé manuellement.
+
+
 ## 3. Progression musicale — mécanisme existant à préserver
 
 Le musicien déclenche principalement une **scène entière** en avançant dans Session View.
@@ -67,7 +86,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
   - **Contrainte :** ne pas assimiler `Track.mute` à une économie CPU garantie ; ne pas arrêter automatiquement les stems ou d'autres traitements non concernés.
   - **Validation requise :** mesures de charge, temps de réactivation, notes tenues/queues d'effets et transitions dans Ableton réel.
 - **Maintenance :** lorsqu'une piste apparaît dans Live, ajouter une colonne au tableau ; l'utilisateur configure ses états ligne par ligne sans modifier de macros.
-- **Interface :** tableau de configurations complètes associé aux noms de clips, duplication simple d'une configuration, colonnes de pistes audio/MIDI et commandes d'armement sur MIDI uniquement.
+- **Interface :** tableau de configurations complètes associé aux noms de clips, duplication simple, colonnes de pistes audio/MIDI, sélection de la piste jouée par Push. Pas de colonne d'armement explicite requise pour KLJ en V1 (D-021).
 
 Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
@@ -89,7 +108,7 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 - Une **ligne** représente une configuration complète correspondant à un nom de clip déclencheur.
 - Une **colonne** représente une piste du Set Ableton, **audio ou MIDI**.
 - Le tableau peut représenter une piste audio ou MIDI. L'état ON/OFF principal correspond toujours au **Track Activator**. Sur le Set KLJ, les pistes de stems audio ne doivent pas être commutées automatiquement par cet outil, car leur mixage reste manuel via APC.
-- Le réglage **d'armement est réservé aux pistes MIDI** dans l'interface KLJ.
+- **Armement :** pas de commande d'armement explicite requise en V1 (D-021). Si cette fonction devait être ajoutée ultérieurement, elle concernerait uniquement les pistes MIDI (D-015).
 - Une nouvelle piste ajoutée à Ableton doit produire **une nouvelle colonne** dans le tableau. L'utilisateur renseigne ensuite les valeurs pour chaque configuration existante, sans modifier manuellement des macros.
 - Tempo, fondamentale/gamme, sélection Push et états spécifiques de devices doivent aussi être représentables dans les configurations, selon une mise en page à concevoir.
 
