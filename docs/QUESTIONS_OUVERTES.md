@@ -13,7 +13,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 **D-025 — validé :** ajouter un champ de commandes avancées facultatif à chaque ligne, plutôt qu'une interface graphique dédiée pour True Peak.
 
-**À décider sur ce champ :** langage (JavaScript direct avec une petite API, syntaxe proche ClyphX, ou commandes minimales), ordre d'exécution avec les réglages classiques, gestion des erreurs, comportement lors d'un déclenchement répété et fiabilité scénique.
+**D-026 résolu :** champ en **JavaScript natif Max (V8 / LiveAPI)**, sans mini-langage, sans interpréteur ClyphX, sans commandes propriétaires. **À vérifier techniquement :** exécution dynamique du texte par ligne dans le `.amxd`, persistance, ordre relatif aux réglages de configuration, gestion des erreurs, comportement lors d'un déclenchement répété et fiabilité scénique.
 
 ## B. Instruments et contrôleurs
 
@@ -46,6 +46,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine discussion :** choisir la **syntaxe et la portée du champ de commandes avancées** (D-025), en évitant de recréer un interpréteur ClyphX complet. Puis préciser les références des pistes/devices en cas de renommage ou déplacement. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
+**Prochaine discussion :** tester ou spécifier le mécanisme d'exécution dynamique de **JavaScript Max natif** dans un champ éditable, puis préciser l'ordre d'exécution et la gestion d'erreurs. Ensuite, trancher les références des pistes/devices lors des renommages/déplacements. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
 
 Aucune réponse ci-dessus n'est présumée acquise.
