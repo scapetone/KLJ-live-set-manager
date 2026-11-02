@@ -29,7 +29,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## D. Maintenance et interface
 
-13. Une nouvelle piste ajoute une colonne (D-016) : quelle valeur provisoire pour ses cellules non renseignées ? Comment gérer ensuite renommage, déplacement et suppression ?
+13. **Résolu pour l'ajout MIDI (D-024) :** colonne automatique, OFF dans les configurations existantes. Restent à définir les renommages, déplacements, suppressions et la manière de distinguer les pistes MIDI d'instrument des autres pistes.
 14. La représentation par colonnes de pistes est validée (D-014). Comment afficher clairement activation des pistes audio/MIDI, armement MIDI, Push, tempo et devices ?
 15. Comment enregistrer, dupliquer, comparer et réappliquer les configurations ? Que souhaite-t-on sauvegarder dans le Live Set ?
 16. Comment vérifier avant concert qu'aucun déclencheur ne référence un instrument introuvable ?
@@ -42,6 +42,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine discussion :** définir exactement le contenu des cellules de la matrice, les valeurs par défaut des nouvelles colonnes et le comportement des effets spéciaux. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
+**Prochaine discussion :** préciser les effets spéciaux à piloter depuis le panneau de détails (ex. True Peak) puis le référencement des pistes lors des renommages/suppressions. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
 
 Aucune réponse ci-dessus n'est présumée acquise.
