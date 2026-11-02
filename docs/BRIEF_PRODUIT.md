@@ -136,7 +136,7 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
 **Important :** cette validation concerne l'organisation « tableau + panneau », pas une disposition graphique pixel par pixel ni une exclusion générale des pistes audio. Les stems étant contrôlés manuellement par APC (D-018), ils n'ont pas besoin d'encombrer la vue compacte ; la représentation éventuelle des pistes audio, des effets qui s'y trouvent et du filtre de colonnes reste à préciser. Aucune commande Mute ou volume des stems ne doit être exécutée par ce device.
 
-**Point d'ergonomie encore ouvert :** comment initialiser les nouvelles cellules lorsqu'une piste apparaît dans le Set, sans déclencher d'action dangereuse avant leur configuration ?
+**D-024 — valeur initiale validée :** à l'ajout d'une nouvelle piste MIDI d'instrument, créer automatiquement sa colonne et préremplir ses cellules **OFF pour toutes les configurations existantes**. Le musicien active ensuite la piste dans les configurations souhaitées. C'est l'état cible enregistré pour les futurs déclenchements, pas une commande immédiate imposée à la piste physique lors de son ajout. La gestion des renommages et suppressions reste à préciser.
 
 ### Cas d'usage de référence
 
