@@ -75,7 +75,26 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 - **Réactivité :** les changements doivent intervenir suffisamment vite pour ne pas gêner le jeu. Les timings acceptables restent à mesurer.
 - **Robustesse :** comportement lors d'une relance du même clip, d'une piste absente et d'un changement de structure à définir.
 
-## 7. Hors périmètre décidé à ce jour
+## 7. Réutilisabilité — orientation validée
+
+Le gestionnaire doit être **un outil générique**, dont Kiss La Joue constitue un jeu de scénarios de validation. La configuration du live KLJ n'est **pas** une convention imposée aux autres utilisateurs.
+
+- Ne fixer dans le code ni le nombre de pistes ni leur ordre ni leurs noms.
+- Ne pas supposer deux decks A/B, quatre stems par morceau, une piste de déclenchement à l'indice 9, ni même la présence de stems.
+- La piste surveillée pour les clips déclencheurs doit être **choisie par l'utilisateur**.
+- Les pistes et devices ciblés doivent être **choisis/configurés dans l'interface**, sans modifier le code pour adapter un Live Set.
+- Les noms de déclencheurs doivent être libres ; on peut réutiliser un déclencheur dans plusieurs clips.
+- Push 2 et le clavier MIDI sont des cas d'usage importants de KLJ, **pas** des prérequis universels du logiciel.
+
+Le mécanisme exact de référencement des pistes/devices et l'étendue des fonctions spécifiquement Push restent à explorer.
+
+## 8. Cible de livraison pour Codex
+
+L'objectif est de finaliser **ensemble** un brief assez précis (comportements, interface, limites techniques, cas tests et critères d'acceptation) pour le transmettre à Codex en mode Plan, puis **viser** une première implémentation de bout en bout.
+
+Cette intention n'implique pas que le code sera garanti correct sans validation dans Live : l'intégration du Push 2, le routage MIDI et les performances doivent faire l'objet de tests réels.
+
+## 9. Hors périmètre décidé à ce jour
 
 - Refaire le séquencement musical, les Follow Actions ou la gestion des scènes.
 - Développer une IA exécutée pendant le concert.
