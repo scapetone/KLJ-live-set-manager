@@ -29,9 +29,10 @@ Statuts :
 | D-015 | 2026-11-02 | **Validée** | La commande d'armement concerne uniquement les pistes MIDI ; elle ne doit pas être proposée pour les pistes audio dans ce produit. | Simplifier l'interface et refléter les besoins KLJ. |
 | D-016 | 2026-11-02 | **Validée** | Lorsqu'une piste est ajoutée au Set, une nouvelle colonne apparaît dans le tableau ; l'utilisateur renseigne les états de cette piste configuration par configuration. | Éviter toute réécriture de macros existantes et permettre une édition visuelle directe. |
 
+| D-017 | 2026-11-02 | **Orientation fonctionnelle confirmée** | Pour réduire le CPU, privilégier l'activation/désactivation **des instruments et effets (Device ON/OFF)** plutôt que le seul mute de piste. Le tableau comprend des pistes audio et MIDI, mais couper un device audio ne coupe pas forcément le signal de la piste. | Ableton Live 12 indique qu'un device désactivé cesse de consommer des cycles CPU de traitement. Il faut distinguer clairement Device ON/OFF et Mute. |
 ## Points **non tranchés**
 
-- Configurations complètes validées (D-012). Pistes audio et MIDI présentes dans le tableau (D-014) ; reste à préciser le sens exact de « activation » (mute piste, activation device, ou deux commandes).
+- Configurations complètes validées (D-012). Pistes audio/MIDI dans le tableau (D-014) ; **Device ON/OFF privilégié pour le CPU (D-017)**. Reste à choisir les devices concernés par piste et à décider si un contrôle Mute audio est également nécessaire.
 - Routage MIDI optimal (monitoring, armement, racks, autre) pour clavier et Push 2.
 - Gestion CPU : **principe automatique validé (D-011)**, à articuler avec la configuration manuelle ligne par ligne (D-014/D-016), sans actions surprises sur les pistes audio.
 - Apparition automatique des colonnes à l'ajout d'une piste (D-016) ; valeur initiale des cellules non renseignées, traitement des suppressions/renommages et référencement des pistes à préciser.
