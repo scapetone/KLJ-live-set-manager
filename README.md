@@ -1,6 +1,6 @@
 # KLJ Live Set Manager
 
-**Statut : cadrage produit / discovery — pas encore de développement.**
+**Statut : spécification V1 consolidée, prête pour une revue Codex en mode Plan — pas encore de développement ni de validation dans Ableton/Push 2.**
 
 Projet de Max for Live pour simplifier et fiabiliser le pilotage des configurations du live Ableton de **Kiss La Joue (KLJ)**. **Objectif V1 : répondre au besoin de KLJ le plus rapidement possible**, sans développer d'abord un produit universel.
 
@@ -13,6 +13,10 @@ Conserver la progression musicale actuelle d'Ableton Live (Session View, scènes
 Le projet n'a **pas** pour objectif de recréer le moteur de séquencement des clips ni de reproduire les commandes ClyphX à l'identique.
 
 **Interface V1 validée :** tableau compact (une ligne par configuration, une colonne par instrument MIDI) avec panneau de détails (tempo, sélection Push, gamme et JavaScript libre). Les stems audio des deux decks restent contrôlés manuellement par l'APC : le device **ne change ni leur volume ni leur Track Activator**. Une nouvelle piste MIDI ajoute une colonne OFF par défaut ; les colonnes affichent leur numéro et nom et suivent l'ordre des pistes Live. **Pas d'armement MIDI explicite requis en V1**, sous réserve des essais avec Push 2.
+
+## Point de départ pour Codex
+
+**[Spécification consolidée V1](docs/SPEC_CODEX_V1.md)** — contrat fonctionnel, interface, priorités, limites techniques, tests P1/P2/P3 et instruction initiale à copier dans Codex. **Lire ce document en premier** avant le brief exploratoire.
 
 ## Documentation produit
 
