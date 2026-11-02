@@ -171,6 +171,29 @@ Références officielles :
 
 Documentation : https://docs.cycling74.com/reference/v8/ ; https://docs.cycling74.com/apiref/js/liveapi/
 
+### Détection des clips déclencheurs et Follow Actions (D-027)
+
+**Implantation validée :** placer le device **sur la piste contenant les clips déclencheurs**. Résoudre automatiquement la piste par `this_device canonical_parent` afin que le système continue à marcher quand les pistes du Set sont réorganisées.
+
+**Comportements attendus :**
+
+- Scène lancée manuellement : au **démarrage effectif** du clip sur cette piste, appliquer la ligne correspondante du tableau.
+- Follow Action vers un autre slot : appliquer la configuration liée au **nouveau lancement**, même lorsque les deux clips partagent le même nom.
+- Clip qui **boucle naturellement** plusieurs fois : **ne pas** réappliquer chaque tour la configuration ni réexécuter le script JavaScript.
+- Follow Action **Linked** avec multiplicateur (plusieurs tours avant action) : aucun nouveau déclenchement pendant les tours d'attente ; appliquer seulement à l'arrivée du clip cible.
+- Relance effective du même slot, notamment **Play Again** : **à vérifier en PoC**, car un changement de `Track.playing_slot_index` ne permet pas à lui seul de la distinguer de la continuité de lecture.
+
+**Point d'API :** `Track.playing_slot_index` est observable et identifie le slot actif ; il ne représente pas un compteur de lancements. `Clip.playing_status` envoie un événement lorsque l'état lecture/déclenchement change, mais la documentation ne garantit pas l'émission d'un événement distinct à chaque relance du même slot. `Clip.playing_position` n'est pas un indicateur suffisant : il repart aussi au début lors d'un bouclage normal.
+
+**Test minimum Live 12 demandé à Codex :** instrumenter les événements API pour différencier (1) boucle classique, (2) Follow Action Linked après 2 ou 4 tours, (3) Next/Jump vers un autre clip, (4) deux clips de nom identique, (5) Follow Action Play Again, (6) relance manuelle du clip actif. En cas d'ambiguïté, remonter explicitement la limite plutôt que déclencher un script à chaque retour de position.
+
+Références :
+- https://docs.cycling74.com/userguide/m4l/live_api_overview/
+- https://docs.cycling74.com/apiref/lom/track/
+- https://docs.cycling74.com/apiref/lom/clip/
+- https://www.ableton.com/en/live-manual/12/launching-clips/
+- https://help.ableton.com/hc/en-us/articles/360019101360-Updates-to-Follow-Actions-in-Live-11
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
