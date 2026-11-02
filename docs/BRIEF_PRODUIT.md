@@ -234,6 +234,21 @@ Le contenu à restaurer comprend notamment les noms et l'ordre des configuration
 
 **Test attendu :** ajouter une piste, déplacer deux pistes, renommer une piste pendant que le device est ouvert, enregistrer/rouvrir le Set et vérifier la correspondance des états ON/OFF.
 
+### Fenêtre d'édition principale : tableau d'abord (D-033)
+
+**Organisation visuelle confirmée :** le device Max for Live reste compact dans la chaîne Ableton (affiche la configuration courante et permet d'ouvrir l'éditeur), mais la **gestion du Set** s'effectue dans une **grande fenêtre indépendante**, avec une interface esthétique, sobre et lisible.
+
+L'utilisateur travaille **avant tout dans un tableau**, pas dans des fiches de configuration successives :
+
+- Bouton **Ajouter une ligne** visible directement sous ou au-dessus du tableau ; chaque ligne correspond à une nouvelle configuration complète associée au nom d'un clip.
+- **Édition directe dans les cellules** des valeurs les plus courantes : nom du déclencheur, BPM, Track Activator ON/OFF des pistes MIDI, sélection de piste Push.
+- En-têtes des colonnes synchronisés à l'ordre des pistes Live et affichant **numéro + nom** (D-031).
+- **Réglages avancés facultatifs**, repliés par défaut, accessibles par un bouton/discret indicateur propre à la ligne. Ils contiennent fondamentale/gamme, fonctions Push réalisables et champ **JavaScript Max natif** par ligne ; ils se déploient dans un panneau de détails **de la même fenêtre**, sans ouvrir une boîte de dialogue à chaque configuration.
+- Dupliquer une ligne par copie complète si simple à implémenter (D-029).
+- Aucune obligation d'ouvrir les détails pour créer une configuration basique : la saisie se fait intégralement dans le tableau.
+
+**Priorité technique :** fiabilité de l'édition du tableau, défilement et lisibilité d'abord ; design personnalisé raisonnable ensuite. Ne pas imposer un rendu entièrement sur mesure en `v8ui` si cela nécessite de reconstruire coûteusement le tableau et l'édition de texte. Les composants définitifs Max sont à choisir avec Codex.
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
