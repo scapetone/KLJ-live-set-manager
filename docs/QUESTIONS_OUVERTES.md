@@ -35,7 +35,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## D. Maintenance et interface
 
-13. **D-024/D-031 — choix validés :** nouvelle piste MIDI = nouvelle colonne OFF ; ordre de colonnes calqué sur l'ordre Live et en-tête `numéro — nom`. Les pistes instrumentales portent des noms uniques. Tester les réorganisations, renommages observés pendant la session, suppressions et cas ambigus, sans assistant de résolution complexe.
+13. **D-024/D-031 — choix validés :** nouvelle piste MIDI = nouvelle colonne OFF ; ordre de colonnes calqué sur l'ordre Live et en-tête `numéro — nom`. Les pistes instrumentales portent des noms uniques. **D-032 :** lors d'une suppression, effacer immédiatement la colonne et ses états, sans colonne fantôme ; une piste recréée repart OFF. Tester la distinction suppression / déplacement / renommage et les cas ambigus, sans assistant complexe.
 14. La représentation par colonnes de pistes est validée (D-014). Comment afficher clairement activation des pistes audio/MIDI, armement MIDI, Push, tempo et devices ?
 15. **D-029/D-030 — résolu en produit :** duplication indépendante si simple, stockage complet avec le Live Set (`.als`), sans fichier externe. **À valider en PoC :** restauration exacte après sauvegarde, fermeture et réouverture, y compris scripts JavaScript multilignes. L'export/import dédié n'est pas requis en V1.
 16. Comment vérifier avant concert qu'aucun déclencheur ne référence un instrument introuvable ?
