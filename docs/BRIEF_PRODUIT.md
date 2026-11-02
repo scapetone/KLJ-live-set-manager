@@ -249,6 +249,30 @@ L'utilisateur travaille **avant tout dans un tableau**, pas dans des fiches de c
 
 **Priorité technique :** fiabilité de l'édition du tableau, défilement et lisibilité d'abord ; design personnalisé raisonnable ensuite. Ne pas imposer un rendu entièrement sur mesure en `v8ui` si cela nécessite de reconstruire coûteusement le tableau et l'édition de texte. Les composants définitifs Max sont à choisir avec Codex.
 
+### Contrôle de couverture de la maquette (à valider visuellement)
+
+Le premier visuel du tableau était **illustratif et volontairement réduit à quelques colonnes**. Avant de figer l'interface pour Codex, ne pas omettre :
+
+| Fonction | Présentation attendue |
+|---|---|
+| Noms des configurations | Une ligne = un nom exact de clip, renommable dans la grille |
+| BPM | Cellule éditable dans chaque ligne |
+| Tous les instruments MIDI | **Une colonne par piste MIDI instrumentale**, ON/OFF Track Activator dans chaque ligne ; **plusieurs colonnes peuvent être ON simultanément** (cas Breathe) |
+| En-têtes de pistes | **Numéro actuel + nom**, ordre synchronisé avec Ableton ; défilement horizontal pour les nombreux instruments |
+| Push 2 | Colonne de sélection de la piste jouée, idéalement choix lisible par **nom + numéro**, ou absence de sélection quand approprié |
+| Fondamentale et gamme | Détails repliables propres à chaque ligne ; distinguer réglages natifs Live des modes propres à Push |
+| Modes Push, In Key, 64 pads | Détails repliables **seulement si faisables** sans Remote Script legacy ; ne bloquent pas V1 |
+| JavaScript natif utilisateur | **Éditeur multiligne** facultatif dans les détails de chaque ligne, exécution au déclenchement ; indicateur discret lorsqu'une ligne contient du code |
+| Entretien du tableau | Ajouter, Dupliquer (si simple), Renommer, Supprimer ; pistes ajoutées automatiquement et initialisées à OFF |
+| Retour d'exécution | Configuration actuellement active, statut de synchronisation, erreur non bloquante pour clip inconnu/script invalide/piste ambiguë |
+| Fenêtre et mini-device | Grande fenêtre d'édition pour le tableau ; mini-device Live pour la configuration en cours et l'accès à l'éditeur |
+
+**À ne PAS inclure comme colonnes commandant les stems audio A/B :** Mute, Track Activator ou volume des 8 stems, qui restent sous contrôle manuel APC (D-018). En cas de besoin de commande spéciale d'un effet audio, l'approche prévue est le **script JS libre**, pas la création d'un éditeur dédié.
+
+**Ce qui est invisible par design mais obligatoire à l'exécution :** déclenchement au vrai départ de clip, Follow Actions et boucles non redéclenchées, noms de clips sans syntaxe ClyphX, Monitor IN préconfiguré (sous réserve du test matériel), conservation avec le Live Set, correspondance des noms après réorganisation.
+
+**Limite du contrôle de couverture :** il confirme l'interface par rapport aux décisions produit documentées ; il **ne remplace pas une comparaison exhaustive avec toutes les anciennes macros ClyphX**, ni les essais Push/Max for Live indispensables. Les résultats de P1/P2/P3 restent ouverts.
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
