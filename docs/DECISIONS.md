@@ -103,6 +103,8 @@ Statuts :
 
 | D-029 | 2026-11-02 | **Validée sous condition de faible complexité** | Ajouter dans la V1 un bouton **Dupliquer** pour copier intégralement une configuration (BPM, états ON/OFF des pistes, choix Push, gamme, JavaScript avancé et autres paramètres), puis permettre de renommer et éditer la copie. **À conserver si cela reste un simple clonage de données, sans développement d'interface élaboré.** | L'utilisateur approuve la duplication uniquement si elle ne demande pas un effort important. Evite de repartir de zéro pour des variantes A/B ou un changement de BPM. |
 
+| D-030 | 2026-11-02 | **Validée** | Toutes les configurations du KLJ Live Manager sont **persistées directement avec le Live Set Ableton (`.als`)** via le système d'état compatible Max for Live du device : lignes et noms, tempo, états Track Activator, sélection Push, gammes, scripts JavaScript (multilignes), etc. **Pas de fichier externe de données de configuration requis.** | L'utilisateur souhaite retrouver les paramètres immédiatement en rouvrant le Set. **Point technique à tester :** restauration fidèle de plusieurs configurations et de leur JavaScript après sauvegarde/fermeture/réouverture du Set ; ce choix ne prétend pas que le stockage est déjà implémenté. |
+
 ## Points **non tranchés**
 
 - Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
@@ -110,7 +112,7 @@ Statuts :
 - Gestion CPU : souhait d'optimiser les pistes inutilisées (D-011), mais **Track Activator n'est pas une garantie d'économie CPU** (D-019). Conserver comme point de test et ne pas imposer la désactivation générale des devices pour l'instant.
 - Ajout d'une piste MIDI : colonne automatique et cellules OFF validées (D-016/D-024). Reste à préciser le traitement des suppressions/renommages, la référence stable des pistes, et les éventuelles colonnes audio.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
-- **Structure tableau + panneau validée (D-023)** ; champ script par configuration (D-025), **JavaScript Max natif uniquement (D-026)**. Restent à vérifier le mécanisme d'exécution dynamique en V8 dans un device Max for Live, la persistance, l'ordre d'exécution et le signalement d'erreurs ; aucune grammaire de commandes spécifique au plugin.
+- **Structure tableau + panneau validée (D-023)** ; champ script par configuration (D-025), **JavaScript Max natif uniquement (D-026)**. Restent à vérifier le mécanisme d'exécution dynamique en V8 dans un device Max for Live, la **mise en œuvre de la persistance interne décidée en D-030**, l'ordre d'exécution et le signalement d'erreurs ; aucune grammaire de commandes spécifique au plugin.
 - **Déclenchement sur la piste du device validé (D-027)** : tester les Follow Actions, les boucles multiples et le cas `Play Again` sur le même slot. L'API `playing_slot_index` seule ne suffit pas pour certifier la détection des relances sans changement de slot.
 - Limites précises de la V1.
 
