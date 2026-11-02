@@ -138,6 +138,24 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
 **D-024 — valeur initiale validée :** à l'ajout d'une nouvelle piste MIDI d'instrument, créer automatiquement sa colonne et préremplir ses cellules **OFF pour toutes les configurations existantes**. Le musicien active ensuite la piste dans les configurations souhaitées. C'est l'état cible enregistré pour les futurs déclenchements, pas une commande immédiate imposée à la piste physique lors de son ajout. La gestion des renommages et suppressions reste à préciser.
 
+### Faisabilité des effets spécifiques — cas True Peak (vérification documentaire)
+
+**Faisable avec l'API officielle Max for Live :** une configuration peut agir sur le paramètre automatable `Device On` d'un device chargé dans une autre piste Live, pour reproduire la logique de `16/DEV(3) OFF` puis `16/DEV(3) ON` de ClyphX.
+
+- Via le Live Object Model, parcourir les `Track.devices`, identifier le device de la piste ciblée, retrouver son paramètre **Device On**, puis modifier `DeviceParameter.value` avec `live.object` ou `LiveAPI` JavaScript.
+- Ne pas tenter d'écrire directement `Device.is_active` : la propriété est **en lecture seule** et sert à connaître l'état effectif, y compris lorsqu'un rack parent est désactivé.
+- L'interface envisagée permettrait de **choisir l'effet par son nom** dans le panneau de détails au lieu de saisir son index (`DEV(3)`). Le référencement exact après déplacement/renommage d'un device est à définir.
+- La configuration doit respecter les états de l'effet prévus par chaque ligne sans redémarrer inutilement un effet déjà à la bonne valeur.
+- **Limites à vérifier sur les devices réels :** disponibilité du paramètre Device On sur l'effet concerné, devices imbriqués dans des racks, automation concurrente éventuelle et coupure de queues de reverb/delay à la désactivation.
+
+**Important :** ce constat valide la **faisabilité de l'action**, pas encore le détail d'interface ni la prise en charge universelle de chaque plugin tiers. L'activation de **l'effet** est distincte de l'activation de **la piste** (D-019).
+
+Références officielles :
+- [Cycling '74 — Live API](https://docs.cycling74.com/userguide/m4l/live_api/)
+- [Cycling '74 — Device et paramètres](https://docs.cycling74.com/apiref/lom/device/)
+- [Cycling '74 — DeviceParameter.value](https://docs.cycling74.com/apiref/lom/deviceparameter/)
+- [Ableton Live 12 — Activateur des devices](https://www.ableton.com/en/manual/working-with-instruments-and-effects/)
+
 ### Cas d'usage de référence
 
 Le Set KLJ comporte huit pistes audio de stems A/B, une piste de déclenchement et des pistes MIDI dédiées au clavier et à Push. Cette organisation sert de référence à la V1 ; il n'est pas demandé de développer une architecture multi-projets générique.
