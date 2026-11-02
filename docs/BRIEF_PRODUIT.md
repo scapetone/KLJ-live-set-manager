@@ -1,6 +1,6 @@
 # Brief produit — KLJ Live Set Manager
 
-> **Document de travail, version 0.1 (2026-11-02).** Ce texte rassemble les éléments exprimés et confirmés pendant le cadrage. Les choix d'interface, de moteur MIDI et de réalisation technique ne sont **pas encore validés**.
+> **Archive de cadrage (2026-11-02).** Ce document conserve les réflexions, hypothèses et décisions à différentes étapes. **Il n'est plus le contrat V1 à donner à Codex.** Pour coder, utiliser d'abord [SPEC_CODEX_V1.md](SPEC_CODEX_V1.md), [DECISIONS.md](DECISIONS.md) et [MAQUETTE_UI.md](MAQUETTE_UI.md). Certaines sections ci-dessous (notamment D-014 sur les colonnes audio et la répartition ancienne des paramètres Push) sont **supplantées** par D-018/D-023/D-033/D-035 ; ne pas appliquer les réglages ON/OFF aux stems audio de l'APC.
 
 ## 1. Problème à résoudre
 
@@ -71,7 +71,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 - Un changement qui ne concerne que le tempo se prépare en **dupliquant une configuration complète** et en changeant son BPM ; pas de mode ponctuel distinct (D-012).
 - Les scènes, stems et Follow Actions restent gérés nativement par Ableton.
 
-**D-012 — Mode unique de configuration complète :** chaque clip applique l'état prévu par sa ligne de configuration. **D-014 :** les pistes audio et MIDI figurent dans le tableau. **D-019 :** le bouton ON/OFF de piste doit piloter **Track Activator**, et non Device On/Off. Pour le Set KLJ, ne pas modifier le mixage manuel des stems audio effectué sur APC (D-018). L'interface devra offrir une duplication rapide des configurations ; à l'exécution, éviter les actions redondantes sera étudié pour préserver la continuité audio. Le périmètre précis, le format des noms et la sauvegarde restent à définir.
+**Évolution des décisions :** D-012 impose une configuration complète. D-014 envisageait alors des colonnes audio et MIDI, **mais le périmètre V1 clarifié par D-018/D-023/D-033 exclut le contrôle automatique des huit stems audio** ; la matrice ON/OFF concerne les instruments MIDI. D-019 précise que l'état ON/OFF pilote **Track Activator**, pas Device On/Off. La duplication simple et la sauvegarde ALS sont désormais définies en D-029/D-030 ; voir [la spécification finale](SPEC_CODEX_V1.md).
 
 ## 5. Besoins exprimés à prendre en charge
 
@@ -94,7 +94,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
   - **Contrainte :** ne pas assimiler `Track.mute` à une économie CPU garantie ; ne pas arrêter automatiquement les stems ou d'autres traitements non concernés.
   - **Validation requise :** mesures de charge, temps de réactivation, notes tenues/queues d'effets et transitions dans Ableton réel.
 - **Maintenance :** lorsqu'une piste apparaît dans Live, ajouter une colonne au tableau ; l'utilisateur configure ses états ligne par ligne sans modifier de macros.
-- **Interface :** tableau de configurations complètes associé aux noms de clips, duplication simple, colonnes de pistes audio/MIDI, sélection de la piste jouée par Push. Pas de colonne d'armement explicite requise pour KLJ en V1 (D-021).
+- **Interface V1 clarifiée :** tableau de configurations complètes (pistes **MIDI instrumentales** dans la matrice), colonne KEY, sélection Push et PUSH MODE directement dans la grille (D-033/D-035). Pas de colonne d'armement en V1 (D-021).
 
 Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
@@ -114,8 +114,8 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 ### Modèle d'interface validé
 
 - Une **ligne** représente une configuration complète correspondant à un nom de clip déclencheur.
-- Une **colonne** représente une piste du Set Ableton, **audio ou MIDI**.
-- Le tableau peut représenter une piste audio ou MIDI. L'état ON/OFF principal correspond toujours au **Track Activator**. Sur le Set KLJ, les pistes de stems audio ne doivent pas être commutées automatiquement par cet outil, car leur mixage reste manuel via APC.
+- **Historique D-014 :** une colonne représentait initialement une piste audio ou MIDI. **Pour la V1 KLJ désormais validée : les colonnes ON/OFF ne représentent que les instruments MIDI**, jamais les stems audio commandés par APC.
+- Les interrupteurs ON/OFF V1 représentent les **Track Activators des pistes MIDI instrumentales**. Les stems audio ne doivent jamais être commutés automatiquement ; les effets audio exceptionnels restent accessibles via JavaScript.
 - **Armement :** pas de commande d'armement explicite requise en V1 (D-021). Si cette fonction devait être ajoutée ultérieurement, elle concernerait uniquement les pistes MIDI (D-015).
 - Une nouvelle piste ajoutée à Ableton doit produire **une nouvelle colonne** dans le tableau. L'utilisateur renseigne ensuite les valeurs pour chaque configuration existante, sans modifier manuellement des macros.
 - Tempo, fondamentale/gamme, sélection Push et états spécifiques de devices doivent aussi être représentables dans les configurations, selon une mise en page à concevoir.
@@ -131,7 +131,7 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 **Deux niveaux d'édition :**
 
 1. **Tableau principal :** une ligne par configuration complète liée à un nom de clip, avec des colonnes immédiatement utiles pour comparer les configurations KLJ : BPM, états ON/OFF des pistes d'instruments MIDI, piste sélectionnée pour Push. L'utilisateur doit pouvoir repérer les changements d'instruments d'un seul coup d'œil.
-2. **Panneau de détails de la ligne sélectionnée :** édition des paramètres plus rares ou spécifiques : fondamentale, gamme, In Key, modes Push conditionnés à leur faisabilité, actions individuelles sur certains effets (exemple True Peak).
+2. **Historique D-023, précisé ensuite par D-035 :** fondamentale/gamme (KEY) et PUSH MODE sont maintenant **dans le tableau principal**. Le panneau avancé reste pour le script JS libre et des détails réellement facultatifs. L'automatisation des modes Push doit être vérifiée.
 3. **Édition rapide :** la duplication d'une ligne permet de préparer une variation d'un même morceau en modifiant un BPM, un instrument ou un effet. Une nouvelle piste crée une colonne à renseigner dans les configurations.
 
 **Important :** cette validation concerne l'organisation « tableau + panneau », pas une disposition graphique pixel par pixel ni une exclusion générale des pistes audio. Les stems étant contrôlés manuellement par APC (D-018), ils n'ont pas besoin d'encombrer la vue compacte ; la représentation éventuelle des pistes audio, des effets qui s'y trouvent et du filtre de colonnes reste à préciser. Aucune commande Mute ou volume des stems ne doit être exécutée par ce device.
