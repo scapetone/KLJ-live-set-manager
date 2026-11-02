@@ -45,6 +45,8 @@ Statuts :
 
 | D-025 | 2026-11-02 | **Validée** | Pour les besoins particuliers comme True Peak, préférer dans le panneau de détails **un champ texte « Commandes avancées / Script » par configuration**, plutôt qu'un éditeur graphique dédié aux effets. Le contenu doit être exécuté au déclenchement du clip correspondant, en complément des réglages normaux. | Un seul exemple d'effet à piloter ne justifie pas une interface spécialisée ; permettre des actions complémentaires avec un peu de code écrit par l'utilisateur. **Syntaxe / moteur d'exécution / limites non décidés.** |
 
+| D-026 | 2026-11-02 | **Validée** | Le champ « Commandes avancées » de chaque configuration doit contenir du **JavaScript natif de Max**, utilisant directement les API documentées de Max/Max for Live (notamment `LiveAPI`). **Aucune syntaxe ClyphX, aucun langage de commandes maison, aucune liste fermée de fonctions/commandes prédéfinies à inventer.** Le script est exécuté lors du déclenchement du clip. | L'utilisateur préfère pouvoir écrire librement quelques lignes de JavaScript pour un cas particulier, plutôt que maintenir des commandes spécialisées ou multiplier les composants d'interface. **L'exécution dynamique de texte JS éditable et sauvegardé dans un .amxd doit encore être validée techniquement.** |
+
 ## Points **non tranchés**
 
 - Configuration complète (D-012) avec colonnes audio/MIDI (D-014) ; la commande ON/OFF de piste doit piloter **Track Activator** (D-019), et **non Device ON/OFF**. Pour KLJ, ne pas prendre le contrôle manuel des stems audio assuré par l'APC (D-018). Les actions indépendantes sur certains effets restent distinctes.
@@ -52,7 +54,7 @@ Statuts :
 - Gestion CPU : souhait d'optimiser les pistes inutilisées (D-011), mais **Track Activator n'est pas une garantie d'économie CPU** (D-019). Conserver comme point de test et ne pas imposer la désactivation générale des devices pour l'instant.
 - Ajout d'une piste MIDI : colonne automatique et cellules OFF validées (D-016/D-024). Reste à préciser le traitement des suppressions/renommages, la référence stable des pistes, et les éventuelles colonnes audio.
 - Pilotage possible des dispositions/modes Push 2 en Live 12 sans dépendance legacy.
-- **Structure tableau + panneau validée (D-023)** ; le panneau dispose d'un **champ texte de commandes avancées par configuration (D-025)**. Restent à trancher la syntaxe (JavaScript, mini-langage, compatibilité partielle ClyphX), les API exposées, l'ordre d'exécution, la gestion d'erreurs et la persistance.
+- **Structure tableau + panneau validée (D-023)** ; champ script par configuration (D-025), **JavaScript Max natif uniquement (D-026)**. Restent à vérifier le mécanisme d'exécution dynamique en V8 dans un device Max for Live, la persistance, l'ordre d'exécution et le signalement d'erreurs ; aucune grammaire de commandes spécifique au plugin.
 - Limites précises de la V1.
 
 **Règle de travail :** toute nouvelle décision validée est ajoutée ici avec date et justification ; les hypothèses restent dans les questions ouvertes.
