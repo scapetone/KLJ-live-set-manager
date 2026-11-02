@@ -9,7 +9,18 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 1. **Résolu par D-012/D-014 :** une configuration est complète et le tableau comporte toutes les pistes audio et MIDI. Reste à définir les réglages exacts de chaque colonne et leur comportement.
 2. Comment rendre la duplication d'une configuration complète rapide, même lorsqu'on ne modifie qu'un BPM ou l'état d'un effet ?
 3. Que doit-il se passer si un clip déclencheur est lancé une seconde fois, s'il est inconnu, ou si sa configuration fait référence à une piste disparue ?
-4. Faut-il conserver les noms de déclencheurs historiques `$TRUE_PEAK_A$`, `$BREATHE$`, etc. ou définir un format plus simple ?
+4. **D-028 — tranché :** abandonner les marqueurs `# Discovery — questions ouvertes
+
+**Statut : exploration, pas un backlog de développement.**
+
+L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorité produit officiellement validée. Chaque question devra mener soit à une décision documentée, soit à un test technique ciblé.
+
+## A. Parcours et configurations
+
+1. **Résolu par D-012/D-014 :** une configuration est complète et le tableau comporte toutes les pistes audio et MIDI. Reste à définir les réglages exacts de chaque colonne et leur comportement.
+2. Comment rendre la duplication d'une configuration complète rapide, même lorsqu'on ne modifie qu'un BPM ou l'état d'un effet ?
+3. Que doit-il se passer si un clip déclencheur est lancé une seconde fois, s'il est inconnu, ou si sa configuration fait référence à une piste disparue ?
+, adopter des noms simples (convention recommandée `MAJUSCULES_ET_UNDERSCORES`), avec correspondance exacte du nom entre clip et ligne. Reste à tester l'affichage d'un avertissement non bloquant si un clip n'a pas de configuration.
 
 **D-025 — validé :** ajouter un champ de commandes avancées facultatif à chaque ligne, plutôt qu'une interface graphique dédiée pour True Peak.
 
