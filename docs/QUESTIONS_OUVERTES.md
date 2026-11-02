@@ -9,26 +9,13 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 1. **Résolu par D-012/D-014 :** une configuration est complète et le tableau comporte toutes les pistes audio et MIDI. Reste à définir les réglages exacts de chaque colonne et leur comportement.
 2. Comment rendre la duplication d'une configuration complète rapide, même lorsqu'on ne modifie qu'un BPM ou l'état d'un effet ?
 3. Que doit-il se passer si un clip déclencheur est lancé une seconde fois, s'il est inconnu, ou si sa configuration fait référence à une piste disparue ?
-4. **D-028 — tranché :** abandonner les marqueurs `# Discovery — questions ouvertes
+4. **D-028 — tranché :** noms des clips sans marqueurs ClyphX, convention recommandée `MAJUSCULES_ET_UNDERSCORES`, correspondance exacte au nom de la ligne. Un clip inconnu doit rester sans effet et produire un diagnostic non bloquant.
 
-**Statut : exploration, pas un backlog de développement.**
+**D-025 — validé :** chaque configuration possède un champ facultatif de JavaScript avancé, sans éditeur graphique spécifique True Peak.
 
-L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorité produit officiellement validée. Chaque question devra mener soit à une décision documentée, soit à un test technique ciblé.
+**D-026 — tranché :** JavaScript natif Max (`v8` / `LiveAPI`) ; aucun langage propriétaire. Reste à tester l'évaluation dynamique de chaînes, la persistance et les erreurs.
 
-## A. Parcours et configurations
-
-1. **Résolu par D-012/D-014 :** une configuration est complète et le tableau comporte toutes les pistes audio et MIDI. Reste à définir les réglages exacts de chaque colonne et leur comportement.
-2. Comment rendre la duplication d'une configuration complète rapide, même lorsqu'on ne modifie qu'un BPM ou l'état d'un effet ?
-3. Que doit-il se passer si un clip déclencheur est lancé une seconde fois, s'il est inconnu, ou si sa configuration fait référence à une piste disparue ?
-, adopter des noms simples (convention recommandée `MAJUSCULES_ET_UNDERSCORES`), avec correspondance exacte du nom entre clip et ligne. Reste à tester l'affichage d'un avertissement non bloquant si un clip n'a pas de configuration.
-
-**D-025 — validé :** ajouter un champ de commandes avancées facultatif à chaque ligne, plutôt qu'une interface graphique dédiée pour True Peak.
-
-**D-026 résolu :** champ en **JavaScript natif Max (V8 / LiveAPI)**, sans mini-langage, sans interpréteur ClyphX, sans commandes propriétaires. **À vérifier techniquement :** exécution dynamique du texte par ligne dans le `.amxd`, persistance, ordre relatif aux réglages de configuration, gestion des erreurs, comportement lors d'un déclenchement répété et fiabilité scénique.
-
-**D-027 — installation validée :** le device est placé sur la piste contenant les clips déclencheurs. Une boucle naturelle ne relance pas la configuration ; une vraie transition de slot le fait.
-
-**Essais à prévoir :** observer `playing_slot_index` et `playing_status` sur un Set de test ; confirmer que Follow Actions Linked après plusieurs boucles et Play Again/relance manuelle du même clip sont bien différenciés des boucles naturelles. `playing_slot_index` seul ne change pas lors d'un relancement sur le même slot.
+**D-027 — installation validée :** device sur la piste des clips déclencheurs. Une boucle naturelle ne relance pas la configuration ; une transition réelle oui. Tester `Play Again` et les relances du même slot.
 
 ## B. Instruments et contrôleurs
 
@@ -48,7 +35,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## D. Maintenance et interface
 
-13. **Résolu pour l'ajout MIDI (D-024) :** colonne automatique, OFF dans les configurations existantes. Restent à définir les renommages, déplacements, suppressions et la manière de distinguer les pistes MIDI d'instrument des autres pistes.
+13. **D-024/D-031 — choix validés :** nouvelle piste MIDI = nouvelle colonne OFF ; ordre de colonnes calqué sur l'ordre Live et en-tête `numéro — nom`. Les pistes instrumentales portent des noms uniques. Tester les réorganisations, renommages observés pendant la session, suppressions et cas ambigus, sans assistant de résolution complexe.
 14. La représentation par colonnes de pistes est validée (D-014). Comment afficher clairement activation des pistes audio/MIDI, armement MIDI, Push, tempo et devices ?
 15. **D-029/D-030 — résolu en produit :** duplication indépendante si simple, stockage complet avec le Live Set (`.als`), sans fichier externe. **À valider en PoC :** restauration exacte après sauvegarde, fermeture et réouverture, y compris scripts JavaScript multilignes. L'export/import dédié n'est pas requis en V1.
 16. Comment vérifier avant concert qu'aucun déclencheur ne référence un instrument introuvable ?
@@ -61,6 +48,6 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 
 ## Prochaine séance proposée
 
-**Prochaine discussion :** tester ou spécifier le mécanisme d'exécution dynamique de **JavaScript Max natif** dans un champ éditable, puis préciser l'ordre d'exécution et la gestion d'erreurs. Ensuite, trancher les références des pistes/devices lors des renommages/déplacements. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
+**Prochaine discussion :** tester ou spécifier le mécanisme d'exécution dynamique de **JavaScript Max natif** dans un champ éditable, puis préciser l'ordre d'exécution et la gestion d'erreurs. La politique des colonnes basée sur numéro affiché + nom est arrêtée en D-031 ; restent les tests de renommage et de pistes manquantes. Le monitoring fixe IN reste une orientation sous réserve du test D-022 ; aucune complexité n'est ajoutée au plugin tant que le test n'en prouve pas la nécessité.
 
 Aucune réponse ci-dessus n'est présumée acquise.
