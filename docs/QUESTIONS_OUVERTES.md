@@ -22,7 +22,7 @@ L'ordre ci-dessous constitue une proposition de discussion, **pas** une priorit�
 5. **Orientation D-022 à valider :** le routage MIDI et Monitor IN restent préconfigurés dans Live ; le plugin n'écrit plus MON OFF / MON IN. **Test requis :** s'assurer que le clavier ne joue que ses pistes actives, et que Push ne joue que sa piste sélectionnée, même quand le changement est déclenché par l'API Live plutôt que par une touche de Push.
 6. Pour Breathe, faut-il toujours faire jouer deux instruments simultanément avec le clavier, sans split de notes, ou y a-t-il des cas particuliers ?
 7. **D-010/D-020 :** sélectionner la piste destinée à Push est indispensable (équivalent `14/SEL`). Vérifier sur le matériel que sélection dans Live + réglages existants rendent immédiatement l'instrument jouable, sans gestion d'ARM ajoutée.
-8. **À vérifier techniquement** : quels comportements Push 2 sont réalisables de façon fiable avec Live 12 / Max for Live sans ancien Remote Script ? Tester notamment le « 64 pads » ; le résultat ne doit pas bloquer la V1.
+8. **D-035 :** colonnes `KEY` et `PUSH MODE` demandées dans la grille, avec `NOTE`, `NOTE IN KEY`, `PADS`, `64 PADS`. La doc Live 12 confirme l'existence de ces modes, MAIS `ControlSurface.pad_layout` est **get/observe seulement**, sans `set` documenté ; `Song.scale_mode` n'équivaut pas à In Key sur Push. Tester en matériel une voie officielle de changement et la synchronisation de `KEY`. **Si impossible sans legacy, arbitrer explicitement** : ne pas laisser un choix « PUSH MODE » dans l'UI prétendre automatiser un mode inapplicable. Clarifier au passage que `PADS` signifie le Drum Rack classique (Loop Selector).
 
 ## C. CPU, continuité sonore et stabilité
 
