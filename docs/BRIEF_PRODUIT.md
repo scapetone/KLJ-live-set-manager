@@ -14,7 +14,7 @@ La réduction de la consommation CPU liée aux instruments et effets inutilisés
 
 ## 2. Contexte du Set actuel (existant, non prescriptif)
 
-- **8 pistes audio de stems**, en deux decks A/B de 4 pistes : kick, drums, bass, instruments ; elles permettent les mashups, superpositions et transitions.
+- **8 pistes audio de stems**, en deux decks A/B de 4 pistes : kick, drums, bass, instruments ; elles permettent les mashups, superpositions et transitions. Leur **volume et leur Mute sont pilotés manuellement par un contrôleur APC** : aucune automatisation de leur mixage n'est demandée au plugin (D-018).
 - **1 piste dédiée au déclenchement ClyphX**, contenant des clips nommés pour rappeler des configurations ou réaliser des actions ponctuelles.
 - **Pistes MIDI d'instruments** dédiées à un clavier MIDI et à Push 2. Chaque piste dispose de son instrument. Un morceau (**Breathe**) requiert deux instruments simultanés pour le clavier.
 - Ancienne **piste 10 d'entrée basse/guitare** : non nécessaire à terme, car l'instrument est branché directement sur la console de mixage.
@@ -52,7 +52,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 
 - Configurer automatiquement le **bon instrument joué depuis Push 2** à chaque déclenchement concerné.
 - Configurer le ou les **instruments joués depuis le clavier MIDI**, y compris le cas où deux pistes doivent jouer en parallèle.
-- Préserver la progression musicale et les transitions A/B. Les pistes audio participent au tableau d'activation, mais les actions ne doivent pas provoquer de coupures imprévues.
+- Préserver la progression musicale et les transitions A/B. Les pistes audio peuvent figurer dans le tableau pour les opérations Device ON/OFF, mais le device ne gère ni leur volume ni leur Mute (D-018).
 - Permettre une progression autonome lors des Follow Actions tout en gardant la reprise en main par lancement manuel de scène.
 
 ### Besoins importants, détail à préciser
@@ -94,7 +94,9 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 
 **D-017 — gestion CPU :** l'activation/désactivation vise prioritairement les instruments et effets, pas le bouton Mute. Pour une piste audio, désactiver un effet peut laisser passer le signal non traité : cela ne rend pas la piste silencieuse.
 
-**À définir :** quels devices sont concernés par colonne et faut-il un contrôle Mute distinct pour les stems audio ? Quelle valeur initiale pour les nouvelles cellules ? Comment concilier D-011 (gestion CPU automatique) avec les états saisis explicitement ?
+**D-018 — mixage audio externe au device :** les volumes et le Mute des stems sont gérés manuellement avec un contrôleur APC. Aucune commande de volume/Mute des pistes audio dans la V1 ; la possibilité de contrôler leurs effets via Device ON/OFF reste distincte.
+
+**À définir :** quels devices sont concernés par colonne ? Quelle valeur initiale pour les nouvelles cellules ? Comment concilier D-011 (gestion CPU automatique) avec les états saisis explicitement ?
 
 ### Cas d'usage de référence
 
