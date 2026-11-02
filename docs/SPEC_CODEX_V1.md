@@ -68,6 +68,8 @@ Le contrôle ON/OFF d'une piste correspond à **Live Track Activator**, accessib
 
 ## 6. Interface et direction graphique validées
 
+**Référence visuelle détaillée :** [MAQUETTE_UI.md](MAQUETTE_UI.md) précise la structure de la fenêtre, les interactions, les colonnes, les états et la palette. Le texte est une maquette descriptive : aucune image ni patch Max n'a été livré à ce stade.
+
 **Deux surfaces :**
 
 1. **Mini-device intégré dans Live** : nom de la configuration en cours, état/avertissement, accès à l'éditeur.
@@ -161,4 +163,6 @@ Lire et exécuter en priorité les trois PoC documentés dans [VALIDATION_TECHNI
 - [Brief produit exploratoire](BRIEF_PRODUIT.md) : contexte et historique, certaines idées initiales ont été affinées ou remplacées.
 - [Questions ouvertes](QUESTIONS_OUVERTES.md) : détails non résolus et risques.
 - [Étude exécution JavaScript](FAISABILITE_SCRIPTS_JS.md) : documentation et protocole PoC.
+- [Maquette UI approuvée](MAQUETTE_UI.md) : structure visuelle et palette à reproduire sans sur-ingénierie.
+- [AGENTS.md](../AGENTS.md) : consignes spécifiques au dépôt pour Codex.
 - [Validation technique ciblée](VALIDATION_TECHNIQUE_CODEX.md) : essais P1/P2/P3 et régression.
