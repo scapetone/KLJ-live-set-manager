@@ -44,7 +44,7 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 - Un changement qui ne concerne que le tempo se prépare en **dupliquant une configuration complète** et en changeant son BPM ; pas de mode ponctuel distinct (D-012).
 - Les scènes, stems et Follow Actions restent gérés nativement par Ableton.
 
-**D-012 — Mode unique de configuration complète :** chaque clip applique l'état prévu par sa ligne de configuration. **D-014 :** les pistes audio et MIDI figurent toutes dans le tableau, et l'activation/désactivation est configurable pour les deux types. L'interface devra offrir une duplication rapide des configurations ; à l'exécution, éviter les actions redondantes sera étudié pour préserver la continuité audio. Le périmètre précis, le format des noms et la sauvegarde restent à définir.
+**D-012 — Mode unique de configuration complète :** chaque clip applique l'état prévu par sa ligne de configuration. **D-014 :** les pistes audio et MIDI figurent toutes dans le tableau. **D-017 :** pour économiser du CPU, le contrôle prioritaire est Device ON/OFF, et non le seul Mute. L'interface devra offrir une duplication rapide des configurations ; à l'exécution, éviter les actions redondantes sera étudié pour préserver la continuité audio. Le périmètre précis, le format des noms et la sauvegarde restent à définir.
 
 ## 5. Besoins exprimés à prendre en charge
 
@@ -61,7 +61,8 @@ Les changements de configuration MIDI ne coïncident pas nécessairement avec l'
 - **Tempo et réglages musicaux :** actions globales ou attachées à une configuration, y compris paliers de tempo pendant une transition.
 - **Effets et devices :** possibilité de les activer/désactiver à certains moments d'un morceau.
 - **CPU — option A validée pour la V1 (D-011) :** gestion **automatique** des instruments inutilisés, avec protections pour éviter les coupures ou perturbations sonores. Cette intention reste à articuler avec le nouveau modèle de grille explicite (D-014). L'utilisateur ne doit pas avoir à ajouter à chaque configuration une liste exhaustive de nouveaux instruments à désactiver. La priorité est une réalisation simple pour KLJ.
-  - **Non décidé :** comment délimiter les instruments pris en charge ; comment déterminer qu'un instrument est « inutilisé » ; faut-il désactiver l'instrument, la piste ou certains effets ; faut-il un délai, une exception ou une préactivation avant le jeu.
+  - **D-017 :** privilégier l'activation/désactivation des instruments et effets (Device ON/OFF), qui permet de cesser leur traitement CPU selon le manuel Ableton Live 12. Le Mute de piste ne doit pas être confondu avec cette commande. Source : https://www.ableton.com/fr/live-manual/12/working-with-instruments-and-effects/
+  - **Non décidé :** quels devices d'une piste sont concernés ; comment déterminer qu'un instrument est inutilisé ; faut-il un délai, une exception ou une préactivation avant le jeu.
   - **Contrainte :** ne pas assimiler `Track.mute` à une économie CPU garantie ; ne pas arrêter automatiquement les stems ou d'autres traitements non concernés.
   - **Validation requise :** mesures de charge, temps de réactivation, notes tenues/queues d'effets et transitions dans Ableton réel.
 - **Maintenance :** lorsqu'une piste apparaît dans Live, ajouter une colonne au tableau ; l'utilisateur configure ses états ligne par ligne sans modifier de macros.
@@ -91,7 +92,9 @@ Ces besoins ne constituent **pas encore** le périmètre ferme de la V1.
 - Une nouvelle piste ajoutée à Ableton doit produire **une nouvelle colonne** dans le tableau. L'utilisateur renseigne ensuite les valeurs pour chaque configuration existante, sans modifier manuellement des macros.
 - Tempo, fondamentale/gamme, sélection Push et états spécifiques de devices doivent aussi être représentables dans les configurations, selon une mise en page à concevoir.
 
-**À définir :** « activation » signifie-t-elle mute/unmute de la piste, on/off du device, ou deux réglages distincts ? Quelle valeur initiale affecter aux nouvelles cellules en attendant leur configuration ? Comment concilier D-011 (gestion CPU automatique) avec les états saisis explicitement dans le tableau ?
+**D-017 — gestion CPU :** l'activation/désactivation vise prioritairement les instruments et effets, pas le bouton Mute. Pour une piste audio, désactiver un effet peut laisser passer le signal non traité : cela ne rend pas la piste silencieuse.
+
+**À définir :** quels devices sont concernés par colonne et faut-il un contrôle Mute distinct pour les stems audio ? Quelle valeur initiale pour les nouvelles cellules ? Comment concilier D-011 (gestion CPU automatique) avec les états saisis explicitement ?
 
 ### Cas d'usage de référence
 
