@@ -1,6 +1,6 @@
 # Plan de cadrage produit — KLJ Live Set Manager
 
-**Statut : actif — étape 01 en cours**  
+**Statut : cadrage fonctionnel largement avancé ; essais techniques ciblés restant à réaliser**  
 **Date d'ouverture : 2026-11-02**  
 **Objectif final :** disposer d'un brief suffisamment complet et non ambigu pour demander à Codex un plan d'implémentation, puis viser le développement d'une première version fonctionnelle en une passe, suivie de tests réels dans Ableton.
 
@@ -8,7 +8,7 @@
 
 - **Livrer vite pour KLJ.** Le besoin du Live Set Kiss La Joue est le périmètre de V1. La réutilisation par d'autres musiciens serait un bonus, non une exigence qui doit ralentir le projet. La structure actuelle de KLJ sert de point de départ.
 - **Préserver le moteur musical natif de Live.** Les scènes, clips, boucles, Follow Actions et transitions A/B restent pilotés par Ableton.
-- **Garder la logique de déclenchement ClyphX, pas ses contraintes techniques.** Un clip nommé, lu sur une piste choisie par l'utilisateur, applique la configuration associée, qu'il soit lancé par une scène ou par une Follow Action.
+- **Garder la logique de déclenchement ClyphX, pas ses contraintes techniques.** Un clip nommé, lu sur la piste où se trouve le device, applique la configuration associée, qu'il soit lancé par une scène ou par une Follow Action.
 - **Ne pas reproduire mécaniquement l'existant.** Repartir des besoins, proposer les approches natives Ableton/Max for Live les plus simples et robustes.
 - **Sobriété et stabilité scénique.** Ne pas ajouter de fonctionnalités ni de couches techniques sans valeur démontrée. Les changements doivent éviter toute interruption involontaire du son.
 - **Décisions explicites.** Séparer besoins confirmés, hypothèses et faisabilité à vérifier. Ne rien présenter comme acquis avant validation.
@@ -31,7 +31,7 @@
 
 **Objectif :** définir le contrat de fonctionnement entre Live et le device.
 
-**À traiter :** choix de la piste de contrôle ; noms des clips et correspondance avec configurations ; début réel de lecture ; lancement manuel ou Follow Action ; répétitions du même nom ; déclencheurs inconnus ; absence de piste ; conflits/événements rapprochés ; comportement à l'ouverture d'un Set.
+**À traiter :** piste de contrôle = piste hébergeant le device (D-027) ; noms des clips et correspondance avec configurations ; début réel de lecture ; lancement manuel ou Follow Action ; répétitions du même nom ; déclencheurs inconnus ; absence de piste ; conflits/événements rapprochés ; comportement à l'ouverture d'un Set.
 
 **Sortie :** règles fonctionnelles et cas limites.
 
@@ -51,7 +51,7 @@
 
 **Objectif :** rendre le paramétrage compréhensible pour un musicien non développeur.
 
-**À traiter :** sélection de la piste de contrôle ; tableau des configurations/déclencheurs ; choix des pistes/devices ; édition, duplication, suppression, sauvegarde ; retour visuel sur la dernière configuration ; erreurs visibles ; lisibilité des colonnes audio/MIDI et ajout de pistes dans le Set KLJ.
+**À traiter :** tableau des configurations/déclencheurs et panneau de détails (D-023) ; colonne par instrument MIDI avec numéro + nom et ordre Live (D-031) ; édition, duplication simple (D-029), suppression, sauvegarde interne ALS (D-030) ; retour visuel sur la dernière configuration ; erreurs visibles ; ajout de pistes MIDI (D-024). Les 8 stems audio restent gérés par APC (D-018).
 
 **Sortie :** maquette validée et règles d'interaction (pas encore du code).
 
@@ -61,7 +61,7 @@
 
 **Objectif :** lever les inconnues bloquantes avant de figer le brief technique.
 
-**À traiter :** Live API et détection des clips ; monitoring/mute/armement/routage ; référencement stable des pistes et devices ; persistance des configurations ; activation des plugins et implications CPU ; Push 2 (instrument, modes, disposition 64 pads, gamme, affichage) dans Live 12 sans script legacy.
+**À traiter :** les trois essais ciblés P1 lancement/Follow Actions, P2 sélection Push/Monitor IN et P3 JavaScript dynamique + sauvegarde ([protocole](VALIDATION_TECHNIQUE_CODEX.md)). Vérifier le référencement des pistes et l'absence de contrôle des stems APC. Les modes Push 64 pads restent non bloquants ; le CPU reste à mesurer plutôt qu'à promettre.
 
 **Sortie :** matrice **supporté / à prototyper / impossible ou hors V1**, architecture proposée, contournements décidés et dépendances documentées.
 
@@ -110,19 +110,20 @@ Pour chaque étape :
 
 | Étape | Statut | Livrable |
 |---|---|---|
-| 01 — Périmètre | **En cours** | Fonctionnalités V1 / optionnelles / exclues |
-| 02 — Déclenchement | À faire | Règles d'exécution |
-| 03 — Actions et configurations | À faire | Modèle et catalogue |
-| 04 — Interface | À faire | Maquette et parcours |
-| 05 — Faisabilité | À faire | Architecture et preuves techniques |
-| 06 — Tests | À faire | Critères d'acceptation |
-| 07 — Codex | À faire | Brief consolidé / plan d'implémentation |
+| 01 — Périmètre | **Largement cadré** | D-001 à D-032, exclusions à finaliser |
+| 02 — Déclenchement | **Règles définies, P1 à tester** | D-027/D-028, boucles et Follow Actions |
+| 03 — Actions et configurations | **Largement cadré, points techniques ouverts** | Grille MIDI, BPM/gamme, Push, scripts JS |
+| 04 — Interface | **Structure validée** | Tableau + panneau D-023, détails UI à préciser |
+| 05 — Faisabilité | **Documentation vérifiée, P1/P2/P3 à exécuter** | [Protocole](VALIDATION_TECHNIQUE_CODEX.md) |
+| 06 — Tests | **Trame créée** | Trois POC + scénarios KLJ |
+| 07 — Codex | **À préparer** | Brief consolidé / plan d'implémentation |
 
 ## Références
 
 - [Brief produit](BRIEF_PRODUIT.md)
 - [Décisions](DECISIONS.md)
 - [Questions ouvertes](QUESTIONS_OUVERTES.md)
+- [Validation technique ciblée avant Codex](VALIDATION_TECHNIQUE_CODEX.md)
 - [Issue discovery initiale](https://github.com/scapetone/KLJ-live-set-manager/issues/1)
 
 Le plan définit **l'ordre de nos travaux**, pas la validation anticipée des fonctionnalités ou de la solution technique.
