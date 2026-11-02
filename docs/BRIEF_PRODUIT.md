@@ -228,7 +228,8 @@ Le contenu à restaurer comprend notamment les noms et l'ordre des configuration
 - Le **numéro ne constitue pas l'identité persistée** d'un instrument : si une piste passe de 14 à 12, ses réglages suivent son nom au lieu d'être appliqués à la nouvelle piste numéro 14.
 - Les noms des pistes d'instruments MIDI doivent être **uniques**. C'est une convention du Set KLJ, dont l'utilisateur prend la responsabilité ; aucun gestionnaire complexe de doublons n'est demandé.
 - En cours de session, surveiller le renommage d'une piste et, si l'identité de l'objet Live en mémoire le permet, propager le nouveau nom dans les configurations existantes. **Ne pas présumer qu'un renommage effectué en dehors d'une session surveillée peut être reconstitué** à la réouverture.
-- Si une piste a disparu ou si deux pistes ont le même nom, montrer une indication simple et **ne pas cibler arbitrairement la première piste homonyme**. La V1 n'a pas besoin d'un assistant de résolution de conflit.
+- **D-032, suppression simplifiée :** quand une piste MIDI instrumentale est supprimée du Set, sa colonne disparaît et les cellules associées sont effacées des configurations. **Pas de colonne fantôme, d'historique ou de restauration automatique.** Si un instrument est recréé, il apparaît comme nouvelle piste, avec toutes ses cellules OFF (D-024). Ne pas confondre une suppression réelle avec un simple déplacement ou renommage.
+- Si deux pistes ont le même nom, afficher une indication simple et **ne pas cibler arbitrairement la première piste homonyme**. La V1 n'a pas besoin d'un assistant de résolution de conflit.
 - Les références d'objet fournies par l'API pendant la session servent à détecter les réorganisations et renommages, mais ne sont pas le seul identifiant sauvegardé dans l'ALS.
 
 **Test attendu :** ajouter une piste, déplacer deux pistes, renommer une piste pendant que le device est ouvert, enregistrer/rouvrir le Set et vérifier la correspondance des états ON/OFF.
