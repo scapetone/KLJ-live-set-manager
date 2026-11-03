@@ -1,63 +1,104 @@
 # KLJ Live Set Manager
 
-**Clip-triggered performance configurations for Ableton Live 12.**
+*A Max for Live device we built to simplify the way we manage our Ableton Live set.*
 
-Built for Kiss La Joue: one visual matrix to prepare a live show, then recall each configuration from the clips already driving the set.
+![KLJ Live Set Manager](docs/images/klj-live-set-manager.png)
 
-[Download v1.5.1](https://github.com/scapetone/KLJ-live-set-manager/releases/download/v1.5.1/KLJ-Live-Set-Manager-v1.5.1.zip) · [Releases](https://github.com/scapetone/KLJ-live-set-manager/releases) · [Usage](INSTALLATION.md)
+[Download the latest release](https://github.com/scapetone/KLJ-live-set-manager/releases) · [Installation guide](INSTALLATION.md)
 
-## Screenshot
+## Why we built this
 
-![KLJ Live Set Manager English configuration editor](docs/images/klj-live-set-manager.png)
+We're **Kiss La Joue**, an electronic live project, and we've been building and refining our Ableton Live setup for quite a while.
 
-The English editor with validation feedback and the per-configuration JavaScript panel.
+Our set combines audio stems, multiple MIDI instruments, a keyboard controller and Push 2. We use Session View, scenes and Follow Actions to move between songs and sections.
 
-## The problem
+The musical part of this setup works well. But behind the scenes, there's quite a lot to manage.
 
-A complex Ableton Live Set needs predictable changes between songs and sections: tempo, key, playable MIDI instruments and the instrument selected for Push. Recreating that setup with legacy ClyphX macros makes a show harder to inspect and maintain.
+When moving from one song to another, we might need to change the tempo and scale, enable or disable several instruments, select the right track for Push, or switch specific effects on and off.
 
-## The solution
+For years, we handled most of this with **ClyphX**, using macros triggered by clips in our Live set.
 
-KLJ Live Set Manager is a Max for Live MIDI effect with a configuration editor. Each row matches a control clip by name. When that clip starts playing, the device recalls the row's settings and optional JavaScript. Scenes and native Follow Actions keep driving the show.
+It worked, but as the set grew, so did the configuration files. Making changes meant going back into lines of commands, remembering what each one did and checking that nothing had been broken along the way.
 
-## Features
+We were also relying on an older Push 2 integration to support parts of that workflow, which wasn't ideal as we moved to newer versions of Live.
 
-- Recall BPM, root note and scale.
-- Set Track Activators for normal MIDI tracks, including tracks without an instrument loaded.
-- Keep several MIDI instruments active at once and select the target track for Push 2.
-- Add optional JavaScript to each configuration, with error reporting.
-- Save configurations and scripts inside the Live Set.
-- Edit, duplicate and delete rows in a resizable matrix with a frozen CLIP column.
-- Follow MIDI track moves, renames, additions and removals; warn about ambiguous names.
-- Leave audio tracks, returns, master and the control track outside the built-in activation controls.
+At some point, we started wondering:
 
-## Installation
+*Could we keep the workflow we already like, but make all these configurations visible and editable in one place?*
 
-**Requires Ableton Live 12 with Max for Live and Max 9.** Validated by the project author in Live 12.4.16 with integrated Max 9.1.5 and Push 2.
+That's where KLJ Live Set Manager started.
 
-1. Download and unzip the [release ZIP](https://github.com/scapetone/KLJ-live-set-manager/releases/download/v1.5.1/KLJ-Live-Set-Manager-v1.5.1.zip) into a permanent folder.
-2. Keep the `.amxd` and all four `klj.*.js` files together.
-3. Load the device on the MIDI track containing your control clips.
-4. Open **OPEN CONFIGURATIONS**, add a row with the matching clip name, set its values and save the Live Set.
+## What we came up with
 
-No additional packages or external services are required. Configure MIDI inputs and Monitor manually. For an existing installation, follow the [update instructions](INSTALLATION.md#updating-an-existing-set) before replacing its device.
+The idea is pretty simple.
 
-## Tech stack
+Each row in the editor represents a complete configuration for a song or section. Give that configuration a name, create a MIDI clip with the same name in Ableton, and the device recalls its settings when the clip starts playing.
 
-Native Max for Live patchers and UI objects, JavaScript running in Max `v8`, LiveAPI observers and commands, and `pattr` Blob storage. The editor uses synchronized `jit.cellblock` grids and native selectors. Development checks use Node.js and Python's standard library; neither is required to use the device.
+From the editor, we can configure:
 
-## Known limitations
+- **Tempo, root note and scale**
+- **Which MIDI tracks are active**, including several instruments at once
+- **Which track Push 2 should select**
+- **Optional JavaScript actions**, for things like switching effects on or off
 
-- Push 2 track selection is automated. Playing layouts such as Note, In Key and Pads are configured manually on Push.
-- A same-slot relaunch without an observable stop/play transition may not be detected. Natural clip loops do not recall configurations again.
-- Track names should be unique. Ambiguous MIDI targets are skipped.
-- Custom JavaScript is not sandboxed. It can access LiveAPI and must respect the audio-stem protections; an infinite loop can block Max/Live.
-- Turning an instrument OFF can interrupt its sound. MIDI routing, Arm and Monitor remain manual.
+Everything is saved with the Ableton Live Set.
 
-## Development process
+We deliberately kept the rest of our workflow unchanged. Ableton still handles scenes, clips and Follow Actions. Our audio stems and their mixing remain under manual control.
 
-Functional and visual design, product direction and testing in Ableton Live were led by [scapetone](https://github.com/scapetone). Implementation and iterative corrections were assisted by **OpenAI Codex**, with automated checks and native Max tests followed by musician validation in Live with instruments and Push 2.
+The device only handles the configuration changes we actually need.
 
-Release v1.5.1 packages the validated English version without changing its runtime code or interface. See [development and build instructions](docs/DEVELOPMENT.md) and the [release validation report](validation/RELEASE-1.5.1.md).
+## How we built it
 
-Licensing terms have not yet been selected. No open-source license is included.
+This was also an experiment in building our own tools.
+
+We started by documenting how our existing live setup worked, going through our ClyphX macros and identifying what we really needed to keep.
+
+From there, we designed the interface and developed the Max for Live device with the help of **OpenAI Codex**.
+
+There was quite a bit of trial and error: clip-name matching issues, unreliable menus, UI problems, Push integration limitations and plenty of testing directly in Ableton.
+
+The development was AI-assisted, but the requirements, design choices, testing and iterations came from using the device in our actual musical setup.
+
+It's been a useful experience in learning how far we can go with custom tools built around very specific needs.
+
+## Where it stands
+
+The current version is working in our Ableton Live 12 setup, including Push 2 track selection, configuration changes, custom JavaScript and saved configurations.
+
+There are still some limitations.
+
+For example, Push 2 playing layouts (Note, In Key, Pads, etc.) aren't automatically switched by the device. We currently set these manually on Push, which remembers the layout as we change instruments.
+
+Relaunching a clip that's already playing may not always be detected as a new trigger. And custom JavaScript isn't sandboxed, so scripts should be used carefully.
+
+This is **not intended to replace everything ClyphX can do**, or to be a universal Ableton controller. It's a focused tool that works for our particular live setup.
+
+We're sharing it because it might be useful to other musicians facing similar problems.
+
+## Try it
+
+You'll need **Ableton Live 12 with Max for Live and Max 9**.
+
+Download the latest version from [GitHub Releases](https://github.com/scapetone/KLJ-live-set-manager/releases), keep the `.amxd` and its accompanying JavaScript files together, and load the device on a MIDI track containing your control clips.
+
+The [installation guide](INSTALLATION.md) explains how to set up your first configuration.
+
+## Feedback, ideas & contributions
+
+This project started as a tool for our own live show, but we'd love to hear how other people approach similar challenges.
+
+Maybe you use ClyphX, maybe you've built your own Max for Live devices, or maybe your Live set works completely differently.
+
+**If you try KLJ Live Set Manager, we'd genuinely like to hear what you think.**
+
+If something doesn't work, could be improved, or would make the device more useful in your setup, feel free to [open an issue](https://github.com/scapetone/KLJ-live-set-manager/issues).
+
+Suggestions, bug reports, technical advice and ideas are all welcome. If you'd like to contribute code, let's discuss the approach in an issue first.
+
+We're not promising to turn this into a large software project, but we're definitely open to learning from others and seeing where it could go.
+
+---
+
+*Made for Kiss La Joue, with curiosity, a lot of testing, and some help from AI.*
+
+*The repository is public; licensing terms have not yet been defined.*
