@@ -1,0 +1,119 @@
+{
+  "results": [
+    {
+      "name": "model + UI compile/render in native v8",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "new Function native runner token 1",
+      "ok": true,
+      "detail": "Script terminé"
+    },
+    {
+      "name": "new Function native runner token 2",
+      "ok": true,
+      "detail": "Error: Erreur attendue"
+    },
+    {
+      "name": "new Function native runner token 3",
+      "ok": true,
+      "detail": "Script terminé"
+    },
+    {
+      "name": "textedit getvalueof multiline roundtrip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 ten native grid selections keep A length 1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 native grid preserves internal double space",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 ROOT menu visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 SCALE menu visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 native ROOT/SCALE outlets set E Minor",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 native PUSH outlet selects track key",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 legacy mode data retained without UI",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 header separate and no user selection",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 actual header dump contains CLIP",
+      "ok": true,
+      "detail": "[0,0,\"CLIP\"]"
+    },
+    {
+      "name": "V1.5 layout and details preserve all configuration fields",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 body uses new first row without overwriting header",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 MIDI width bounded",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 names + ROOT/SCALE + legacy mode pattr roundtrip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5 names + ROOT/SCALE + legacy mode pattr roundtrip",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

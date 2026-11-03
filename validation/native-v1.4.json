@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "name": "model + UI compile/render in native v8",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "textedit getvalueof multiline roundtrip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 ten native grid selections keep A length 1",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 native grid preserves internal double space",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 ROOT menu visible",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 SCALE menu visible",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 native ROOT/SCALE outlets set E Minor",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 native PUSH outlet selects track key",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 legacy mode data retained without UI",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 header separate and no user selection",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 layout and details preserve all configuration fields",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 body uses new first row without overwriting header",
+      "ok": false,
+      "detail": ""
+    },
+    {
+      "name": "V1.4 MIDI width bounded",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

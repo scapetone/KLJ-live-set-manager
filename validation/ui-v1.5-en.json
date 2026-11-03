@@ -1,0 +1,27 @@
+{
+  "version": "1.5-en",
+  "automated": {
+    "passed": 45,
+    "failed": 0,
+    "api": "LiveAPI simulated"
+  },
+  "native": {
+    "status": "passed",
+    "checks": 23,
+    "environment": "Max 9.1.5 integrated, opened from Live 12.4.16",
+    "live_commands": false,
+    "visual": [
+      "English compact title and OPEN CONFIGURATIONS fit",
+      "ACTIVE, warning, buttons and script header in English",
+      "MORE after horizontal scroll",
+      "PUSH selector shows None",
+      "frozen CLIP and resize retained"
+    ],
+    "not_tested": [
+      "new AMXD loaded into Live Set",
+      "new .als save and reopen",
+      "Push 2 hardware"
+    ]
+  },
+  "scope": "English text only; data, geometry, colors and wiring unchanged."
+}

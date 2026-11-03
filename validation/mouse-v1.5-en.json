@@ -1,0 +1,5178 @@
+[
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "layout",
+    "args": [],
+    "size": [
+      1180,
+      760
+    ],
+    "gridRect": [
+      20,
+      148,
+      1140,
+      320
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      20,
+      120
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      20,
+      110,
+      260,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  },
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "dismiss",
+    "args": [],
+    "size": [
+      1180,
+      760
+    ],
+    "gridRect": [
+      20,
+      108,
+      1140,
+      360
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      1534,
+      -693
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      20,
+      110,
+      260,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  },
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "layout",
+    "args": [],
+    "size": [
+      953,
+      601
+    ],
+    "gridRect": [
+      20,
+      108,
+      913,
+      245
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      1534,
+      -693
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      20,
+      110,
+      260,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  },
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "parametersync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      4
+    ],
+    "size": [
+      953,
+      601
+    ],
+    "gridRect": [
+      20,
+      108,
+      913,
+      245
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      1534,
+      -693
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      20,
+      110,
+      260,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  },
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "parametersync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      4
+    ],
+    "size": [
+      953,
+      601
+    ],
+    "gridRect": [
+      20,
+      108,
+      913,
+      245
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      1534,
+      -693
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      20,
+      110,
+      260,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  },
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "parametersync",
+    "args": [
+      "sync",
+      "select",
+      7,
+      0
+    ],
+    "size": [
+      953,
+      601
+    ],
+    "gridRect": [
+      20,
+      108,
+      913,
+      245
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      1534,
+      -693
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      663,
+      108,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r5",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— None",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS WITH A VERY LONG NAME THAT MUST STAY NARROW",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        },
+        {
+          "label": "5 — BASS",
+          "value": "t3"
+        },
+        {
+          "label": "6 — LEAD",
+          "value": "t4"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  },
+  {
+    "headers": [
+      [
+        0,
+        0,
+        "BPM"
+      ],
+      [
+        1,
+        0,
+        "ROOT"
+      ],
+      [
+        2,
+        0,
+        "SCALE"
+      ],
+      [
+        3,
+        0,
+        "3 — TEST KEY…"
+      ],
+      [
+        4,
+        0,
+        "4 — EMPTY MI…"
+      ],
+      [
+        5,
+        0,
+        "5 — BASS"
+      ],
+      [
+        6,
+        0,
+        "6 — LEAD"
+      ],
+      [
+        7,
+        0,
+        "PUSH"
+      ],
+      [
+        8,
+        0,
+        "MORE"
+      ]
+    ],
+    "kind": "parametercell",
+    "args": [
+      7,
+      0,
+      "— ▾"
+    ],
+    "size": [
+      953,
+      601
+    ],
+    "gridRect": [
+      20,
+      108,
+      913,
+      245
+    ],
+    "widths": [
+      200,
+      64,
+      78,
+      176,
+      122,
+      122,
+      122,
+      122,
+      190,
+      60
+    ],
+    "mouse": [
+      1534,
+      -693
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      663,
+      108,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r5",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— None",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS WITH A VERY LONG NAME THAT MUST STAY NARROW",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        },
+        {
+          "label": "5 — BASS",
+          "value": "t3"
+        },
+        {
+          "label": "6 — LEAD",
+          "value": "t4"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r5"
+      },
+      {
+        "clip": "CONFIG_1",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r6"
+      },
+      {
+        "clip": "CONFIG_2",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r7"
+      },
+      {
+        "clip": "CONFIG_3",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r8"
+      },
+      {
+        "clip": "CONFIG_4",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r9"
+      },
+      {
+        "clip": "CONFIG_5",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r10"
+      },
+      {
+        "clip": "CONFIG_6",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r11"
+      },
+      {
+        "clip": "CONFIG_7",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r12"
+      },
+      {
+        "clip": "CONFIG_8",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r13"
+      },
+      {
+        "clip": "CONFIG_9",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r14"
+      },
+      {
+        "clip": "CONFIG_10",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r15"
+      },
+      {
+        "clip": "CONFIG_11",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r16"
+      },
+      {
+        "clip": "CONFIG_12",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r17"
+      },
+      {
+        "clip": "CONFIG_13",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r18"
+      },
+      {
+        "clip": "CONFIG_14",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r19"
+      },
+      {
+        "clip": "CONFIG_15",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r20"
+      },
+      {
+        "clip": "CONFIG_16",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r21"
+      },
+      {
+        "clip": "CONFIG_17",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r22"
+      },
+      {
+        "clip": "CONFIG_18",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r23"
+      },
+      {
+        "clip": "CONFIG_19",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r24"
+      },
+      {
+        "clip": "CONFIG_20",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r25"
+      },
+      {
+        "clip": "CONFIG_21",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r26"
+      },
+      {
+        "clip": "CONFIG_22",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r27"
+      },
+      {
+        "clip": "CONFIG_23",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r28"
+      },
+      {
+        "clip": "CONFIG_24",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r29"
+      },
+      {
+        "clip": "CONFIG_25",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r30"
+      },
+      {
+        "clip": "CONFIG_26",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r31"
+      },
+      {
+        "clip": "CONFIG_27",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r32"
+      },
+      {
+        "clip": "CONFIG_28",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r33"
+      },
+      {
+        "clip": "CONFIG_29",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r34"
+      },
+      {
+        "clip": "CONFIG_30",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r35"
+      },
+      {
+        "clip": "CONFIG_31",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r36"
+      },
+      {
+        "clip": "CONFIG_32",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r37"
+      },
+      {
+        "clip": "CONFIG_33",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r38"
+      },
+      {
+        "clip": "CONFIG_34",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r39"
+      },
+      {
+        "clip": "CONFIG_35",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r40"
+      },
+      {
+        "clip": "CONFIG_36",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r41"
+      },
+      {
+        "clip": "CONFIG_37",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r42"
+      },
+      {
+        "clip": "CONFIG_38",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r43"
+      },
+      {
+        "clip": "CONFIG_39",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0,
+          "t3": 0,
+          "t4": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r44"
+      }
+    ]
+  }
+]

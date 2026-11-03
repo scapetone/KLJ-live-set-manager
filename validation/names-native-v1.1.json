@@ -1,0 +1,272 @@
+[
+  {
+    "outmode": 2,
+    "iteration": 1,
+    "atoms": [
+      "A "
+    ],
+    "raw": "A ",
+    "length": 2
+  },
+  {
+    "outmode": 2,
+    "iteration": 2,
+    "atoms": [
+      "A  "
+    ],
+    "raw": "A  ",
+    "length": 3
+  },
+  {
+    "outmode": 2,
+    "iteration": 3,
+    "atoms": [
+      "A   "
+    ],
+    "raw": "A   ",
+    "length": 4
+  },
+  {
+    "outmode": 2,
+    "iteration": 4,
+    "atoms": [
+      "A    "
+    ],
+    "raw": "A    ",
+    "length": 5
+  },
+  {
+    "outmode": 2,
+    "iteration": 5,
+    "atoms": [
+      "A     "
+    ],
+    "raw": "A     ",
+    "length": 6
+  },
+  {
+    "outmode": 2,
+    "iteration": 6,
+    "atoms": [
+      "A      "
+    ],
+    "raw": "A      ",
+    "length": 7
+  },
+  {
+    "outmode": 2,
+    "iteration": 7,
+    "atoms": [
+      "A       "
+    ],
+    "raw": "A       ",
+    "length": 8
+  },
+  {
+    "outmode": 2,
+    "iteration": 8,
+    "atoms": [
+      "A        "
+    ],
+    "raw": "A        ",
+    "length": 9
+  },
+  {
+    "outmode": 2,
+    "iteration": 9,
+    "atoms": [
+      "A         "
+    ],
+    "raw": "A         ",
+    "length": 10
+  },
+  {
+    "outmode": 2,
+    "iteration": 10,
+    "atoms": [
+      "A          "
+    ],
+    "raw": "A          ",
+    "length": 11
+  },
+  {
+    "outmode": 0,
+    "iteration": 1,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 2,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 3,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 4,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 5,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 6,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 7,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 8,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 9,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 10,
+    "atoms": [
+      "A"
+    ],
+    "raw": "A",
+    "length": 1
+  },
+  {
+    "outmode": 0,
+    "iteration": 1,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 2,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 3,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 4,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 5,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 6,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 7,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 8,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 9,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  },
+  {
+    "outmode": 0,
+    "iteration": 10,
+    "atoms": [
+      "B  C"
+    ],
+    "raw": "B  C",
+    "length": 4
+  }
+]

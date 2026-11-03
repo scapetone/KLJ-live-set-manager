@@ -1,0 +1,39 @@
+{
+  "results": [
+    {
+      "name": "model + UI compile/render in native v8",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "new Function native runner token 1",
+      "ok": true,
+      "detail": "Script terminé"
+    },
+    {
+      "name": "new Function native runner token 2",
+      "ok": true,
+      "detail": "Error: Erreur attendue"
+    },
+    {
+      "name": "new Function native runner token 3",
+      "ok": true,
+      "detail": "Script terminé"
+    },
+    {
+      "name": "textedit getvalueof multiline roundtrip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,1377 @@
+[
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      0
+    ],
+    "mouse": [
+      20,
+      120
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      20,
+      110,
+      260,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "select",
+      2,
+      1
+    ],
+    "mouse": [
+      20,
+      120
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      310,
+      134,
+      100,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "root",
+      "choices": [
+        {
+          "label": "C",
+          "value": 0
+        },
+        {
+          "label": "C#",
+          "value": 1
+        },
+        {
+          "label": "D",
+          "value": 2
+        },
+        {
+          "label": "D#",
+          "value": 3
+        },
+        {
+          "label": "E",
+          "value": 4
+        },
+        {
+          "label": "F",
+          "value": 5
+        },
+        {
+          "label": "F#",
+          "value": 6
+        },
+        {
+          "label": "G",
+          "value": 7
+        },
+        {
+          "label": "G#",
+          "value": 8
+        },
+        {
+          "label": "A",
+          "value": 9
+        },
+        {
+          "label": "A#",
+          "value": 10
+        },
+        {
+          "label": "B",
+          "value": 11
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "cell",
+    "args": [
+      2,
+      1,
+      "C ▾"
+    ],
+    "mouse": [
+      20,
+      120
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      310,
+      134,
+      100,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "root",
+      "choices": [
+        {
+          "label": "C",
+          "value": 0
+        },
+        {
+          "label": "C#",
+          "value": 1
+        },
+        {
+          "label": "D",
+          "value": 2
+        },
+        {
+          "label": "D#",
+          "value": 3
+        },
+        {
+          "label": "E",
+          "value": 4
+        },
+        {
+          "label": "F",
+          "value": 5
+        },
+        {
+          "label": "F#",
+          "value": 6
+        },
+        {
+          "label": "G",
+          "value": 7
+        },
+        {
+          "label": "G#",
+          "value": 8
+        },
+        {
+          "label": "A",
+          "value": 9
+        },
+        {
+          "label": "A#",
+          "value": 10
+        },
+        {
+          "label": "B",
+          "value": 11
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 0,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "menu",
+    "args": [
+      3
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      310,
+      134,
+      100,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      0
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      310,
+      134,
+      100,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "select",
+      3,
+      1
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      400,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "scale",
+      "choices": [
+        {
+          "label": "Major",
+          "value": "Major"
+        },
+        {
+          "label": "Minor",
+          "value": "Minor"
+        },
+        {
+          "label": "Dorian",
+          "value": "Dorian"
+        },
+        {
+          "label": "Mixolydian",
+          "value": "Mixolydian"
+        },
+        {
+          "label": "Lydian",
+          "value": "Lydian"
+        },
+        {
+          "label": "Phrygian",
+          "value": "Phrygian"
+        },
+        {
+          "label": "Locrian",
+          "value": "Locrian"
+        },
+        {
+          "label": "Whole Tone",
+          "value": "Whole Tone"
+        },
+        {
+          "label": "Half-whole Dim.",
+          "value": "Half-whole Dim."
+        },
+        {
+          "label": "Whole-half Dim.",
+          "value": "Whole-half Dim."
+        },
+        {
+          "label": "Minor Blues",
+          "value": "Minor Blues"
+        },
+        {
+          "label": "Minor Pentatonic",
+          "value": "Minor Pentatonic"
+        },
+        {
+          "label": "Major Pentatonic",
+          "value": "Major Pentatonic"
+        },
+        {
+          "label": "Harmonic Minor",
+          "value": "Harmonic Minor"
+        },
+        {
+          "label": "Harmonic Major",
+          "value": "Harmonic Major"
+        },
+        {
+          "label": "Dorian #4",
+          "value": "Dorian #4"
+        },
+        {
+          "label": "Phrygian Dominant",
+          "value": "Phrygian Dominant"
+        },
+        {
+          "label": "Melodic Minor",
+          "value": "Melodic Minor"
+        },
+        {
+          "label": "Lydian Augmented",
+          "value": "Lydian Augmented"
+        },
+        {
+          "label": "Lydian Dominant",
+          "value": "Lydian Dominant"
+        },
+        {
+          "label": "Super Locrian",
+          "value": "Super Locrian"
+        },
+        {
+          "label": "8-Tone Spanish",
+          "value": "8-Tone Spanish"
+        },
+        {
+          "label": "Bhairav",
+          "value": "Bhairav"
+        },
+        {
+          "label": "Hungarian Minor",
+          "value": "Hungarian Minor"
+        },
+        {
+          "label": "Hirajoshi",
+          "value": "Hirajoshi"
+        },
+        {
+          "label": "In-Sen",
+          "value": "In-Sen"
+        },
+        {
+          "label": "Iwato",
+          "value": "Iwato"
+        },
+        {
+          "label": "Kumoi",
+          "value": "Kumoi"
+        },
+        {
+          "label": "Pelog Selisir",
+          "value": "Pelog Selisir"
+        },
+        {
+          "label": "Pelog Tembung",
+          "value": "Pelog Tembung"
+        },
+        {
+          "label": "Messiaen 3",
+          "value": "Messiaen 3"
+        },
+        {
+          "label": "Messiaen 4",
+          "value": "Messiaen 4"
+        },
+        {
+          "label": "Messiaen 5",
+          "value": "Messiaen 5"
+        },
+        {
+          "label": "Messiaen 6",
+          "value": "Messiaen 6"
+        },
+        {
+          "label": "Messiaen 7",
+          "value": "Messiaen 7"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "cell",
+    "args": [
+      3,
+      1,
+      "Minor ▾"
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      400,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "scale",
+      "choices": [
+        {
+          "label": "Major",
+          "value": "Major"
+        },
+        {
+          "label": "Minor",
+          "value": "Minor"
+        },
+        {
+          "label": "Dorian",
+          "value": "Dorian"
+        },
+        {
+          "label": "Mixolydian",
+          "value": "Mixolydian"
+        },
+        {
+          "label": "Lydian",
+          "value": "Lydian"
+        },
+        {
+          "label": "Phrygian",
+          "value": "Phrygian"
+        },
+        {
+          "label": "Locrian",
+          "value": "Locrian"
+        },
+        {
+          "label": "Whole Tone",
+          "value": "Whole Tone"
+        },
+        {
+          "label": "Half-whole Dim.",
+          "value": "Half-whole Dim."
+        },
+        {
+          "label": "Whole-half Dim.",
+          "value": "Whole-half Dim."
+        },
+        {
+          "label": "Minor Blues",
+          "value": "Minor Blues"
+        },
+        {
+          "label": "Minor Pentatonic",
+          "value": "Minor Pentatonic"
+        },
+        {
+          "label": "Major Pentatonic",
+          "value": "Major Pentatonic"
+        },
+        {
+          "label": "Harmonic Minor",
+          "value": "Harmonic Minor"
+        },
+        {
+          "label": "Harmonic Major",
+          "value": "Harmonic Major"
+        },
+        {
+          "label": "Dorian #4",
+          "value": "Dorian #4"
+        },
+        {
+          "label": "Phrygian Dominant",
+          "value": "Phrygian Dominant"
+        },
+        {
+          "label": "Melodic Minor",
+          "value": "Melodic Minor"
+        },
+        {
+          "label": "Lydian Augmented",
+          "value": "Lydian Augmented"
+        },
+        {
+          "label": "Lydian Dominant",
+          "value": "Lydian Dominant"
+        },
+        {
+          "label": "Super Locrian",
+          "value": "Super Locrian"
+        },
+        {
+          "label": "8-Tone Spanish",
+          "value": "8-Tone Spanish"
+        },
+        {
+          "label": "Bhairav",
+          "value": "Bhairav"
+        },
+        {
+          "label": "Hungarian Minor",
+          "value": "Hungarian Minor"
+        },
+        {
+          "label": "Hirajoshi",
+          "value": "Hirajoshi"
+        },
+        {
+          "label": "In-Sen",
+          "value": "In-Sen"
+        },
+        {
+          "label": "Iwato",
+          "value": "Iwato"
+        },
+        {
+          "label": "Kumoi",
+          "value": "Kumoi"
+        },
+        {
+          "label": "Pelog Selisir",
+          "value": "Pelog Selisir"
+        },
+        {
+          "label": "Pelog Tembung",
+          "value": "Pelog Tembung"
+        },
+        {
+          "label": "Messiaen 3",
+          "value": "Messiaen 3"
+        },
+        {
+          "label": "Messiaen 4",
+          "value": "Messiaen 4"
+        },
+        {
+          "label": "Messiaen 5",
+          "value": "Messiaen 5"
+        },
+        {
+          "label": "Messiaen 6",
+          "value": "Messiaen 6"
+        },
+        {
+          "label": "Messiaen 7",
+          "value": "Messiaen 7"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Minor",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "menu",
+    "args": [
+      33
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      400,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      0
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      400,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "select",
+      6,
+      1
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— Aucune sélection",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "cell",
+    "args": [
+      6,
+      1,
+      "— ▾"
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— Aucune sélection",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": null,
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "menu",
+    "args": [
+      1
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      0
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "select",
+      7,
+      1
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      825,
+      134,
+      335,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "pushMode",
+      "choices": [
+        {
+          "label": "NOTE · réglage manuel sur Push",
+          "value": "NOTE"
+        },
+        {
+          "label": "NOTE IN KEY · réglage manuel sur Push",
+          "value": "NOTE IN KEY"
+        },
+        {
+          "label": "PADS · réglage manuel sur Push",
+          "value": "PADS"
+        },
+        {
+          "label": "64 PADS · réglage manuel sur Push",
+          "value": "64 PADS"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "cell",
+    "args": [
+      7,
+      1,
+      "NOTE · manuel ▾"
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      825,
+      134,
+      335,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "pushMode",
+      "choices": [
+        {
+          "label": "NOTE · réglage manuel sur Push",
+          "value": "NOTE"
+        },
+        {
+          "label": "NOTE IN KEY · réglage manuel sur Push",
+          "value": "NOTE IN KEY"
+        },
+        {
+          "label": "PADS · réglage manuel sur Push",
+          "value": "PADS"
+        },
+        {
+          "label": "64 PADS · réglage manuel sur Push",
+          "value": "64 PADS"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "NOTE",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "menu",
+    "args": [
+      3
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      825,
+      134,
+      335,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      0
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      825,
+      134,
+      335,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "select",
+      6,
+      1
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— Aucune sélection",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "cell",
+    "args": [
+      6,
+      1,
+      "3 — TEST KEYS ▾"
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— Aucune sélection",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "click",
+      1,
+      0,
+      1,
+      0
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 0,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": {
+      "rowId": "r3",
+      "field": "push",
+      "choices": [
+        {
+          "label": "— Aucune sélection",
+          "value": null
+        },
+        {
+          "label": "3 — TEST KEYS",
+          "value": "t1"
+        },
+        {
+          "label": "4 — EMPTY MIDI",
+          "value": "t2"
+        }
+      ]
+    },
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 0,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "sync",
+    "args": [
+      "sync",
+      "select",
+      4,
+      1
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 1,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  },
+  {
+    "kind": "cell",
+    "args": [
+      4,
+      1,
+      "ON"
+    ],
+    "mouse": [
+      997,
+      -617
+    ],
+    "menuHidden": 1,
+    "menuRect": [
+      834,
+      134,
+      270,
+      23
+    ],
+    "menuTarget": null,
+    "rootHidden": null,
+    "rootRect": null,
+    "rows": [
+      {
+        "clip": "MOUSE_TEST",
+        "bpm": 120,
+        "root": 3,
+        "scale": "Messiaen 6",
+        "enabled": {
+          "t1": 1,
+          "t2": 0
+        },
+        "push": "t1",
+        "pushMode": "64 PADS",
+        "script": "",
+        "id": "r3"
+      }
+    ]
+  }
+]

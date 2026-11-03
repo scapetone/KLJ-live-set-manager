@@ -1,0 +1,32 @@
+{
+  "version": "1.5",
+  "automated": {
+    "passed": 42,
+    "failed": 0,
+    "api": "LiveAPI simulée"
+  },
+  "native": {
+    "status": "passed",
+    "checks": 23,
+    "environment": "Max 9.1.5 intégré depuis Live 12.4.16",
+    "live_commands": false,
+    "visual": [
+      "CLIP fixe après défilement horizontal",
+      "synchronisation verticale depuis les deux volets",
+      "redimensionnement",
+      "titres alignés après bascule ON/OFF",
+      "renommage réel CONFIG_31 en RENAMED_31",
+      "PUSH choisi sur ligne 31 après défilement"
+    ],
+    "not_tested": [
+      "nouvel AMXD chargé dans le Set Live",
+      "réouverture .als V1.5",
+      "Push 2 matériel"
+    ]
+  },
+  "unchanged": {
+    "klj.engine.js": "60332a313018ca2de450869d11803978aab084607e52152bb6753493f7cd79cf",
+    "klj.model.js": "9f0459f821e49588da90fa29aed8d94b636e9d403adb8ca74aff7a8381d81568",
+    "klj.runner.js": "e4fc90beedc0791b331cab46492918f398c2f322be8f4d43bff5fed93e35f2fb"
+  }
+}

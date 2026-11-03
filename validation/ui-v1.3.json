@@ -1,0 +1,16 @@
+{
+  "version": "1.3",
+  "automated": {
+    "runner": "node --test tests/engine.test.cjs",
+    "passed": 36,
+    "failed": 0
+  },
+  "native": {
+    "status": "not_run",
+    "reason": "Max and Live UI access timed out"
+  },
+  "unchanged_from_v12": {
+    "device/klj.model.js": "9f0459f821e49588da90fa29aed8d94b636e9d403adb8ca74aff7a8381d81568",
+    "device/klj.runner.js": "e4fc90beedc0791b331cab46492918f398c2f322be8f4d43bff5fed93e35f2fb"
+  }
+}

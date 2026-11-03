@@ -1,0 +1,34 @@
+{
+  "version": "1.4",
+  "automated": {
+    "passed": 39,
+    "failed": 0,
+    "api": "LiveAPI simulée"
+  },
+  "native": {
+    "status": "passed",
+    "checks": 23,
+    "environment": "Max 9.1.5 intégré, accessible après ouverture depuis Live 12.4.16",
+    "live_commands": false,
+    "visual": [
+      "titres visibles",
+      "troncature des noms MIDI",
+      "fermeture avertissement",
+      "fermeture panneau script",
+      "redimensionnement",
+      "défilements horizontal et vertical",
+      "ROOT et PUSH ouverts à la souris, choix validés au clavier",
+      "PUSH après redimensionnement et défilement"
+    ],
+    "not_tested": [
+      "nouveau binaire musical dans Live",
+      "réouverture .als V1.4",
+      "matériel Push 2"
+    ]
+  },
+  "engine_sha256": {
+    "device/klj.engine.js": "60332a313018ca2de450869d11803978aab084607e52152bb6753493f7cd79cf",
+    "device/klj.model.js": "9f0459f821e49588da90fa29aed8d94b636e9d403adb8ca74aff7a8381d81568",
+    "device/klj.runner.js": "e4fc90beedc0791b331cab46492918f398c2f322be8f4d43bff5fed93e35f2fb"
+  }
+}

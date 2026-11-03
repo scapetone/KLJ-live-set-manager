@@ -1,0 +1,26 @@
+{
+  "javascript": {
+    "klj.model.js": {
+      "non_text_code_unchanged": true,
+      "before_sha256": "9f0459f821e49588da90fa29aed8d94b636e9d403adb8ca74aff7a8381d81568",
+      "after_sha256": "4822a4950b6650f60a99261f66ecccbd2014b3c64f625de4e5bacd507609fef1"
+    },
+    "klj.ui.js": {
+      "non_text_code_unchanged": true,
+      "before_sha256": "6543ed05d238c2fa71de126328181089cc50d5730e9f9d41c393d81f0ebf8fa2",
+      "after_sha256": "73d18f6c26c3ec938e34e928e2f38eaddb5c2d23ad7f3180aefef574dd89bd20"
+    },
+    "klj.engine.js": {
+      "non_text_code_unchanged": true,
+      "before_sha256": "60332a313018ca2de450869d11803978aab084607e52152bb6753493f7cd79cf",
+      "after_sha256": "4ae961ec58a1dd7e96496a90b16dcc9f674a357161c7bc22177aac70e80b4ee6"
+    },
+    "klj.runner.js": {
+      "non_text_code_unchanged": true,
+      "before_sha256": "e4fc90beedc0791b331cab46492918f398c2f322be8f4d43bff5fed93e35f2fb",
+      "after_sha256": "3741f33b6430ece07e490380e9b622cd496a7f4d4dcdd55524e65344500f2b26"
+    }
+  },
+  "patch_except_text_texton_identical": true,
+  "note": "Only string literals and the two UI status classification regexes were translated. Dimensions, attributes, wiring and persisted parameter names are identical."
+}

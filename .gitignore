@@ -1,0 +1,23 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+/dist/
+/tests/max/generated/
+/validation/local/
+
+# Never commit private Live Sets, backups, recordings or credentials.
+*.als
+*.alp
+*.asd
+*.wav
+*.aif
+*.aiff
+*.flac
+*.mp3
+*.m4a
+*.bak
+*.maxsnap
+.env
+.env.*
+*.pem
+*.key

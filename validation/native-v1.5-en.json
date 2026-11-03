@@ -1,0 +1,119 @@
+{
+  "results": [
+    {
+      "name": "model + UI compile/render in native v8",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "new Function native runner token 1",
+      "ok": true,
+      "detail": "Script completed"
+    },
+    {
+      "name": "new Function native runner token 2",
+      "ok": true,
+      "detail": "Error: Erreur attendue"
+    },
+    {
+      "name": "new Function native runner token 3",
+      "ok": true,
+      "detail": "Script completed"
+    },
+    {
+      "name": "textedit getvalueof multiline roundtrip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN ten native grid selections keep A length 1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN native grid preserves internal double space",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN ROOT menu visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN SCALE menu visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN native ROOT/SCALE outlets set E Minor",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN native PUSH outlet selects track key",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN legacy mode data retained without UI",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN header separate and no user selection",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN actual header dump contains CLIP",
+      "ok": true,
+      "detail": "[0,0,\"CLIP\"]"
+    },
+    {
+      "name": "V1.5-EN layout and details preserve all configuration fields",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN body uses new first row without overwriting header",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN MIDI width bounded",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN names + ROOT/SCALE + legacy mode pattr roundtrip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pattr dictionary copy + multiline script",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "V1.5-EN names + ROOT/SCALE + legacy mode pattr roundtrip",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

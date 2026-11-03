@@ -1,0 +1,45 @@
+{
+  "version": "1.5.1",
+  "scope": "Repository finalization and minimal distribution only; validated V1.5-EN runtime unchanged.",
+  "automated": {
+    "node_tests_passed": 45,
+    "node_tests_failed": 0,
+    "structural_validation": "passed",
+    "clean_zip_extraction": "passed",
+    "reproducible_zip": "passed",
+    "runtime_and_sources_byte_identical": "passed"
+  },
+  "runtime_sha256": {
+    "klj.model.js": "4822a4950b6650f60a99261f66ecccbd2014b3c64f625de4e5bacd507609fef1",
+    "KLJ Live Set Manager.maxpat": "41b4341040826c7bfee31ed6d60c7be175c54e2e0b5b073f553ecb208e793d26",
+    "klj.ui.js": "73d18f6c26c3ec938e34e928e2f38eaddb5c2d23ad7f3180aefef574dd89bd20",
+    "klj.engine.js": "4ae961ec58a1dd7e96496a90b16dcc9f674a357161c7bc22177aac70e80b4ee6",
+    "KLJ Live Set Manager.amxd": "2374e15eb6c521ea9b26da32d42d90babfd99e53afc5f85b9671e518412a3a0e",
+    "klj.runner.js": "3741f33b6430ece07e490380e9b622cd496a7f4d4dcdd55524e65344500f2b26",
+    "device.maxproj": "1b47c305388c2a2dc7892e22de7b113df5e5c2de2d427bccee83b9b5dc873e05"
+  },
+  "zip_sha256": "933de4c151b1c21d125aecf94f7667728dc7ee2d48ed791c7b42826f3088300a",
+  "zip_files": [
+    "KLJ Live Set Manager.amxd",
+    "klj.engine.js",
+    "klj.model.js",
+    "klj.ui.js",
+    "klj.runner.js",
+    "README.txt"
+  ],
+  "prior_native_checks": {
+    "passed": 23,
+    "report": "native-v1.5-en.json",
+    "rerun_for_release_preparation": false
+  },
+  "musician_validation": "Author confirmed English device validated in Ableton Live 12 with instruments and Push 2.",
+  "new_live_or_hardware_test": false,
+  "audit": {
+    "personal_paths_in_publishable_files": false,
+    "private_live_sets_or_audio": false,
+    "embedded_musician_state": false,
+    "third_party_runtime_packages": false,
+    "license_added": false
+  },
+  "local_installations": "Extracted older dist installations remain ignored locally because existing Live Sets may reference their paths."
+}
