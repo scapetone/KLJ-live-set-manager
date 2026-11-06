@@ -67,20 +67,30 @@ var KLJModel = (function () {
         });
         return {state: validate(s), changes: changes};
     }
-    function reconcile(s, live, previous, initial) {
+    function reconcile(s, live, previous, initial, preserveUnresolved) {
         var tracks = live.filter(eligible), counts = Object.create(null), oldCounts = Object.create(null);
         tracks.forEach(function (t) { counts[t.name] = (counts[t.name] || 0) + 1; });
         s.tracks.forEach(function (t) { oldCounts[t.name] = (oldCounts[t.name] || 0) + 1; });
-        var used = new Set(), runtime = [];
+        var used = new Set(), runtime = [], saved = s.tracks.slice();
+        var previousKeys = new Set((initial ? [] : previous || []).map(function (t) {return t.key;}));
         tracks.forEach(function (t) {
             var old = initial ? s.tracks.find(function (x) {
                 return x.name === t.name && counts[t.name] === 1 && oldCounts[t.name] === 1;
             }) : (previous || []).find(function (x) { return x.id === t.id; });
+            if (!old && preserveUnresolved) old = saved.find(function (x) {
+                return !previousKeys.has(x.key) && !used.has(x.key) && x.name === t.name && counts[t.name] === 1 && oldCounts[t.name] === 1;
+            });
             var k = old && !used.has(old.key) ? old.key : key(s, "t");
             used.add(k);
             runtime.push({key: k, id: t.id, name: t.name, position: t.position, ambiguous: counts[t.name] > 1});
         });
-        s.tracks = runtime.map(function (t) {return {key: t.key, name: t.name};});
+        s.tracks = runtime.map(function (t) {
+            var record = clone(saved.find(function (x) {return x.key === t.key;}) || {key: t.key});
+            record.name = t.name; return record;
+        });
+        if (preserveUnresolved) saved.forEach(function (t) {
+            if (!used.has(t.key) && !previousKeys.has(t.key)) {s.tracks.push(t); used.add(t.key);}
+        });
         s.rows.forEach(function (r) {
             Object.keys(r.enabled).forEach(function (k) {if (!used.has(k)) delete r.enabled[k];});
             s.tracks.forEach(function (t) {if (!(t.key in r.enabled)) r.enabled[t.key] = 0;});

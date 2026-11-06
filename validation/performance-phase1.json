@@ -1,0 +1,3893 @@
+{
+  "method": "Same Node fake host, production sources; editor logically closed. No native Max/Live timings. Seven iterations per case; first counters retained. Before uses v1.5.1 sources extracted before editing; after uses current branch. Guards-bypassed case exists solely in diagnostic VM, never in device.",
+  "before": {
+    "environment": {
+      "node": "v26.0.0",
+      "platform": "darwin",
+      "arch": "arm64"
+    },
+    "limitations": "Fake synchronous API, zero native bridge/drawing/pattr/ALS latency; no observer initial callbacks or native patch feedback; bypass guards only inside one diagnostic VM, never in device.",
+    "results": [
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 73,
+          "apiGet": 272,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.329
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 79,
+          "apiGet": 282,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 43,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.306
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.005
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 147,
+          "apiGet": 271,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 1
+          },
+          "uiMessages": 362,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 1384,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 6793,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.524
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 147,
+          "apiGet": 271,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 1
+          },
+          "uiMessages": 362,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 6792,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.518
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 367,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 1383,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 2766,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.177
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 362,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 1384,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 2768,
+          "calls": {
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.151
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 381,
+          "boxChanges": 22,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 2766,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.18
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1498,
+          "apiGet": 2998,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1132,
+            "tracks": 34,
+            "has_midi_input": 1394,
+            "has_audio_input": 74,
+            "is_foldable": 74,
+            "is_frozen": 74,
+            "devices": 65,
+            "type": 65,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 8,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 5919,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "guardedTrack": 33,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 3.681
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 112,
+          "apiGet": 358,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 43,
+            "tracks": 1,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 8,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 5919,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.42
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 362,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.085
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 1383,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.034
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 73,
+          "apiGet": 272,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.284
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 79,
+          "apiGet": 282,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 43,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.294
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.003
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 147,
+          "apiGet": 271,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 1
+          },
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 11936,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.744
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 147,
+          "apiGet": 271,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 1
+          },
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 11935,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.65
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1585,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6526,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13052,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.44
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13054,
+          "calls": {
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.44
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1599,
+          "boxChanges": 22,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13052,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.353
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1498,
+          "apiGet": 2998,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1132,
+            "tracks": 34,
+            "has_midi_input": 1394,
+            "has_audio_input": 74,
+            "is_foldable": 74,
+            "is_frozen": 74,
+            "devices": 65,
+            "type": 65,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 64,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 5919,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "guardedTrack": 33,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 3.57
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 112,
+          "apiGet": 358,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 43,
+            "tracks": 1,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 64,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 5919,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.413
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.193
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 6526,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.11
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 111,
+          "apiGet": 405,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 60,
+            "name": 60,
+            "has_audio_input": 60,
+            "is_foldable": 60,
+            "is_frozen": 60,
+            "devices": 51,
+            "type": 51,
+            "is_playing": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 7916,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.428
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 117,
+          "apiGet": 415,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 60,
+            "name": 62,
+            "has_audio_input": 60,
+            "is_foldable": 60,
+            "is_frozen": 60,
+            "devices": 51,
+            "type": 51,
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 7916,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.465
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.002
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 223,
+          "apiGet": 404,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 60,
+            "name": 60,
+            "has_audio_input": 60,
+            "is_foldable": 60,
+            "is_frozen": 60,
+            "devices": 51,
+            "type": 51,
+            "is_playing": 1
+          },
+          "uiMessages": 4042,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 17196,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 25113,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 1.224
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 223,
+          "apiGet": 404,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 60,
+            "name": 60,
+            "has_audio_input": 60,
+            "is_foldable": 60,
+            "is_frozen": 60,
+            "devices": 51,
+            "type": 51,
+            "is_playing": 1
+          },
+          "uiMessages": 4042,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 25112,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 1.163
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 4163,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 17195,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 34390,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.961
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 4042,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 17196,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 34392,
+          "calls": {
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.966
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 4177,
+          "boxChanges": 22,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 34390,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 1.097
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 3341,
+          "apiGet": 6665,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2766,
+            "tracks": 53,
+            "has_midi_input": 3180,
+            "has_audio_input": 112,
+            "is_foldable": 112,
+            "is_frozen": 112,
+            "devices": 103,
+            "type": 103,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 102,
+            "selected_track": 3
+          },
+          "uiMessages": 124,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 8579,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "guardedTrack": 52,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 7.774
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 169,
+          "apiGet": 529,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 62,
+            "tracks": 1,
+            "has_midi_input": 60,
+            "has_audio_input": 60,
+            "is_foldable": 60,
+            "is_frozen": 60,
+            "devices": 51,
+            "type": 51,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 102,
+            "selected_track": 3
+          },
+          "uiMessages": 124,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 8579,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.595
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 4042,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.493
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 17195,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.271
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 297,
+          "apiGet": 496,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 256,
+            "is_playing": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.611
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 303,
+          "apiGet": 506,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 43,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 256,
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.618
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.003
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 371,
+          "apiGet": 495,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 256,
+            "is_playing": 1
+          },
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 11936,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.998
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 371,
+          "apiGet": 495,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 256,
+            "is_playing": 1
+          },
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 11935,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.948
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1585,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6526,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13052,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.369
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13054,
+          "calls": {
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.405
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1599,
+          "boxChanges": 22,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13052,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.402
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1953,
+          "apiGet": 3453,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1132,
+            "tracks": 34,
+            "has_midi_input": 1394,
+            "has_audio_input": 74,
+            "is_foldable": 74,
+            "is_frozen": 74,
+            "devices": 65,
+            "type": 520,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 64,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 5919,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "guardedTrack": 33,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 4.12
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 336,
+          "apiGet": 582,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 43,
+            "tracks": 1,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 256,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 64,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 5919,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.717
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.193
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 6526,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.106
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 73,
+          "apiGet": 272,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.3
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 79,
+          "apiGet": 282,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 43,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5408,
+          "calls": {
+            "refresh": 1,
+            "checkClip": 2,
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.3
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.002
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 147,
+          "apiGet": 271,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 1
+          },
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 129407,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 134816,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.902
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 147,
+          "apiGet": 271,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "has_midi_input": 41,
+            "name": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "is_playing": 1
+          },
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 0,
+          "jsonBytes": 134815,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1,
+            "checkClip": 1,
+            "snapshot": 1
+          }
+        },
+        "nodeMedianMs": 0.701
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1585,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 129406,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 258812,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.656
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 129407,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 258814,
+          "calls": {
+            "persist": 1,
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.683
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1599,
+          "boxChanges": 22,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 258812,
+          "calls": {
+            "highlight": 2,
+            "persist": 1,
+            "render": 1,
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.678
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1498,
+          "apiGet": 2998,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1132,
+            "tracks": 34,
+            "has_midi_input": 1394,
+            "has_audio_input": 74,
+            "is_foldable": 74,
+            "is_frozen": 74,
+            "devices": 65,
+            "type": 65,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 64,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 8292,
+          "jsonStringify": 4,
+          "jsonParse": 1,
+          "jsonBytes": 22403,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "guardedTrack": 33,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 3.605
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 112,
+          "apiGet": 358,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 43,
+            "tracks": 1,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41,
+            "is_frozen": 41,
+            "devices": 32,
+            "type": 32,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 64,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 8292,
+          "jsonStringify": 4,
+          "jsonParse": 1,
+          "jsonBytes": 22403,
+          "calls": {
+            "snapshot": 2,
+            "refresh": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.439
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1524,
+          "boxChanges": 20,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1,
+            "layout": 1,
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.295
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 129406,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.266
+      }
+    ]
+  },
+  "after": {
+    "environment": {
+      "node": "v26.0.0",
+      "platform": "darwin",
+      "arch": "arm64"
+    },
+    "limitations": "Fake synchronous API, zero native bridge/drawing/pattr/ALS latency; no observer initial callbacks or native patch feedback; bypass guards only inside one diagnostic VM, never in device.",
+    "results": [
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.001
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.004
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 1384,
+          "jsonStringify": 36,
+          "jsonParse": 34,
+          "jsonBytes": 8244,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.405
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 3151,
+          "calls": {
+            "refresh": 1
+          }
+        },
+        "nodeMedianMs": 0.181
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 1383,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 2766,
+          "calls": {
+            "highlight": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.067
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 1384,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 2768,
+          "calls": {
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.054
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 15,
+          "boxChanges": 2,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.017
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1425,
+          "apiGet": 2728,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1091,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "tracks": 33,
+            "has_midi_input": 1353,
+            "devices": 33,
+            "type": 33,
+            "has_audio_input": 33,
+            "is_foldable": 33,
+            "is_frozen": 33,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 511,
+          "calls": {
+            "snapshot": 2,
+            "guardedTrack": 33
+          }
+        },
+        "nodeMedianMs": 3.248
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 39,
+          "apiGet": 88,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 511,
+          "calls": {
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.118
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 1,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 1383,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.029
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.001
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.003
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 36,
+          "jsonParse": 34,
+          "jsonBytes": 23673,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.474
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 3151,
+          "calls": {
+            "refresh": 1
+          }
+        },
+        "nodeMedianMs": 0.172
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6526,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13052,
+          "calls": {
+            "highlight": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.176
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13054,
+          "calls": {
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.169
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 15,
+          "boxChanges": 2,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.012
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1425,
+          "apiGet": 2728,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1091,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "tracks": 33,
+            "has_midi_input": 1353,
+            "devices": 33,
+            "type": 33,
+            "has_audio_input": 33,
+            "is_foldable": 33,
+            "is_frozen": 33,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 511,
+          "calls": {
+            "snapshot": 2,
+            "guardedTrack": 33
+          }
+        },
+        "nodeMedianMs": 3.161
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 39,
+          "apiGet": 88,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 511,
+          "calls": {
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.119
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.001
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 6526,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.103
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.002
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 60,
+          "apiGet": 241,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 60,
+            "has_midi_input": 60,
+            "has_audio_input": 60,
+            "is_foldable": 60
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 17196,
+          "jsonStringify": 55,
+          "jsonParse": 53,
+          "jsonBytes": 58131,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 1.025
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 60,
+          "apiGet": 241,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 60,
+            "has_midi_input": 60,
+            "has_audio_input": 60,
+            "is_foldable": 60
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 5032,
+          "calls": {
+            "refresh": 1
+          }
+        },
+        "nodeMedianMs": 0.243
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 17195,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 34390,
+          "calls": {
+            "highlight": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.443
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 17196,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 34392,
+          "calls": {
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.439
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 15,
+          "boxChanges": 2,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.012
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 3230,
+          "apiGet": 6262,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2706,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "tracks": 52,
+            "has_midi_input": 3120,
+            "devices": 52,
+            "type": 52,
+            "has_audio_input": 52,
+            "is_foldable": 52,
+            "is_frozen": 52,
+            "mute": 102,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 663,
+          "calls": {
+            "snapshot": 2,
+            "guardedTrack": 52
+          }
+        },
+        "nodeMedianMs": 7.728
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 58,
+          "apiGet": 126,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 102,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 663,
+          "calls": {
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.208
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 60,
+        "midi": 51,
+        "rows": 30,
+        "devices": 1,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 17195,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.285
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.002
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 36,
+          "jsonParse": 34,
+          "jsonBytes": 23673,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.511
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 3151,
+          "calls": {
+            "refresh": 1
+          }
+        },
+        "nodeMedianMs": 0.182
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6526,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13052,
+          "calls": {
+            "highlight": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.183
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 6527,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 13054,
+          "calls": {
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.184
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 15,
+          "boxChanges": 2,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.013
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1656,
+          "apiGet": 2959,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1091,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "tracks": 33,
+            "has_midi_input": 1353,
+            "devices": 33,
+            "type": 264,
+            "has_audio_input": 33,
+            "is_foldable": 33,
+            "is_frozen": 33,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 511,
+          "calls": {
+            "snapshot": 2,
+            "guardedTrack": 33
+          }
+        },
+        "nodeMedianMs": 3.527
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 39,
+          "apiGet": 88,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 511,
+          "calls": {
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.121
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 8,
+        "scriptBytes": 0,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 6526,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.111
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "idle_stopped_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "idle_playing_poll",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {}
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "unchanged_layout_tick",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "layout": 1
+          }
+        },
+        "nodeMedianMs": 0.002
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "rename_midi",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 129407,
+          "jsonStringify": 36,
+          "jsonParse": 34,
+          "jsonBytes": 392313,
+          "calls": {
+            "refresh": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.938
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "rename_audio",
+        "counts": {
+          "apiNew": 41,
+          "apiGet": 165,
+          "apiSet": 0,
+          "gets": {
+            "tracks": 1,
+            "name": 41,
+            "has_midi_input": 41,
+            "has_audio_input": 41,
+            "is_foldable": 41
+          },
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 0,
+          "jsonBytes": 3151,
+          "calls": {
+            "refresh": 1
+          }
+        },
+        "nodeMedianMs": 0.171
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "toggle_midi",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 1,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 129406,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 258812,
+          "calls": {
+            "highlight": 1,
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.531
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "edit_script",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 129407,
+          "jsonStringify": 2,
+          "jsonParse": 1,
+          "jsonBytes": 258814,
+          "calls": {
+            "persist": 1,
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0.476
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "noop_menu",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 15,
+          "boxChanges": 2,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "highlight": 1
+          }
+        },
+        "nodeMedianMs": 0.011
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "recall_already_correct",
+        "counts": {
+          "apiNew": 1425,
+          "apiGet": 2728,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 1091,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "tracks": 33,
+            "has_midi_input": 1353,
+            "devices": 33,
+            "type": 33,
+            "has_audio_input": 33,
+            "is_foldable": 33,
+            "is_frozen": 33,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 8292,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 16995,
+          "calls": {
+            "snapshot": 2,
+            "guardedTrack": 33
+          }
+        },
+        "nodeMedianMs": 3.18
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "recall_without_guards",
+        "counts": {
+          "apiNew": 39,
+          "apiGet": 88,
+          "apiSet": 0,
+          "gets": {
+            "is_playing": 4,
+            "playing_slot_index": 2,
+            "clip_slots": 2,
+            "clip": 2,
+            "name": 2,
+            "tempo": 3,
+            "root_note": 3,
+            "scale_name": 3,
+            "mute": 64,
+            "selected_track": 3
+          },
+          "uiMessages": 2,
+          "boxChanges": 0,
+          "outlets": 1,
+          "dictParse": 1,
+          "dictBytes": 8292,
+          "jsonStringify": 3,
+          "jsonParse": 1,
+          "jsonBytes": 16995,
+          "calls": {
+            "snapshot": 2
+          }
+        },
+        "nodeMedianMs": 0.141
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "render_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 0,
+          "jsonParse": 0,
+          "jsonBytes": 0,
+          "calls": {
+            "render": 1
+          }
+        },
+        "nodeMedianMs": 0
+      },
+      {
+        "total": 41,
+        "midi": 32,
+        "rows": 15,
+        "devices": 1,
+        "scriptBytes": 8192,
+        "scenario": "validate_only",
+        "counts": {
+          "apiNew": 0,
+          "apiGet": 0,
+          "apiSet": 0,
+          "gets": {},
+          "uiMessages": 0,
+          "boxChanges": 0,
+          "outlets": 0,
+          "dictParse": 0,
+          "dictBytes": 0,
+          "jsonStringify": 1,
+          "jsonParse": 1,
+          "jsonBytes": 129406,
+          "calls": {}
+        },
+        "nodeMedianMs": 0.254
+      }
+    ]
+  }
+}

@@ -24,9 +24,9 @@ python3 tools/package.py
 
 The AMXD builder replaces the complete `ptch` payload in the project's native MIDI template, retaining AMPF metadata. The template was originally exported from Max and contains no musician state or third-party runtime. It is not a JSON file renamed to AMXD. The validator compares the embedded editor to its source, checks patch cords, dependencies, MIDI container metadata and the Blob / Stored Only parameter.
 
-Packaging creates `dist/KLJ-Live-Set-Manager-v1.5.1.zip` with only the AMXD, four JS files and `README.txt`. It extracts the ZIP into a clean temporary directory and compares every file byte for byte. Timestamps and permissions are fixed for reproducible output. Keep development sources out of the user archive.
+Packaging creates `dist/KLJ-Live-Set-Manager-v1.6.0.zip` with only the AMXD, four JS files and `README.txt`. It extracts the ZIP into a clean temporary directory and compares every file byte for byte. Timestamps and permissions are fixed for reproducible output. Keep development sources out of the user archive.
 
-The validated V1.5-EN runtime is unchanged in v1.5.1, including its internal title. Only the release filename is standardized. `autowatch` is disabled in production: reload the device after changing runtime code.
+v1.6.0 promotes the musician-approved dev.4 runtime with only the compact version label and distribution documents changed. See [release validation](../validation/RELEASE-1.6.0.md), [recall investigation](../validation/RECALL-LATENCY-2026-11-04.md) and [data compatibility policy](DATA_COMPATIBILITY.md). The public v1.5.1 baseline remains available at its tag; never overwrite its Release asset. `autowatch` is disabled in production: reload the device after changing runtime code.
 
 ## Native Max harnesses
 
@@ -45,3 +45,13 @@ The smoke harness uses the real model, view, runner and patch wiring without mus
 Do not change the persisted schema or parameter identity casually. The existing tests cover restored states, French names/scripts, independent instances, target validation and audio-track protections. `.als` reopening and Push/Vortex routing still require manual testing; see [the checklist](../LIVE_TESTS.md).
 
 No license has been selected. The repository includes no Live Sets, samples, external JavaScript packages or Ableton/Cycling '74 SDK binaries.
+
+## Phase 1 diagnostics
+
+```sh
+KLJ_AUDIT_CLOSED=1 node tests/performance/audit.cjs > validation/local/performance/after-phase1.json
+```
+
+The audit can load a separately extracted source baseline using KLJ_AUDIT_DEVICE. It reports simulated operation counts, not Live latency. The current Node fixture acknowledges the new-install pattr default explicitly and opens the editor by default; safety tests opt out to verify unknown/late restore ordering.
+
+The recall scenarios include already-correct values and a recall changing every managed MIDI activator plus tempo/root/scale and Push selection. `lastRecall.timings` and the existing `KLJ recall` console line report millisecond wall-clock durations in Max. `notificationToRecallMs` starts at the first received notification for that deferred check, not at physical clip start; retries can omit it. `pushSelectedAfterMs` confirms Live's selected_track property, not hardware playability. `nameScanMs` is included in `applyMs`. `totalMs` ends before logging and includes UI/status work and synchronous script dispatch; it cannot measure asynchronous work a user script schedules, MIDI/audio latency or Push readiness. No timer is added for profiling.

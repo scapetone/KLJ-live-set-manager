@@ -13,10 +13,15 @@ function fixture() {
     const row = M.add(state, defaults); row.clip = 'SONG_A';
     return {state, tracks, row};
 }
-function host() {
+function host(options = {}) {
     const dicts = new Map(), objects = new Map(), queue = new Set(), writes = [], outputs = [];
-    const uiObjects = new Map();
+    const uiObjects = new Map(), future = new Set(), reads = [];
+    const sourcePatch = JSON.parse(fs.readFileSync(path.join(__dirname,'../device/KLJ Live Set Manager.maxpat'),'utf8')).patcher;
+    const editorPatch = sourcePatch.boxes.find(x=>x.box.varname==='editor').box.patcher;
+    const namedBoxes = new Set(sourcePatch.boxes.concat(editorPatch.boxes).map(x=>x.box.varname).filter(Boolean));
     const patcher = {wind:{location:[0,0,1180,760],size:[1180,760]}, raised: [], bringtofront(obj) {this.raised.push(obj);}, getnamed(name) {
+        // Max resolves scripting names (varname), never JSON box IDs. Unknown names return null.
+        if (!namedBoxes.has(name)) return null;
         if (!uiObjects.has(name)) uiObjects.set(name, {hidden: 0, messages: [], value:'',
             message(...args) {this.messages.push(args); if(args[0]==='dictionary') this.value=dicts.get(args[1]).text;},
             setboxattr(name,value) {this[name]=value; this.messages.push(['box',name,...value]);},
@@ -54,6 +59,7 @@ function host() {
     }
     Object.defineProperty(LiveAPI.prototype, 'type', {get() {return objects.get(this.id)?.type;}});
     LiveAPI.prototype.get = function (prop) {
+        reads.push([this.id,prop]);
         const o = objects.get(this.id);
         if (!o || !(prop in o)) throw Error('Unavailable '+this.id+'.'+prop);
         return Array.isArray(o[prop]) ? o[prop] : [o[prop]];
@@ -64,8 +70,8 @@ function host() {
         objects.get(this.id)[prop] = args[0] === 'id' ? args : args[0];
     };
     function Task(fn, owner) {this.fn = () => fn.call(owner);}
-    Task.prototype.schedule = function () {queue.add(this);};
-    Task.prototype.cancel = function () {queue.delete(this);};
+    Task.prototype.schedule = function (delay = 0) {if(delay >= 100) future.add(this); else queue.add(this);};
+    Task.prototype.cancel = function () {queue.delete(this); future.delete(this);};
     Task.prototype.repeat = function () {};
     let context;
     context = vm.createContext({console, Dict, LiveAPI, Task, patcher, jsarguments:['klj.engine.js', 'test'],
@@ -73,7 +79,13 @@ function host() {
         outlet(...args) {outputs.push(args);},
         include(name) {vm.runInContext(fs.readFileSync(path.join(__dirname,'../device', name), 'utf8'), context, {filename:name});}});
     vm.runInContext(fs.readFileSync(path.join(__dirname,'../device/klj.engine.js'),'utf8'), context);
-    return {context, objects, writes, outputs, dicts, uiObjects,
+    const initialize=context.init;
+    context.init=function() {
+        if(options.restoreDefault !== false) context.restore(0);
+        initialize();
+        if(options.openEditor !== false && context.view.setVisible) context.view.setVisible(true);
+    };
+    return {context, objects, writes, outputs, dicts, uiObjects, future, reads,
         drain() {for (let i=0; queue.size && i<20; i++) {const tasks=Array.from(queue); queue.clear(); tasks.forEach(t=>t.fn());} assert.equal(queue.size,0);},
         click(col,row=0) {
             context.ui('sync','click',1,0,1,0);
@@ -193,7 +205,7 @@ test('adding an instrument only updates data until the next real launch', () => 
     h.objects.set(22,{...h.objects.get(20),name:'NEW',devices:['id',120]});
     h.objects.get(1).tracks.push('id',22); h.context.refresh(false);
     assert.equal(h.writes.length,0);
-    const t=h.context.runtime.find(t=>t.id===22); assert.equal(r.enabled[t.key],0);
+    const t=h.context.runtime.find(t=>t.id===22); assert.equal(h.context.state.rows[0].enabled[t.key],0);
     h.launch(0); assert.ok(h.writes.some(w=>w[0]===22 && w[1]==='mute' && w[2]===1));
 });
 test('guard revalidates eligibility, deletion and ambiguity at every mute write', () => {
@@ -203,6 +215,110 @@ test('guard revalidates eligibility, deletion and ambiguity at every mute write'
     h.objects.get(20).has_midi_input=1; h.objects.get(20).has_audio_input=0;
     h.objects.get(21).name='KEYS'; assert.throws(()=>h.context.guardedTrack(t));
     h.objects.get(1).tracks=['id',10,'id',21,'id',30]; assert.throws(()=>h.context.guardedTrack(t));
+});
+test('recall scans names once at 41/32/15 and 60/51/30, with fresh guards for every write', () => {
+    for (const [total,midi,rows] of [[41,32,15],[60,51,30]]) {
+        const h=host({openEditor:false}),trackIds=['id',10];
+        for(let i=0;i<total-1;i++) {
+            const id=2000+i,isMidi=i<midi;
+            h.objects.set(id,{type:'Track',name:'TRACK_'+i,has_midi_input:+isMidi,has_audio_input:+!isMidi,
+                is_foldable:0,is_frozen:0,mute:1,devices:[]});
+            trackIds.push('id',id);
+        }
+        h.objects.get(1).tracks=trackIds;h.context.init();
+        for(let i=0;i<rows;i++)h.context.KLJModel.add(h.context.state,defaults).clip=i?'OTHER_'+i:'SONG_A';
+        const row=h.context.state.rows[0];
+        h.context.runtime.forEach(t=>row.enabled[t.key]=1);row.push=h.context.runtime.at(-1).key;
+        const saved=JSON.stringify(h.context.state),outlets=h.outputs.length;
+        h.reads.length=0;h.launch(0);
+        assert.equal(h.writes.filter(w=>w[1]==='mute').length,midi);
+        assert.equal(h.objects.get(2).selected_track[1],2000+midi-1);
+        assert.ok(h.reads.length<12*midi+100,`${h.reads.length} reads for ${midi} MIDI tracks`);
+        assert.ok(h.reads.filter(r=>r[1]==='name').length<=2*midi+5);
+        assert.equal(h.reads.filter(r=>r[1]==='devices'||r[1]==='type').length,0);
+        assert.equal(h.context.recallWarnings.length,0);
+        assert.equal(JSON.stringify(h.context.state),saved);assert.equal(h.outputs.length,outlets);
+        assert.ok(h.writes.every(w=>w[1]!=='mute'||(w[0]>=2000&&w[0]<2000+midi)));
+        assert.ok(h.context.lastRecall.timings.pushSelectedAfterMs>=0);
+    }
+});
+test('recall skips guards for read-only no-ops and starts a fresh name scan on the next change', () => {
+    const h=host({openEditor:false});h.context.init();
+    const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';
+    h.context.runtime.forEach(t=>r.enabled[t.key]=1);r.push=h.context.runtime[0].key;
+    h.objects.get(2).selected_track=['id',20];
+    const original=h.context.recallTrackContext;let scans=0;
+    h.context.recallTrackContext=function(){scans++;return original();};
+    h.launch(0);assert.equal(scans,0);assert.deepEqual(h.writes,[]);
+    h.objects.get(20).mute=1;h.context.recall(h.context.snapshot());
+    assert.equal(scans,1);assert.equal(h.objects.get(20).mute,0);
+    h.objects.get(21).name='KEYS';h.objects.get(20).mute=1;h.writes.length=0;
+    h.context.recall(h.context.snapshot());
+    assert.equal(scans,2);assert.equal(h.writes.filter(w=>w[1]==='mute').length,0);
+    assert.ok(h.context.recallWarnings.some(w=>w.includes('ambiguous')));
+});
+test('recall timing is diagnostic only and never changes saved rows or clip deduplication', () => {
+    const h=host({openEditor:false});h.context.init();
+    const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';r.push=h.context.runtime[0].key;
+    h.objects.get(1).is_playing=1;h.objects.get(10).playing_slot_index=0;
+    const saved=JSON.stringify(h.context.state),outlets=h.outputs.length;
+    h.context.clipNotificationAt=Date.now()-50;h.context.checkClip();
+    assert.ok(h.context.lastRecall.timings.notificationToRecallMs>=50);
+    assert.ok(h.context.lastRecall.timings.totalMs>=h.context.lastRecall.timings.pushSelectedAfterMs);
+    assert.equal(h.context.clipNotificationAt,null);assert.equal(h.context.token,1);
+    h.context.scheduleClip();h.drain();assert.equal(h.context.token,1);
+    assert.equal(JSON.stringify(h.context.state),saved);assert.equal(h.outputs.length,outlets);
+});
+test('shared recall guards reject audio, control, groups, frozen and absent targets', () => {
+    for(const mode of ['audio','control','group','frozen','missing','return','master']) {
+        const h=host({openEditor:false});h.context.init();
+        const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';r.bpm=140;
+        r.enabled[h.context.runtime[0].key]=1;r.push=h.context.runtime[0].key;
+        h.objects.get(20).mute=1;
+        if(mode==='audio'){h.objects.get(20).has_midi_input=0;h.objects.get(20).has_audio_input=1;}
+        if(mode==='control'){h.context.runtime[0].id=10;h.objects.get(10).mute=1;}
+        if(mode==='group')h.objects.get(20).is_foldable=1;
+        if(mode==='frozen')h.objects.get(20).is_frozen=1;
+        if(mode==='missing')h.objects.get(1).tracks=['id',10,'id',21,'id',30];
+        if(mode==='return'||mode==='master'){
+            h.objects.set(80,{...h.objects.get(20),type:mode==='master'?'MasterTrack':'ReturnTrack'});
+            h.context.runtime[0].id=80;
+        }
+        h.launch(0);
+        assert.ok(h.context.recallWarnings.length>0,mode);
+        assert.ok(!h.writes.some(w=>['mute','selected_track'].includes(w[1])&&
+            (w[0]===(mode==='control'?10:(mode==='return'||mode==='master'?80:20))||w[1]==='selected_track')),mode);
+        assert.equal(h.objects.get(1).tempo,140,mode);
+        assert.ok(h.writes.every(w=>!['volume','arm','current_monitoring_state'].includes(w[1])));
+    }
+});
+test('write guards re-read target eligibility and membership after earlier MIDI writes', () => {
+    for(const mode of ['audio','group','frozen','missing','rename','structure','name_notification']) {
+        const h=host({openEditor:false});h.context.init();
+        const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';
+        h.context.runtime.forEach(t=>r.enabled[t.key]=1);r.push=h.context.runtime[1].key;
+        h.objects.get(20).mute=1;h.objects.get(21).mute=1;
+        const original=h.context.LiveAPI.prototype.set;
+        h.context.LiveAPI.prototype.set=function(prop,...args){
+            original.call(this,prop,...args);
+            if(this.id===20&&prop==='mute'){
+                if(mode==='audio'){h.objects.get(21).has_midi_input=0;h.objects.get(21).has_audio_input=1;}
+                if(mode==='group')h.objects.get(21).is_foldable=1;
+                if(mode==='frozen')h.objects.get(21).is_frozen=1;
+                if(mode==='missing')h.objects.get(1).tracks=['id',10,'id',20,'id',30];
+                if(mode==='rename')h.objects.get(21).name='NEW_NAME';
+                if(mode==='structure')h.objects.get(1).tracks=['id',10,'id',21,'id',20,'id',30];
+                if(mode==='name_notification'){
+                    h.objects.get(20).name='BASS';
+                    h.context.nameObservers[20].callback(['name','BASS']);
+                }
+            }
+        };
+        h.launch(0);
+        assert.ok(h.writes.some(w=>w[0]===20&&w[1]==='mute'),mode);
+        assert.ok(!h.writes.some(w=>(w[0]===21&&w[1]==='mute')||w[1]==='selected_track'),mode);
+        assert.ok(h.context.recallWarnings.length>0,mode);
+    }
 });
 test('failed inventory cannot delete persisted columns', () => {
     const h=host(); h.context.init(); const before=JSON.stringify(h.context.state);
@@ -539,4 +655,127 @@ test('only new generated names use English; existing French names remain untouch
     const added=M.add(f.state,defaults); assert.equal(added.clip,'NEW_CLIP');
     const copy=M.add(f.state,defaults,f.row); assert.equal(copy.clip,'NOUVEAU_CLIP_COPIE_COPY');
     assert.equal(JSON.stringify(f.row),original);
+});
+
+test('Phase 1: no periodic task; idle closed editor sends no view or persistence messages', () => {
+    const h=host({openEditor:false}); h.context.init();
+    assert.equal(h.context.pollTask,null); assert.equal(h.context.view.visible,false);
+    const outputs=h.outputs.length;
+    for(let i=0;i<20;i++)h.context.ui('layout');
+    assert.equal(h.outputs.length,outputs);
+    assert.equal(h.uiObjects.has('grid'),true);
+    assert.equal(h.uiObjects.get('grid').messages.length,0);
+});
+test('Phase 1: structural bursts coalesce and name subscriptions are reused', () => {
+    const h=host();h.context.init();const observers=h.context.nameObservers,first=observers[20];
+    h.objects.get(20).name='RENAMED';for(let i=0;i<20;i++)h.context.scheduleScan();h.drain();
+    assert.equal(h.context.nameObservers[20],first); assert.equal(h.context.runtime[0].name,'RENAMED');
+    assert.equal(h.context.inventoryDirty,false);assert.deepEqual(h.writes,[]);
+    h.objects.get(20).has_audio_input=1;assert.throws(()=>h.context.guardedTrack(h.context.runtime[0]));
+});
+test('Phase 1: unresolved quantized launch has a targeted retry, canceled on real playback', () => {
+    const h=host();h.context.init();h.context.ui('add');h.context.ui('cell',0,0,'SONG_A');
+    h.objects.get(1000).is_playing=0;h.launch(0);
+    assert.ok(h.future.has(h.context.clipRetryTask)); assert.equal(h.context.token,0);
+    h.objects.get(1000).is_playing=1;h.context.clipRetryTask.fn();
+    assert.equal(h.context.token,1);assert.ok(!h.future.has(h.context.clipRetryTask));
+    h.context.checkClip();assert.equal(h.context.token,1);
+});
+test('Phase 1: hidden edits and track changes defer one reconstruction until opening', () => {
+    const h=host();h.context.init();h.context.ui('add');h.context.ui('editorclose');
+    const grid=h.uiObjects.get('grid');grid.messages.length=0;
+    h.objects.get(20).name='KEYS_RENAMED';h.context.scheduleScan();h.drain();
+    assert.equal(grid.messages.length,0);assert.equal(h.context.view.dirty,true);
+    h.context.ui('editoropen'); assert.ok(grid.messages.some(a=>a[0]==='set'));
+    assert.equal(h.context.view.visible,true);assert.equal(h.context.view.dirty,false);
+    h.context.ui('editorclose');assert.equal(h.uiObjects.get('layoutclock').messages.at(-1)[1],0);
+    assert.deepEqual(h.writes,[]);
+});
+test('Phase 1: opening and closing control real named UI clocks without errors or data writes', () => {
+    const h=host({openEditor:false});h.context.init();
+    const saved=JSON.stringify(h.context.state),outputs=h.outputs.length;
+    assert.equal(h.context.patcher.getnamed('missing_object'),null);
+    h.context.ui('editoropen');
+    assert.equal(h.context.view.visible,true);
+    assert.doesNotMatch(h.context.statusText,/Cannot read|TypeError/);
+    assert.deepEqual(h.uiObjects.get('layoutclock').messages.at(-1),['int',1]);
+    assert.deepEqual(h.uiObjects.get('mouse').messages.at(-1),['poll']);
+    h.context.ui('editorclose');
+    assert.deepEqual(h.uiObjects.get('layoutclock').messages.at(-1),['int',0]);
+    assert.deepEqual(h.uiObjects.get('mouse').messages.at(-1),['nopoll']);
+    assert.equal(JSON.stringify(h.context.state),saved);
+    assert.equal(h.outputs.length,outputs);assert.deepEqual(h.writes,[]);
+});
+test('Phase 1: unknown startup never overwrites pattr; a late v1.5.1 restore is intact', () => {
+    const h=host({restoreDefault:false,openEditor:false});h.context.init();
+    assert.equal(h.outputs.length,0);h.context.persist();assert.equal(h.outputs.length,0);
+    const old=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/v1.5.1-state.json'),'utf8'));
+    const d=new h.context.Dict('old_version');d.parse(JSON.stringify(old));h.context.restore('dictionary',d.name);
+    assert.deepEqual(JSON.parse(JSON.stringify(h.context.state)),old);
+    assert.equal(h.context.restorationReady,true);assert.equal(h.context.restoreBlocked,false);
+    assert.equal(h.outputs.length,0);assert.deepEqual(h.writes,[]);
+});
+test('Phase 1: valid v1.5.1 state survives early restore, init and manual resynchronization', () => {
+    const h=host({restoreDefault:false});
+    const old=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/v1.5.1-state.json'),'utf8'));
+    const d=new h.context.Dict('early');d.parse(JSON.stringify(old));h.context.restore('dictionary',d.name);h.context.init();
+    h.context.ui('refreshtracks');h.context.ui('editorclose');h.context.ui('editoropen');
+    assert.deepEqual(JSON.parse(JSON.stringify(h.context.state)),old); assert.equal(h.outputs.length,0);
+});
+test('Phase 1: invalid or newer saved state locks writes and retains last valid state and raw data', () => {
+    const h=host();h.context.init();h.context.ui('add');const previous=JSON.stringify(h.context.state),stored=h.context.lastStored;
+    for(const payload of [{version:99,rows:[],tracks:[],nextId:1},{version:1,rows:[{}],tracks:[],nextId:1},null]){
+        const d=new h.context.Dict('bad');d.parse(JSON.stringify(payload));const out=h.outputs.length;
+        h.context.restore('dictionary',d.name);h.context.persist();h.context.ui('add');h.context.ui('refreshtracks');h.context.restore(0);h.launch(0);
+        assert.equal(h.context.restoreBlocked,true);assert.equal(JSON.stringify(h.context.state),previous);
+        assert.equal(h.context.lastStored,stored);assert.equal(h.outputs.length,out);
+        assert.equal(h.context.lastRestoreRaw,JSON.stringify(payload));assert.deepEqual(h.writes,[]);
+    }
+    const d=new h.context.Dict('good');d.parse(previous);h.context.restore('dictionary',d.name);
+    assert.equal(h.context.restoreBlocked,false);assert.equal(JSON.stringify(h.context.state),previous);
+});
+test('Phase 1: missing/offline-renamed tracks preserve saved states, keys, scripts and Push refs', () => {
+    for(const missing of [true,false]){
+        const h=host({restoreDefault:false});
+        const old=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/v1.5.1-state.json'),'utf8'));
+        if(missing)h.objects.get(1).tracks=['id',10,'id',20,'id',30];else h.objects.get(21).name='RENAMED_OFFLINE';
+        const d=new h.context.Dict('unresolved');d.parse(JSON.stringify(old));h.context.restore('dictionary',d.name);h.context.init();
+        for(const row of old.rows){const found=h.context.state.rows.find(r=>r.id===row.id);
+            for(const key of Object.keys(row))if(key!=='enabled')assert.deepEqual(JSON.parse(JSON.stringify(found[key])),row[key]);
+            assert.equal(found.enabled.t1,row.enabled.t1);assert.equal(found.enabled.t2,row.enabled.t2);}
+        assert.ok(h.context.state.tracks.some(t=>t.key==='t2'&&t.name==='BASS'));
+        h.context.ui('refreshtracks');assert.ok(h.context.state.tracks.some(t=>t.key==='t2'));
+        assert.match(h.context.statusText,/unresolved/);assert.deepEqual(h.writes,[]);
+    }
+});
+test('Phase 1: unresolved track can return by unique saved name without changing its key', () => {
+    const h=host({restoreDefault:false});const old=fixture().state;
+    h.objects.get(1).tracks=['id',10,'id',20,'id',30];
+    const d=new h.context.Dict('missing');d.parse(JSON.stringify(old));h.context.restore('dictionary',d.name);h.context.init();
+    h.objects.get(1).tracks.push('id',21);h.context.scheduleScan();h.drain();
+    assert.equal(h.context.runtime.find(t=>t.id===21).key,old.tracks[1].key);
+    assert.deepEqual(JSON.parse(JSON.stringify(h.context.state.rows)),old.rows);
+});
+test('Phase 1: malformed JSON cannot replace or overwrite the stored Blob', () => {
+    const h=host();h.context.init();h.context.ui('add');
+    const before=JSON.stringify(h.context.state),out=h.outputs.length;
+    const stringify=h.context.Dict.prototype.stringify;
+    h.context.Dict.prototype.stringify=function(){return '{broken';};
+    h.context.restore('dictionary','corrupt');h.context.persist();
+    assert.equal(h.context.restoreBlocked,true);assert.equal(h.context.lastRestoreRaw,'{broken');
+    assert.equal(JSON.stringify(h.context.state),before);assert.equal(h.outputs.length,out);
+    h.context.Dict.prototype.stringify=stringify;
+});
+test('Phase 1: opening and refreshing tracks never prime or replay the current clip', () => {
+    const h=host();h.context.init();h.context.ui('add');h.context.ui('cell',0,0,'SONG_A');h.launch(0);
+    const token=h.context.token,stored=h.context.lastStored,rows=JSON.stringify(h.context.state.rows);
+    h.context.ui('editorclose');h.context.ui('editoropen');h.context.ui('refreshtracks');h.context.checkClip();
+    assert.equal(h.context.token,token);assert.equal(h.context.lastStored,stored);assert.equal(JSON.stringify(h.context.state.rows),rows);
+});
+test('Phase 1: a burst queues one scan, no device-chain observer is installed', () => {
+    const h=host();h.context.init();let scans=0;const refresh=h.context.refresh;
+    h.context.refresh=function(...a){scans++;return refresh(...a);};
+    for(let i=0;i<30;i++)h.context.scheduleScan();h.drain();assert.equal(scans,1);
+    assert.equal(Object.keys(h.context.nameObservers).length,2);
+    assert.ok(Object.values(h.context.nameObservers).every(x=>x.property==='name'));
 });

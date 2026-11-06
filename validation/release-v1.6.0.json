@@ -1,0 +1,40 @@
+{
+  "version": "1.6.0",
+  "date": "2026-11-06",
+  "validated_candidate": "1.6.0-dev.4",
+  "schema_version": 1,
+  "automated": {
+    "node_tests_passed": 63,
+    "node_tests_failed": 0,
+    "structural_validation": "passed",
+    "clean_zip_extraction": "passed",
+    "candidate_runtime_js_byte_identical": "passed",
+    "amxd_difference_from_candidate": "compact version title only",
+    "reproducible_zip": "passed"
+  },
+  "runtime_sha256": {
+    "klj.model.js": "033b868896e738e0eba5120e1f085b2e4974351837e407e2fcf0310b29a16545",
+    "KLJ Live Set Manager.maxpat": "b30d78d0b62a27c9ef821895337aea6d53a07ee32b80e8a0a252dea984eb0172",
+    "klj.ui.js": "947e3de6b432ce6ba2c973f588a58e418d6eed14d966fb02a9f525ad92f04c24",
+    "klj.engine.js": "51497188dc9d830cfe3d116c324f46cd27e5fe58df68593c63e1a86a2a2caf2f",
+    "KLJ Live Set Manager.amxd": "9b457ea949fc82a181150b2f149b1e86b397b94fee38a3c5273c8fd64eccb74e",
+    "klj.runner.js": "3741f33b6430ece07e490380e9b622cd496a7f4d4dcdd55524e65344500f2b26",
+    "device.maxproj": "1b47c305388c2a2dc7892e22de7b113df5e5c2de2d427bccee83b9b5dc873e05"
+  },
+  "zip_sha256": "67effff7d09a8b7e2273a24ddd9fa06477466d3fcdda3b8dc139fb831a41fe27",
+  "zip_files": [
+    "KLJ Live Set Manager.amxd",
+    "klj.engine.js",
+    "klj.model.js",
+    "klj.ui.js",
+    "klj.runner.js",
+    "README.txt"
+  ],
+  "musician_acceptance": "Author approved final candidate and requested GitHub publication on 2026-11-06.",
+  "validation_limits": "No newly executed native Max test, independently measured Live/Push latency, or independently observed ALS round-trip during this release preparation.",
+  "previous_release": {
+    "tag": "v1.5.1",
+    "commit": "3585bb8f5e547b218903b588cb873df2f2fc551a",
+    "zip_sha256": "933de4c151b1c21d125aecf94f7667728dc7ee2d48ed791c7b42826f3088300a"
+  }
+}

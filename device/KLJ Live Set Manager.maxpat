@@ -42,7 +42,7 @@
             340,
             24
           ],
-          "text": "KLJ / LIVE MANAGER  V1.5-EN",
+          "text": "KLJ / LIVE MANAGER  V1.6.0",
           "presentation": 1,
           "presentation_rect": [
             10,
@@ -338,6 +338,45 @@
       },
       {
         "box": {
+          "id": "open_order",
+          "maxclass": "newobj",
+          "patching_rect": [
+            720,
+            200,
+            70,
+            22
+          ],
+          "text": "t b b"
+        }
+      },
+      {
+        "box": {
+          "id": "opened_msg",
+          "maxclass": "message",
+          "patching_rect": [
+            800,
+            200,
+            100,
+            22
+          ],
+          "text": "editoropen"
+        }
+      },
+      {
+        "box": {
+          "id": "window_open",
+          "maxclass": "message",
+          "patching_rect": [
+            720,
+            240,
+            60,
+            22
+          ],
+          "text": "open"
+        }
+      },
+      {
+        "box": {
           "id": "pcontrol",
           "maxclass": "newobj",
           "patching_rect": [
@@ -449,6 +488,82 @@
                   ],
                   "fontsize": 13,
                   "varname": "active_label"
+                }
+              },
+              {
+                "box": {
+                  "id": "refreshtracks",
+                  "maxclass": "textbutton",
+                  "patching_rect": [
+                    1006,
+                    22,
+                    154,
+                    26
+                  ],
+                  "text": "REFRESH TRACKS",
+                  "presentation": 1,
+                  "presentation_rect": [
+                    1006,
+                    22,
+                    154,
+                    26
+                  ],
+                  "varname": "refreshtracks",
+                  "texton": "REFRESH TRACKS",
+                  "bgcolor": [
+                    0.1450980392156863,
+                    0.17254901960784313,
+                    0.2196078431372549,
+                    1
+                  ],
+                  "textcolor": [
+                    0.6627450980392157,
+                    0.7098039215686275,
+                    0.7764705882352941,
+                    1
+                  ],
+                  "mode": 0,
+                  "fontsize": 11,
+                  "rounded": 4
+                }
+              },
+              {
+                "box": {
+                  "id": "refresh_msg",
+                  "maxclass": "message",
+                  "patching_rect": [
+                    1100,
+                    1100,
+                    100,
+                    22
+                  ],
+                  "text": "refreshtracks"
+                }
+              },
+              {
+                "box": {
+                  "id": "editor_closed",
+                  "maxclass": "newobj",
+                  "patching_rect": [
+                    1100,
+                    1130,
+                    70,
+                    22
+                  ],
+                  "text": "closebang"
+                }
+              },
+              {
+                "box": {
+                  "id": "closed_msg",
+                  "maxclass": "message",
+                  "patching_rect": [
+                    1100,
+                    1160,
+                    100,
+                    22
+                  ],
+                  "text": "editorclose"
                 }
               },
               {
@@ -1616,10 +1731,10 @@
                   "patching_rect": [
                     950,
                     765,
-                    78,
+                    90,
                     22
                   ],
-                  "text": "loadmess poll"
+                  "text": "loadmess nopoll"
                 }
               },
               {
@@ -1632,7 +1747,7 @@
                     70,
                     22
                   ],
-                  "text": "loadmess 1"
+                  "text": "loadmess 0"
                 }
               },
               {
@@ -1645,7 +1760,8 @@
                     70,
                     22
                   ],
-                  "text": "qmetro 100"
+                  "text": "qmetro 100",
+                  "varname": "layoutclock"
                 }
               },
               {
@@ -1703,6 +1819,54 @@
               }
             ],
             "lines": [
+              {
+                "patchline": {
+                  "source": [
+                    "refreshtracks",
+                    0
+                  ],
+                  "destination": [
+                    "refresh_msg",
+                    0
+                  ]
+                }
+              },
+              {
+                "patchline": {
+                  "source": [
+                    "refresh_msg",
+                    0
+                  ],
+                  "destination": [
+                    "events",
+                    0
+                  ]
+                }
+              },
+              {
+                "patchline": {
+                  "source": [
+                    "editor_closed",
+                    0
+                  ],
+                  "destination": [
+                    "closed_msg",
+                    0
+                  ]
+                }
+              },
+              {
+                "patchline": {
+                  "source": [
+                    "closed_msg",
+                    0
+                  ],
+                  "destination": [
+                    "events",
+                    0
+                  ]
+                }
+              },
               {
                 "patchline": {
                   "source": [
@@ -2281,6 +2445,66 @@
       {
         "patchline": {
           "source": [
+            "open_msg",
+            0
+          ],
+          "destination": [
+            "open_order",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "open_order",
+            1
+          ],
+          "destination": [
+            "opened_msg",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "opened_msg",
+            0
+          ],
+          "destination": [
+            "uievent",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "open_order",
+            0
+          ],
+          "destination": [
+            "window_open",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "window_open",
+            0
+          ],
+          "destination": [
+            "pcontrol",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
             "ready",
             0
           ],
@@ -2394,18 +2618,6 @@
           ],
           "destination": [
             "open_msg",
-            0
-          ]
-        }
-      },
-      {
-        "patchline": {
-          "source": [
-            "open_msg",
-            0
-          ],
-          "destination": [
-            "pcontrol",
             0
           ]
         }

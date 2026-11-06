@@ -5,6 +5,7 @@ var KLJView = (function () {
         this.headers = this.editor.getnamed("headers");
         this.clips = this.editor.getnamed("clips");
         this.clipHeader = this.editor.getnamed("clip_header");
+        this.visible = false; this.dirty = true; this.lastStatus = "Initializing…";
         this.active = "—";
         this.warningVisible = false;
         this.warningText = "";
@@ -36,8 +37,17 @@ var KLJView = (function () {
             this.editor.bringtofront(this.editor.getnamed(name));
         }, this);
     }
+    View.prototype.setVisible = function (visible) {
+        this.visible = !!visible;
+        this.editor.getnamed("layoutclock").message("int", this.visible ? 1 : 0);
+        this.editor.getnamed("mouse").message(this.visible ? "poll" : "nopoll");
+        if (!this.visible) {this.hideMenu(); return;}
+        if (this.state && this.dirty) this.render(this.state, this.tracks);
+        this.status(this.active, this.lastStatus);
+    };
     View.prototype.status = function (active, text) {
-        this.active = active;
+        this.active = active; this.lastStatus = text;
+        if (!this.visible) {this.dirty = true; return;}
         if (this.state) this.highlight(this.state);
         this.editor.getnamed("active_label").message("set", "●  ACTIVE · " + active);
         // Presentation only: keep the engine's status, sequencing and persistence untouched.
@@ -86,6 +96,7 @@ var KLJView = (function () {
         }
     };
     View.prototype.highlight = function (state) {
+        if (!this.visible) {this.dirty = true; return;}
         state.rows.forEach(function (r, i) {
             var active = r.clip === this.active, selected = r.id === this.selected;
             var background = active ? (selected ? [36, 76, 65] : [26, 57, 49])
@@ -139,6 +150,7 @@ var KLJView = (function () {
         this.headerLabels().forEach(function (text, c) {(c === 0 ? this.clipHeader : this.headers).message("set", Math.max(0,c - 1), 0, text);}, this);
     };
     View.prototype.layout = function (force) {
+        if (!this.visible) return;
         var size = this.editor.wind.size || [1180, 760];
         var width = Math.max(1, Number(size[0])), height = Math.max(1, Number(size[1]));
         if (!Number.isFinite(width) || !Number.isFinite(height)) return;
@@ -163,7 +175,8 @@ var KLJView = (function () {
             this.place("grid", this.parameterRect);
             this.place("headers", [20 + clipWidth, headerTop, Math.max(1, contentWidth - clipWidth - 18), 36]);
             this.place("title", [20, 16, Math.max(1, width * 0.52 - 30), 32]);
-            this.place("active_label", [width * 0.52, 23, Math.max(1, width * 0.48 - 20), 24]);
+            this.place("active_label", [width * 0.52, 23, Math.max(1, width * 0.48 - 184), 24]);
+            this.place("refreshtracks", [width - 174, 22, 154, 26]);
             this.place("warning_panel", [20, 62, contentWidth, 36]);
             this.place("warning_icon", [30, 69, 22, 24]);
             this.place("status_label", [58, 69, Math.max(1, contentWidth - 82), 24]);
@@ -192,7 +205,8 @@ var KLJView = (function () {
         this.layout(true);
     };
     View.prototype.render = function (state, tracks) {
-        this.state = state; this.tracks = tracks;
+        this.state = state; this.tracks = tracks; this.dirty = true;
+        if (!this.visible) return;
         this.loading = true;
         try {
             if (!state.rows.some(function (r) {return r.id === this.selected;}, this)) this.selected = state.rows.length ? state.rows[0].id : null;
@@ -233,6 +247,7 @@ var KLJView = (function () {
             this.selection(state);
             this.grid.message("refresh");
             this.headers.message("refresh");
+            this.dirty = false;
         } finally {this.loading = false;}
     };
     View.prototype.openMenu = function (row, field, tracks) {
@@ -313,7 +328,7 @@ var KLJView = (function () {
             var choice = target.choices[Number(args[0])];
             var targetRow = state.rows.find(function (r) {return r.id === target.rowId;});
             this.hideMenu();
-            if (targetRow && choice) {targetRow[target.field] = choice.value; actions.changed();}
+            if (targetRow && choice && targetRow[target.field] !== choice.value) {targetRow[target.field] = choice.value; actions.changed();}
             return;
         }
         if (event === "sync") {
@@ -362,7 +377,7 @@ var KLJView = (function () {
         else if (event === "delete" && row) {
             state.rows = state.rows.filter(function (r) {return r.id !== row.id;});
             this.selected = null;
-        } else if (event === "details") this.showDetails(!this.details);
+        } else if (event === "details") {this.showDetails(!this.details); this.render(state, tracks); return;}
         actions.changed();
     };
     return View;

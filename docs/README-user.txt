@@ -1,4 +1,4 @@
-KLJ Live Set Manager — v1.5.1
+KLJ Live Set Manager — v1.6.0
 Max for Live MIDI effect for Ableton Live 12 and Push 2
 
 INSTALL
@@ -26,7 +26,8 @@ until its saved configurations have been recovered. A newly inserted device is e
 To retain the instance, close Live and replace its referenced AMXD with this AMXD,
 keeping the old filename, plus the four adjacent JS files. Reopen a copy of the Set
 and verify that all configurations are present before saving. No data migration is
-required. The internal device title remains V1.5-EN, the validated runtime version.
+required. The internal device title must show V1.6.0.
+Complete a save/close/reopen test before relying on this upgrade.
 
 LIMITATIONS
 A same-slot retrigger without an observable stop/play transition may not be detected.
@@ -34,3 +35,19 @@ User JavaScript is not sandboxed: avoid infinite loops and do not alter audio st
 
 Project, usage and support:
 https://github.com/scapetone/KLJ-live-set-manager
+
+PERFORMANCE AND RESTORATION
+REFRESH TRACKS resynchronizes track identities without applying a configuration.
+The background full-track scan is removed; track changes are observed.
+Closing the editor suspends its mouse/layout polling and matrix rebuilds.
+Unreadable saved data blocks edits, recall and saving by the device.
+Unresolved saved track references are retained and reported, not silently deleted.
+Keep the original Set and previous installation. Test an update on a copy first.
+
+CONFIGURATION RECALL
+Track-name checks are shared within each recall. Every MIDI/Push write still checks
+the live target's membership, MIDI/audio/group type and frozen state. No-op reads
+do not scan the Set. No device chains are traversed during these checks.
+Compare actual clip playback to playable Push pads with the editor closed/open.
+The Max Console KLJ recall line includes diagnostic durations; these do not measure
+hardware readiness or change saved configurations. Report any remaining delay.

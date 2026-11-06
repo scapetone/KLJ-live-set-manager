@@ -12,7 +12,7 @@ function init() {
         {id:21,name:'EMPTY MIDI',position:4,midi:true},
         {id:22,name:'BASS',position:5,midi:true}, {id:23,name:'LEAD',position:6,midi:true}],[],true);
     for(var i=0;i<40;i++) KLJModel.add(state,{bpm:120,root:0,scale:'Minor'}).clip=i ? 'CONFIG_'+i : 'MOUSE_TEST';
-    view=new KLJView(this.patcher,jsarguments[1]); view.render(state,tracks);
+    view=new KLJView(this.patcher,jsarguments[1]); view.render(state,tracks); view.setVisible(true);
 
     view.status('CONFIG_1','Unknown clip: INTRO_TEST — No action taken');
     view.showDetails(true);

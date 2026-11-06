@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check actual patch wiring, persistence metadata and packaged dependencies."""
 import json
+import re
 from pathlib import Path
 from build_patch import ROOT
 
@@ -32,14 +33,18 @@ for source, dest in [(('midiin', 0), ('midiout', 0)), (('engine', 0), ('state', 
                      (('state', 0), ('restore', 0)), (('restore', 0), ('engine', 0)),
                      (('engine', 1), ('runner', 0)), (('runner', 0), ('engine', 0)),
                      (('ready', 0), ('restore_first', 0)), (('defer', 0), ('init_order', 0)),
-                     (('pcontrol', 0), ('editor', 0))]:
+                     (('pcontrol', 0), ('editor', 0)), (('open_msg',0),('open_order',0)), (('opened_msg',0),('uievent',0)), (('open_order',0),('window_open',0)), (('window_open',0),('pcontrol',0))]:
     assert (source, dest) in links, (source, dest)
+assert boxes['window_open']['maxclass'] == 'message' and boxes['window_open']['text'] == 'open', 'pcontrol must receive open, not a trigger bang'
 parameter = boxes['state']['saved_attribute_attributes']['valueof']
 assert boxes['state']['saved_object_attributes']['parameter_enable'] == 1
 assert parameter['parameter_type'] == 3, 'Persistence must be Blob'
 assert parameter['parameter_invisible'] == 1, 'Persistence must be Stored Only, not Hidden'
 assert patch['parameters']['state'][0] == parameter['parameter_longname']
 editor = {x['box']['id']: x['box'] for x in boxes['editor']['patcher']['boxes']}
+editor_names = {b.get('varname') for b in editor.values()}
+for name in re.findall(r'this\.editor\.getnamed\("([^"]+)"\)', (path.parent/'klj.ui.js').read_text()):
+    assert name in editor_names, f'UI scripting name missing: {name} (box ID alone is not enough)'
 assert boxes['open']['text'] == boxes['open']['texton'] == 'OPEN CONFIGURATIONS'
 assert editor['active_label']['text'] == '●  ACTIVE · —'
 assert [editor[n]['text'] for n in ['add','duplicate','delete','details']] == ['+ ADD','DUPLICATE','DELETE','JAVASCRIPT']
@@ -47,6 +52,10 @@ assert '"PUSH", "MORE"' in (path.parent/'klj.ui.js').read_text()
 for script in path.parent.glob('klj.*.js'):
     for french in ['EN COURS','Aucune','aucune','inconnu','appliquée','Prêt','SUPPRIMER','DUPLIQUER','NOUVEAU_CLIP','_COPIE','invalide','attendu','initialisé']:
         assert french not in script.read_text(), (script.name, french)
+assert editor['layoutload']['text'] == 'loadmess 0'
+assert editor['mousepoll']['text'] == 'loadmess nopoll'
+assert editor['editor_closed']['text'] == 'closebang'
+assert editor['refreshtracks']['text'] == 'REFRESH TRACKS'
 assert editor['grid']['selmode'] == 5
 assert editor['grid']['outmode'] == 0, 'V1.5-EN must not serialize cell symbols with padding'
 assert editor['grid']['rowhead'] == 0
@@ -103,7 +112,7 @@ if amxd.exists():
     assert exported_boxes['engine']['numoutlets'] == 2
     assert exported_boxes['editor']['patcher'] == boxes['editor']['patcher'], 'AMXD editor differs from current source'
     assert exported_boxes['title']['text'] == boxes['title']['text']
-    assert 'V1.5-EN' in exported_boxes['title']['text']
+    assert exported_boxes['title']['text'] == 'KLJ / LIVE MANAGER  V1.6.0'
     assert exported_boxes['state']['saved_object_attributes']['parameter_enable'] == 1
     assert exported_boxes['state']['saved_attribute_attributes']['valueof']['parameter_type'] == 3
     assert exported.get('openinpresentation') == 1

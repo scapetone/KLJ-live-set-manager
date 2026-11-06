@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "nextId": 7,
+  "tracks": [
+    {
+      "key": "t1",
+      "name": "KEYS",
+      "legacyColour": "mint"
+    },
+    {
+      "key": "t2",
+      "name": "BASS"
+    }
+  ],
+  "rows": [
+    {
+      "id": "r3",
+      "clip": "INTRO_été",
+      "bpm": 126,
+      "root": 1,
+      "scale": "Minor",
+      "enabled": {
+        "t1": 1,
+        "t2": 0
+      },
+      "push": "t1",
+      "pushMode": "64 PADS",
+      "script": "",
+      "legacyNote": "retain-0"
+    },
+    {
+      "id": "r4",
+      "clip": "SONG_A",
+      "bpm": 150,
+      "root": 6,
+      "scale": "Dorian",
+      "enabled": {
+        "t1": 0,
+        "t2": 1
+      },
+      "push": "t2",
+      "pushMode": "NOTE IN KEY",
+      "script": "// été \"clé\"\nconst label = `un\\ndeux`;\npost(context.clip + \" / \" + label);",
+      "legacyNote": "retain-1"
+    },
+    {
+      "id": "r5",
+      "clip": "FINALE",
+      "bpm": 92,
+      "root": 11,
+      "scale": "Harmonic Minor",
+      "enabled": {
+        "t1": 1,
+        "t2": 1
+      },
+      "push": "t2",
+      "pushMode": "PADS",
+      "script": "",
+      "legacyNote": "retain-2"
+    }
+  ],
+  "legacyMetadata": {
+    "createdWith": "v1.5.1",
+    "keep": true
+  }
+}

@@ -44,6 +44,13 @@ def editor():
     p.data.update(title="KLJ / LIVE MANAGER", toolbarvisible=0, enablehscroll=0, enablevscroll=0)
     p.label('title', 'KLJ / LIVE MANAGER', [20, 16, 550, 32], size=24, fontface=1, varname='title')
     p.label('active_label', '●  ACTIVE · —', [650, 23, 510, 24], color=GREEN, varname='active_label')
+    p.box('refreshtracks', 'textbutton', [1006,22,154,26], present=True, varname='refreshtracks',
+          text='REFRESH TRACKS', texton='REFRESH TRACKS', bgcolor=PANEL, textcolor=SUB, mode=0, fontsize=11, rounded=4)
+    p.box('refresh_msg','message',[1100,1100,100,22],'refreshtracks')
+    p.line('refreshtracks','refresh_msg'); p.line('refresh_msg','events')
+    p.obj('editor_closed','closebang', 1100, 1130)
+    p.box('closed_msg','message',[1100,1160,100,22],'editorclose')
+    p.line('editor_closed','closed_msg'); p.line('closed_msg','events')
     p.box('warning_panel', 'panel', [20, 62, 1140, 36], present=True, varname='warning_panel',
           hidden=1, background=1, bgcolor=[0.18, 0.17, 0.16, 1], border=1, bordercolor=[0.34, 0.31, 0.27, 1], rounded=6, ignoreclick=1)
     p.label('warning_icon', '⚠', [30, 69, 22, 24], color=AMBER, hidden=1, varname='warning_icon')
@@ -133,15 +140,15 @@ def editor():
     p.obj('mouseload', 'loadmess mode 0', 800, 765)
     p.obj('mousex', 'prepend mousex', 800, 835)
     p.obj('mousey', 'prepend mousey', 920, 835)
-    p.obj('mousepoll', 'loadmess poll', 950, 765)
+    p.obj('mousepoll', 'loadmess nopoll', 950, 765)
     p.line('mouseload', 'mouse')
     p.line('mousepoll', 'mouse')
     p.line('mouse', 'mousex', 1)
     p.line('mouse', 'mousey', 2)
     p.line('mousex', 'events')
     p.line('mousey', 'events')
-    p.obj('layoutload', 'loadmess 1', 1060, 765)
-    p.obj('layoutclock', 'qmetro 100', 1060, 800)
+    p.obj('layoutload', 'loadmess 0', 1060, 765)
+    p.obj('layoutclock', 'qmetro 100', 1060, 800, varname='layoutclock')
     p.box('layoutmsg', 'message', [1060, 835, 70, 22], 'layout')
     p.line('layoutload', 'layoutclock')
     p.line('layoutclock', 'layoutmsg')
@@ -155,7 +162,7 @@ def editor():
 def main():
     p = Patch([80, 80, 980, 750])
     p.data['devicewidth'] = 360
-    p.label('title', 'KLJ / LIVE MANAGER  V1.5-EN', [10, 5, 340, 24], size=17, fontface=1)
+    p.label('title', 'KLJ / LIVE MANAGER  V1.6.0', [10, 5, 340, 24], size=17, fontface=1)
     p.label('active', '—', [10, 33, 340, 24], color=GREEN, size=17, varname='active')
     p.label('status', '', [10, 63, 340, 49], color=SUB, size=11, varname='status', hidden=1)
     p.box('open', 'textbutton', [10, 74, 340, 30], present=True, text='OPEN CONFIGURATIONS',
@@ -177,6 +184,11 @@ def main():
           saved_object_attributes={'parameter_enable': 1, 'parameter_mappable': 0})
     p.obj('restore', 'prepend restore', 160, 580)
     p.box('open_msg', 'message', [600, 200, 50, 22], 'open')
+    p.obj('open_order','t b b',720,200)
+    p.box('opened_msg','message',[800,200,100,22],'editoropen')
+    p.line('open_msg','open_order'); p.line('open_order','opened_msg',1); p.line('opened_msg','uievent')
+    p.box('window_open','message',[720,240,60,22],'open')
+    p.line('open_order','window_open',0); p.line('window_open','pcontrol')
     p.obj('pcontrol', 'pcontrol', 600, 240)
     p.obj('editor', 'p editor', 600, 280, varname='editor', patcher=editor())
     p.obj('uievent', 'prepend ui', 600, 360)
@@ -185,7 +197,7 @@ def main():
     for a,b in [('ready','restore_first'),('restore_first','defer'),('defer','init_order'),
                 ('init_order','init_engine'),('init_engine','engine'),('engine','state'),
                 ('state','restore'),('restore','engine'),('runner','engine'),('open','open_msg'),
-                ('open_msg','pcontrol'),('pcontrol','editor'),('editor','uievent'),('uievent','engine')]:
+                ('pcontrol','editor'),('editor','uievent'),('uievent','engine')]:
         p.line(a,b)
     p.line('restore_first','state',1)
     p.line('init_order','init_runner',1)

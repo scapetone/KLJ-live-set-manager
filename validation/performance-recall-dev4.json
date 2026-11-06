@@ -1,0 +1,1782 @@
+{
+  "baseline": "1.6.0-dev.3",
+  "candidate": "1.6.0-dev.4",
+  "limitations": "Fake synchronous API, zero native bridge/drawing/pattr/ALS latency; no observer initial callbacks or native patch feedback; bypass guards only inside one diagnostic VM, never in device.",
+  "results": [
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 1,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiNew": 1425,
+        "apiGet": 2728,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 33,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 511,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 38,
+        "apiGet": 88,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 596,
+        "calls": {
+          "snapshot": 2
+        }
+      },
+      "writeLog": [],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 1,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiNew": 1425,
+        "apiGet": 2728,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 33,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 511,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 144,
+        "apiGet": 359,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 67,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "tracks": 34,
+          "has_midi_input": 73,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 611,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "writeLog": [
+        [
+          1,
+          "tempo",
+          120
+        ],
+        [
+          1,
+          "root_note",
+          0
+        ],
+        [
+          1,
+          "scale_name",
+          "Minor"
+        ],
+        [
+          2000,
+          "mute",
+          1
+        ],
+        [
+          2001,
+          "mute",
+          1
+        ],
+        [
+          2002,
+          "mute",
+          1
+        ],
+        [
+          2003,
+          "mute",
+          1
+        ],
+        [
+          2004,
+          "mute",
+          1
+        ],
+        [
+          2005,
+          "mute",
+          1
+        ],
+        [
+          2006,
+          "mute",
+          1
+        ],
+        [
+          2007,
+          "mute",
+          1
+        ],
+        [
+          2008,
+          "mute",
+          1
+        ],
+        [
+          2009,
+          "mute",
+          1
+        ],
+        [
+          2010,
+          "mute",
+          1
+        ],
+        [
+          2011,
+          "mute",
+          1
+        ],
+        [
+          2012,
+          "mute",
+          1
+        ],
+        [
+          2013,
+          "mute",
+          1
+        ],
+        [
+          2014,
+          "mute",
+          1
+        ],
+        [
+          2015,
+          "mute",
+          1
+        ],
+        [
+          2016,
+          "mute",
+          1
+        ],
+        [
+          2017,
+          "mute",
+          1
+        ],
+        [
+          2018,
+          "mute",
+          1
+        ],
+        [
+          2019,
+          "mute",
+          1
+        ],
+        [
+          2020,
+          "mute",
+          1
+        ],
+        [
+          2021,
+          "mute",
+          1
+        ],
+        [
+          2022,
+          "mute",
+          1
+        ],
+        [
+          2023,
+          "mute",
+          1
+        ],
+        [
+          2024,
+          "mute",
+          1
+        ],
+        [
+          2025,
+          "mute",
+          1
+        ],
+        [
+          2026,
+          "mute",
+          1
+        ],
+        [
+          2027,
+          "mute",
+          1
+        ],
+        [
+          2028,
+          "mute",
+          1
+        ],
+        [
+          2029,
+          "mute",
+          1
+        ],
+        [
+          2030,
+          "mute",
+          1
+        ],
+        [
+          2031,
+          "mute",
+          1
+        ],
+        [
+          2,
+          "selected_track",
+          "id",
+          2000
+        ]
+      ],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiNew": 1425,
+        "apiGet": 2728,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 33,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 511,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 38,
+        "apiGet": 88,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 596,
+        "calls": {
+          "snapshot": 2
+        }
+      },
+      "writeLog": [],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiNew": 1425,
+        "apiGet": 2728,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 33,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 511,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 144,
+        "apiGet": 359,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 67,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "tracks": 34,
+          "has_midi_input": 73,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 611,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "writeLog": [
+        [
+          1,
+          "tempo",
+          120
+        ],
+        [
+          1,
+          "root_note",
+          0
+        ],
+        [
+          1,
+          "scale_name",
+          "Minor"
+        ],
+        [
+          2000,
+          "mute",
+          1
+        ],
+        [
+          2001,
+          "mute",
+          1
+        ],
+        [
+          2002,
+          "mute",
+          1
+        ],
+        [
+          2003,
+          "mute",
+          1
+        ],
+        [
+          2004,
+          "mute",
+          1
+        ],
+        [
+          2005,
+          "mute",
+          1
+        ],
+        [
+          2006,
+          "mute",
+          1
+        ],
+        [
+          2007,
+          "mute",
+          1
+        ],
+        [
+          2008,
+          "mute",
+          1
+        ],
+        [
+          2009,
+          "mute",
+          1
+        ],
+        [
+          2010,
+          "mute",
+          1
+        ],
+        [
+          2011,
+          "mute",
+          1
+        ],
+        [
+          2012,
+          "mute",
+          1
+        ],
+        [
+          2013,
+          "mute",
+          1
+        ],
+        [
+          2014,
+          "mute",
+          1
+        ],
+        [
+          2015,
+          "mute",
+          1
+        ],
+        [
+          2016,
+          "mute",
+          1
+        ],
+        [
+          2017,
+          "mute",
+          1
+        ],
+        [
+          2018,
+          "mute",
+          1
+        ],
+        [
+          2019,
+          "mute",
+          1
+        ],
+        [
+          2020,
+          "mute",
+          1
+        ],
+        [
+          2021,
+          "mute",
+          1
+        ],
+        [
+          2022,
+          "mute",
+          1
+        ],
+        [
+          2023,
+          "mute",
+          1
+        ],
+        [
+          2024,
+          "mute",
+          1
+        ],
+        [
+          2025,
+          "mute",
+          1
+        ],
+        [
+          2026,
+          "mute",
+          1
+        ],
+        [
+          2027,
+          "mute",
+          1
+        ],
+        [
+          2028,
+          "mute",
+          1
+        ],
+        [
+          2029,
+          "mute",
+          1
+        ],
+        [
+          2030,
+          "mute",
+          1
+        ],
+        [
+          2031,
+          "mute",
+          1
+        ],
+        [
+          2,
+          "selected_track",
+          "id",
+          2000
+        ]
+      ],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 60,
+      "midi": 51,
+      "rows": 30,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiNew": 3230,
+        "apiGet": 6262,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2706,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 52,
+          "has_midi_input": 3120,
+          "devices": 52,
+          "type": 52,
+          "has_audio_input": 52,
+          "is_foldable": 52,
+          "is_frozen": 52,
+          "mute": 102,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 663,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 52
+        }
+      },
+      "after": {
+        "apiNew": 57,
+        "apiGet": 126,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 102,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 748,
+        "calls": {
+          "snapshot": 2
+        }
+      },
+      "writeLog": [],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 60,
+      "midi": 51,
+      "rows": 30,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiNew": 3230,
+        "apiGet": 6262,
+        "apiSet": 55,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2706,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 52,
+          "has_midi_input": 3120,
+          "devices": 52,
+          "type": 52,
+          "has_audio_input": 52,
+          "is_foldable": 52,
+          "is_frozen": 52,
+          "mute": 102,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 663,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 52
+        }
+      },
+      "after": {
+        "apiNew": 220,
+        "apiGet": 549,
+        "apiSet": 55,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 105,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 102,
+          "tracks": 53,
+          "has_midi_input": 111,
+          "has_audio_input": 52,
+          "is_foldable": 52,
+          "is_frozen": 52,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 763,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 52
+        }
+      },
+      "writeLog": [
+        [
+          1,
+          "tempo",
+          120
+        ],
+        [
+          1,
+          "root_note",
+          0
+        ],
+        [
+          1,
+          "scale_name",
+          "Minor"
+        ],
+        [
+          2000,
+          "mute",
+          1
+        ],
+        [
+          2001,
+          "mute",
+          1
+        ],
+        [
+          2002,
+          "mute",
+          1
+        ],
+        [
+          2003,
+          "mute",
+          1
+        ],
+        [
+          2004,
+          "mute",
+          1
+        ],
+        [
+          2005,
+          "mute",
+          1
+        ],
+        [
+          2006,
+          "mute",
+          1
+        ],
+        [
+          2007,
+          "mute",
+          1
+        ],
+        [
+          2008,
+          "mute",
+          1
+        ],
+        [
+          2009,
+          "mute",
+          1
+        ],
+        [
+          2010,
+          "mute",
+          1
+        ],
+        [
+          2011,
+          "mute",
+          1
+        ],
+        [
+          2012,
+          "mute",
+          1
+        ],
+        [
+          2013,
+          "mute",
+          1
+        ],
+        [
+          2014,
+          "mute",
+          1
+        ],
+        [
+          2015,
+          "mute",
+          1
+        ],
+        [
+          2016,
+          "mute",
+          1
+        ],
+        [
+          2017,
+          "mute",
+          1
+        ],
+        [
+          2018,
+          "mute",
+          1
+        ],
+        [
+          2019,
+          "mute",
+          1
+        ],
+        [
+          2020,
+          "mute",
+          1
+        ],
+        [
+          2021,
+          "mute",
+          1
+        ],
+        [
+          2022,
+          "mute",
+          1
+        ],
+        [
+          2023,
+          "mute",
+          1
+        ],
+        [
+          2024,
+          "mute",
+          1
+        ],
+        [
+          2025,
+          "mute",
+          1
+        ],
+        [
+          2026,
+          "mute",
+          1
+        ],
+        [
+          2027,
+          "mute",
+          1
+        ],
+        [
+          2028,
+          "mute",
+          1
+        ],
+        [
+          2029,
+          "mute",
+          1
+        ],
+        [
+          2030,
+          "mute",
+          1
+        ],
+        [
+          2031,
+          "mute",
+          1
+        ],
+        [
+          2032,
+          "mute",
+          1
+        ],
+        [
+          2033,
+          "mute",
+          1
+        ],
+        [
+          2034,
+          "mute",
+          1
+        ],
+        [
+          2035,
+          "mute",
+          1
+        ],
+        [
+          2036,
+          "mute",
+          1
+        ],
+        [
+          2037,
+          "mute",
+          1
+        ],
+        [
+          2038,
+          "mute",
+          1
+        ],
+        [
+          2039,
+          "mute",
+          1
+        ],
+        [
+          2040,
+          "mute",
+          1
+        ],
+        [
+          2041,
+          "mute",
+          1
+        ],
+        [
+          2042,
+          "mute",
+          1
+        ],
+        [
+          2043,
+          "mute",
+          1
+        ],
+        [
+          2044,
+          "mute",
+          1
+        ],
+        [
+          2045,
+          "mute",
+          1
+        ],
+        [
+          2046,
+          "mute",
+          1
+        ],
+        [
+          2047,
+          "mute",
+          1
+        ],
+        [
+          2048,
+          "mute",
+          1
+        ],
+        [
+          2049,
+          "mute",
+          1
+        ],
+        [
+          2050,
+          "mute",
+          1
+        ],
+        [
+          2,
+          "selected_track",
+          "id",
+          2000
+        ]
+      ],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 8,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiNew": 1656,
+        "apiGet": 2959,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 264,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 511,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 38,
+        "apiGet": 88,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 596,
+        "calls": {
+          "snapshot": 2
+        }
+      },
+      "writeLog": [],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 8,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiNew": 1656,
+        "apiGet": 2959,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 264,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 511,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 144,
+        "apiGet": 359,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 67,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "tracks": 34,
+          "has_midi_input": 73,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 0,
+        "dictParse": 0,
+        "dictBytes": 0,
+        "jsonStringify": 2,
+        "jsonParse": 1,
+        "jsonBytes": 611,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "writeLog": [
+        [
+          1,
+          "tempo",
+          120
+        ],
+        [
+          1,
+          "root_note",
+          0
+        ],
+        [
+          1,
+          "scale_name",
+          "Minor"
+        ],
+        [
+          2000,
+          "mute",
+          1
+        ],
+        [
+          2001,
+          "mute",
+          1
+        ],
+        [
+          2002,
+          "mute",
+          1
+        ],
+        [
+          2003,
+          "mute",
+          1
+        ],
+        [
+          2004,
+          "mute",
+          1
+        ],
+        [
+          2005,
+          "mute",
+          1
+        ],
+        [
+          2006,
+          "mute",
+          1
+        ],
+        [
+          2007,
+          "mute",
+          1
+        ],
+        [
+          2008,
+          "mute",
+          1
+        ],
+        [
+          2009,
+          "mute",
+          1
+        ],
+        [
+          2010,
+          "mute",
+          1
+        ],
+        [
+          2011,
+          "mute",
+          1
+        ],
+        [
+          2012,
+          "mute",
+          1
+        ],
+        [
+          2013,
+          "mute",
+          1
+        ],
+        [
+          2014,
+          "mute",
+          1
+        ],
+        [
+          2015,
+          "mute",
+          1
+        ],
+        [
+          2016,
+          "mute",
+          1
+        ],
+        [
+          2017,
+          "mute",
+          1
+        ],
+        [
+          2018,
+          "mute",
+          1
+        ],
+        [
+          2019,
+          "mute",
+          1
+        ],
+        [
+          2020,
+          "mute",
+          1
+        ],
+        [
+          2021,
+          "mute",
+          1
+        ],
+        [
+          2022,
+          "mute",
+          1
+        ],
+        [
+          2023,
+          "mute",
+          1
+        ],
+        [
+          2024,
+          "mute",
+          1
+        ],
+        [
+          2025,
+          "mute",
+          1
+        ],
+        [
+          2026,
+          "mute",
+          1
+        ],
+        [
+          2027,
+          "mute",
+          1
+        ],
+        [
+          2028,
+          "mute",
+          1
+        ],
+        [
+          2029,
+          "mute",
+          1
+        ],
+        [
+          2030,
+          "mute",
+          1
+        ],
+        [
+          2031,
+          "mute",
+          1
+        ],
+        [
+          2,
+          "selected_track",
+          "id",
+          2000
+        ]
+      ],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 8192,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiNew": 1425,
+        "apiGet": 2728,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 33,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 1,
+        "dictParse": 1,
+        "dictBytes": 8292,
+        "jsonStringify": 3,
+        "jsonParse": 1,
+        "jsonBytes": 16995,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 38,
+        "apiGet": 88,
+        "apiSet": 0,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 2,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 1,
+        "dictParse": 1,
+        "dictBytes": 8292,
+        "jsonStringify": 3,
+        "jsonParse": 1,
+        "jsonBytes": 17101,
+        "calls": {
+          "snapshot": 2
+        }
+      },
+      "writeLog": [],
+      "writeLogIdentical": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 8192,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiNew": 1425,
+        "apiGet": 2728,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 1091,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "tracks": 33,
+          "has_midi_input": 1353,
+          "devices": 33,
+          "type": 33,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "mute": 64,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 1,
+        "dictParse": 1,
+        "dictBytes": 8292,
+        "jsonStringify": 3,
+        "jsonParse": 1,
+        "jsonBytes": 16995,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "after": {
+        "apiNew": 144,
+        "apiGet": 359,
+        "apiSet": 36,
+        "gets": {
+          "is_playing": 4,
+          "playing_slot_index": 2,
+          "clip_slots": 2,
+          "clip": 2,
+          "name": 67,
+          "tempo": 3,
+          "root_note": 3,
+          "scale_name": 3,
+          "mute": 64,
+          "tracks": 34,
+          "has_midi_input": 73,
+          "has_audio_input": 33,
+          "is_foldable": 33,
+          "is_frozen": 33,
+          "selected_track": 3
+        },
+        "uiMessages": 2,
+        "boxChanges": 0,
+        "outlets": 1,
+        "dictParse": 1,
+        "dictBytes": 8292,
+        "jsonStringify": 3,
+        "jsonParse": 1,
+        "jsonBytes": 17116,
+        "calls": {
+          "snapshot": 2,
+          "guardedTrack": 33
+        }
+      },
+      "writeLog": [
+        [
+          1,
+          "tempo",
+          120
+        ],
+        [
+          1,
+          "root_note",
+          0
+        ],
+        [
+          1,
+          "scale_name",
+          "Minor"
+        ],
+        [
+          2000,
+          "mute",
+          1
+        ],
+        [
+          2001,
+          "mute",
+          1
+        ],
+        [
+          2002,
+          "mute",
+          1
+        ],
+        [
+          2003,
+          "mute",
+          1
+        ],
+        [
+          2004,
+          "mute",
+          1
+        ],
+        [
+          2005,
+          "mute",
+          1
+        ],
+        [
+          2006,
+          "mute",
+          1
+        ],
+        [
+          2007,
+          "mute",
+          1
+        ],
+        [
+          2008,
+          "mute",
+          1
+        ],
+        [
+          2009,
+          "mute",
+          1
+        ],
+        [
+          2010,
+          "mute",
+          1
+        ],
+        [
+          2011,
+          "mute",
+          1
+        ],
+        [
+          2012,
+          "mute",
+          1
+        ],
+        [
+          2013,
+          "mute",
+          1
+        ],
+        [
+          2014,
+          "mute",
+          1
+        ],
+        [
+          2015,
+          "mute",
+          1
+        ],
+        [
+          2016,
+          "mute",
+          1
+        ],
+        [
+          2017,
+          "mute",
+          1
+        ],
+        [
+          2018,
+          "mute",
+          1
+        ],
+        [
+          2019,
+          "mute",
+          1
+        ],
+        [
+          2020,
+          "mute",
+          1
+        ],
+        [
+          2021,
+          "mute",
+          1
+        ],
+        [
+          2022,
+          "mute",
+          1
+        ],
+        [
+          2023,
+          "mute",
+          1
+        ],
+        [
+          2024,
+          "mute",
+          1
+        ],
+        [
+          2025,
+          "mute",
+          1
+        ],
+        [
+          2026,
+          "mute",
+          1
+        ],
+        [
+          2027,
+          "mute",
+          1
+        ],
+        [
+          2028,
+          "mute",
+          1
+        ],
+        [
+          2029,
+          "mute",
+          1
+        ],
+        [
+          2030,
+          "mute",
+          1
+        ],
+        [
+          2031,
+          "mute",
+          1
+        ],
+        [
+          2,
+          "selected_track",
+          "id",
+          2000
+        ]
+      ],
+      "writeLogIdentical": true
+    }
+  ]
+}

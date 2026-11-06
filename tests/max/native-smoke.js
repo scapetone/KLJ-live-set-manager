@@ -23,7 +23,7 @@ function init() {
         r.clip = "TEST"; r.script = source; r.enabled[runtime[0].key] = 1;
         view = new KLJView(this.patcher, jsarguments[1]);
         this.patcher.getnamed("runner").message("init");
-        view.render(state, runtime);
+        view.render(state, runtime); view.setVisible(true);
         view.status("TEST — simulation", "Test natif ; aucune commande Live");
         result("model + UI compile/render in native v8", true);
         view.showDetails(true);
