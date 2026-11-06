@@ -6,7 +6,7 @@ import tempfile
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '1.6.0'
+VERSION = '1.7.0'
 FILES = {
     'KLJ Live Set Manager.amxd': ROOT / 'device/KLJ Live Set Manager.amxd',
     'klj.engine.js': ROOT / 'device/klj.engine.js',

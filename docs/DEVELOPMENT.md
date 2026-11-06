@@ -24,7 +24,9 @@ python3 tools/package.py
 
 The AMXD builder replaces the complete `ptch` payload in the project's native MIDI template, retaining AMPF metadata. The template was originally exported from Max and contains no musician state or third-party runtime. It is not a JSON file renamed to AMXD. The validator compares the embedded editor to its source, checks patch cords, dependencies, MIDI container metadata and the Blob / Stored Only parameter.
 
-Packaging creates `dist/KLJ-Live-Set-Manager-v1.6.0.zip` with only the AMXD, four JS files and `README.txt`. It extracts the ZIP into a clean temporary directory and compares every file byte for byte. Timestamps and permissions are fixed for reproducible output. Keep development sources out of the user archive.
+Packaging creates `dist/KLJ-Live-Set-Manager-v1.7.0.zip` with only the AMXD, four JS files and `README.txt`. It extracts the ZIP into a clean temporary directory and compares every file byte for byte. Timestamps and permissions are fixed for reproducible output. Keep development sources out of the user archive.
+
+v1.7.0 promotes the author-approved Monitor candidate, with all four runtime JS files byte-identical to 1.7.0-dev.1. See [release validation](../validation/RELEASE-1.7.0.md) and [the original scope](MONITOR-TEST.md). Compared with v1.6.0 only the LiveAPI activation adapter changes; the model, UI and runner remain identical. Retain previous release assets unchanged.
 
 v1.6.0 promotes the musician-approved dev.4 runtime with only the compact version label and distribution documents changed. See [release validation](../validation/RELEASE-1.6.0.md), [recall investigation](../validation/RECALL-LATENCY-2026-11-04.md) and [data compatibility policy](DATA_COMPATIBILITY.md). The public v1.5.1 baseline remains available at its tag; never overwrite its Release asset. `autowatch` is disabled in production: reload the device after changing runtime code.
 

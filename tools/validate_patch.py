@@ -112,7 +112,7 @@ if amxd.exists():
     assert exported_boxes['engine']['numoutlets'] == 2
     assert exported_boxes['editor']['patcher'] == boxes['editor']['patcher'], 'AMXD editor differs from current source'
     assert exported_boxes['title']['text'] == boxes['title']['text']
-    assert exported_boxes['title']['text'] == 'KLJ / LIVE MANAGER  V1.6.0'
+    assert exported_boxes['title']['text'] == 'KLJ / LIVE MANAGER  V1.7.0'
     assert exported_boxes['state']['saved_object_attributes']['parameter_enable'] == 1
     assert exported_boxes['state']['saved_attribute_attributes']['valueof']['parameter_type'] == 3
     assert exported.get('openinpresentation') == 1

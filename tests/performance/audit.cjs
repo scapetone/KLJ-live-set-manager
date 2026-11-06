@@ -25,7 +25,7 @@ function setup(total,midi,rows,devices=1,scriptBytes=0){
  for(let i=0;i<total-1;i++){
   const id=2000+i,isMidi=i<midi,ds=[];
   for(let d=0;isMidi&&d<devices;d++){const did=10000+i*100+d;ds.push('id',did);h.objects.set(did,{type:d===devices-1?1:0});}
-  h.objects.set(id,{type:'Track',name:(isMidi?'MIDI_':'AUDIO_')+i,has_midi_input:+isMidi,has_audio_input:+!isMidi,is_foldable:0,is_frozen:0,devices:ds,mute:0});ids.push('id',id);
+  h.objects.set(id,{type:'Track',name:(isMidi?'MIDI_':'AUDIO_')+i,has_midi_input:+isMidi,has_audio_input:+!isMidi,is_foldable:0,is_frozen:0,devices:ds,mute:0,current_monitoring_state:0});ids.push('id',id);
  }
  h.objects.get(1).tracks=ids;
  for(const name of ['refresh','snapshot','checkClip','persist','guardedTrack']){
@@ -61,7 +61,7 @@ function run(total,midi,rows,devices,scriptBytes,scenario){
  if(scenario==='recall_already_correct'){on();c.recall(c.snapshot());fn=()=>c.recall(c.snapshot());}
  if(scenario==='recall_all_changed'){
   on();fn=()=>{
-   c.runtime.forEach(t=>h.objects.get(t.id).mute=0);
+   c.runtime.forEach(t=>{h.objects.get(t.id).mute=0;h.objects.get(t.id).current_monitoring_state=0;});
    Object.assign(h.objects.get(1),{tempo:99,root_note:1,scale_name:'Major'});
    h.objects.get(2).selected_track=['id',10];
    c.recall(c.snapshot());

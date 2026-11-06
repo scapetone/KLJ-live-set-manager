@@ -283,8 +283,10 @@ function recall(launch, notifiedAt) {
     recallWarnings = KLJModel.apply(config, runtime, {
         song: function (p, value) {setIfDifferent(song, p, value);},
         mute: function (t, value) {
+            // Legacy model callback: 0 means active, 1 inactive. Keep saved ON/OFF data unchanged.
+            // This variant controls only monitoring: 0 = In, 2 = Off (never Auto, mute or Device On).
             // A read-only no-op needs no Set scan. Every actual write still goes through the guard.
-            setIfDifferent(apiId(t.id), "mute", value, function () {return checkedTrack(t);});
+            setIfDifferent(apiId(t.id), "current_monitoring_state", value === 0 ? 0 : 2, function () {return checkedTrack(t);});
         },
         select: function (t) {
             var current = ids(songView.get("selected_track"))[0];

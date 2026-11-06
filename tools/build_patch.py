@@ -162,7 +162,7 @@ def editor():
 def main():
     p = Patch([80, 80, 980, 750])
     p.data['devicewidth'] = 360
-    p.label('title', 'KLJ / LIVE MANAGER  V1.6.0', [10, 5, 340, 24], size=17, fontface=1)
+    p.label('title', 'KLJ / LIVE MANAGER  V1.7.0', [10, 5, 340, 24], size=17, fontface=1)
     p.label('active', '—', [10, 33, 340, 24], color=GREEN, size=17, varname='active')
     p.label('status', '', [10, 63, 340, 49], color=SUB, size=11, varname='status', hidden=1)
     p.box('open', 'textbutton', [10, 74, 340, 30], present=True, text='OPEN CONFIGURATIONS',

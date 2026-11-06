@@ -2,7 +2,7 @@
 
 ## Contract
 
-The plugin version and data schema version are independent. v1.6.0 remains on schema **1** (`state.version === 1`) and supports valid v1.5.1 states without a format migration. The reference fixture in `tests/fixtures/v1.5.1-state.json` is accepted by the original v1.5.1 validator and contains several rows, varied activations/root/scale/Push, multiline Unicode JavaScript, legacy pushMode values and extra legacy metadata.
+The plugin version and data schema version are independent. v1.7.0 remains on schema **1** (`state.version === 1`) and supports valid v1.5.1/v1.6.0 states without a format migration. The reference fixture in `tests/fixtures/v1.5.1-state.json` is accepted by the original v1.5.1 validator and contains several rows, varied activations/root/scale/Push, multiline Unicode JavaScript, legacy pushMode values and extra legacy metadata.
 
 A release must not silently discard or reset a supported configuration. Every future schema change requires an explicit version dispatch, a migration from supported versions, fixtures from those versions, and both automated and real existing-Set upgrade tests. Keep row IDs, track keys, order, names, user scripts and useful unknown fields. Never translate or reinterpret user data as UI text. No automatic updater is introduced.
 
@@ -18,7 +18,7 @@ This protects against the plugin overwriting the Blob. It cannot recover data th
 
 An inventory is built on a candidate copy and validated before committing it. Unmatched references from a restored state are retained, even when a track is absent, ambiguously named or renamed while the device was absent. Runtime targets only contain currently eligible tracks. Unresolved data is preserved across subsequent refreshes; returning unique names can rebind without changing the saved key.
 
-Existing track IDs still handle session moves and renames. A confirmed deletion of a runtime track keeps the prior deletion semantics. A new track gets OFF values without being physically muted until a recall. Reconciliation preserves extra track metadata rather than rebuilding records from only key/name.
+Existing track IDs still handle session moves and renames. A confirmed deletion of a runtime track keeps the prior deletion semantics. A new track gets OFF values without changing its physical monitoring state until a recall. Reconciliation preserves extra track metadata rather than rebuilding records from only key/name.
 
 No positional or approximate name matching is allowed. An offline rename with conflicting saved/runtime identities may require recovery from the original Set; preserving data does not prove that its intended musical target can be guessed.
 
@@ -33,3 +33,7 @@ Before each release:
 5. Keep a rollback installation and Set backup. Test on copies; never use a freshly inserted empty instance as proof of update compatibility.
 
 The public v1.5.1 Release is retained unchanged. On 6 November 2026 the author confirmed the final candidate was satisfactory and requested publication. v1.6.0 uses the same four runtime JavaScript files; see [release validation](../validation/RELEASE-1.6.0.md) for musician feedback versus automated and native-host evidence. The publication request does not imply independent verification of every checklist item.
+
+## v1.7.0 activation semantics
+
+Saved ON/OFF values are preserved, but now request Monitor IN/OFF rather than mute. This is an intentional behavior change, not a data-format migration. Track Activators and Device Activators are never repaired automatically; users upgrading from mute control must manually enable the MIDI Track Activators they intend to play. The author validated the candidate by replacing the plugin in their real test Live Set and explicitly requested release. See [v1.7.0 validation](../validation/RELEASE-1.7.0.md).

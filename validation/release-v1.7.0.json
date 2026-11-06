@@ -1,0 +1,45 @@
+{
+  "version": "1.7.0",
+  "date": "2026-11-06",
+  "validated_candidate": "1.7.0-dev.1 Monitor",
+  "schema_version": 1,
+  "automated": {
+    "node_tests_passed": 66,
+    "node_tests_failed": 0,
+    "structural_validation": "passed",
+    "clean_zip_extraction": "passed",
+    "reproducible_zip": "passed",
+    "candidate_runtime_js_byte_identical": "passed",
+    "amxd_difference_from_candidate": "compact version title only"
+  },
+  "runtime_sha256": {
+    "klj.model.js": "033b868896e738e0eba5120e1f085b2e4974351837e407e2fcf0310b29a16545",
+    "KLJ Live Set Manager.maxpat": "df4966676a9957f8ecdb5632ff197221f22de70bdcbcf52daeaf07ea755f9d62",
+    "klj.ui.js": "947e3de6b432ce6ba2c973f588a58e418d6eed14d966fb02a9f525ad92f04c24",
+    "klj.engine.js": "5b38e3c6676db911bd5ab0e6ee733bb01b78114caff2b97c4b94fe6e5c73537a",
+    "KLJ Live Set Manager.amxd": "e577e1e3be83d0f6c9f42e86d399cc9c3513730e02fc0d8e7ec53a89556f99d5",
+    "klj.runner.js": "3741f33b6430ece07e490380e9b622cd496a7f4d4dcdd55524e65344500f2b26",
+    "device.maxproj": "1b47c305388c2a2dc7892e22de7b113df5e5c2de2d427bccee83b9b5dc873e05"
+  },
+  "zip_files": [
+    "KLJ Live Set Manager.amxd",
+    "klj.engine.js",
+    "klj.model.js",
+    "klj.ui.js",
+    "klj.runner.js",
+    "README.txt"
+  ],
+  "zip_sha256": "70529d46ab6bd714f389fd3bbc65cf922b956ed20731ec56c70d9399f8e029df",
+  "musician_acceptance": "Author reported successful testing on their real test Live Set with the existing plugin replaced, then explicitly requested publication.",
+  "validation_limits": "No independent native Max session, hardware latency benchmark, exhaustive checklist or detailed ALS round-trip observed during release preparation.",
+  "previous_releases": {
+    "1.6.0": {
+      "zip_sha256": "67effff7d09a8b7e2273a24ddd9fa06477466d3fcdda3b8dc139fb831a41fe27",
+      "asset_id": "RA_kwDOVf0NA84qxk0Z"
+    },
+    "1.5.1": {
+      "zip_sha256": "933de4c151b1c21d125aecf94f7667728dc7ee2d48ed791c7b42826f3088300a",
+      "asset_id": "RA_kwDOVf0NA84qF_Sv"
+    }
+  }
+}

@@ -39,7 +39,7 @@ function host(options = {}) {
         objects.set(id, {type:'Track', name, has_midi_input: id === 30 ? 0 : 1,
             has_audio_input: id === 30 ? 1 : 0, is_foldable:0, is_frozen:0,
             devices: id === 20 || id === 21 ? ['id', id+100] : [],
-            playing_slot_index:-2, clip_slots:id===10 ? ['id',500,'id',501] : [], mute:0, volume:0.8});
+            playing_slot_index:-2, clip_slots:id===10 ? ['id',500,'id',501] : [], mute:0, current_monitoring_state:0, volume:0.8});
         if (id === 20 || id === 21) objects.set(id+100, {type:1});
     }
     objects.set(1000, {type:'Clip', name:'SONG_A', is_playing:1});
@@ -167,16 +167,68 @@ test('concrete Live track classes do not break parent resolution', () => {
     const h=host(); h.objects.get(10).type='MidiTrack'; h.context.init();
     assert.equal(h.context.ready,true); assert.equal(h.context.ownTrack,10);
 });
-test('engine recalls full configuration, selected track, and never writes stems/ARM/Monitor', () => {
+test('engine recalls full configuration, selected track, and changes MIDI monitoring and never writes stems/ARM/mute', () => {
     const h=host(); h.context.init();
     const r=M.add(h.context.state, {bpm:118,root:5,scale:'Major'}); r.clip='SONG_A';
     r.enabled[h.context.runtime[0].key]=1; r.push=h.context.runtime[0].key;
     h.launch(0);
     assert.equal(h.context.active,'SONG_A');
-    assert.deepEqual(h.writes,[[1,'tempo',118],[1,'root_note',5],[1,'scale_name','Major'],[21,'mute',1],[2,'selected_track','id',20]]);
+    assert.deepEqual(h.writes,[[1,'tempo',118],[1,'root_note',5],[1,'scale_name','Major'],[21,'current_monitoring_state',2],[2,'selected_track','id',20]]);
     h.writes.length=0; h.launch(0); assert.deepEqual(h.writes,[]);
-    h.objects.get(20).mute=1; h.launch(1);
-    assert.deepEqual(h.writes,[[20,'mute',0]]); // compare current Live state, not an old cached row
+    h.objects.get(20).current_monitoring_state=2; h.launch(1);
+    assert.deepEqual(h.writes,[[20,'current_monitoring_state',0]]); // compare current Live state, not an old cached row
+});
+test('monitor variant preserves eight audio tracks, MIDI mutes and device activators exactly', () => {
+    const h=host({openEditor:false}),audioIds=Array.from({length:8},(_,i)=>30+i);
+    for(const [i,id] of audioIds.entries())h.objects.set(id,{...h.objects.get(30),name:'STEM_'+i,
+        mute:i%2,current_monitoring_state:i%3,volume:0.25+i/100});
+    h.objects.get(1).tracks=['id',10,'id',20,'id',21,...audioIds.flatMap(id=>['id',id])];
+    h.objects.get(20).mute=1;h.objects.get(21).mute=0;
+    h.objects.get(20).current_monitoring_state=1;h.objects.get(21).current_monitoring_state=1;
+    h.objects.get(120).value=0;h.objects.get(121).value=1;
+    const audioBefore=JSON.stringify(audioIds.map(id=>h.objects.get(id)));
+    h.context.init();const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';
+    r.enabled[h.context.runtime[0].key]=1;r.push=h.context.runtime[0].key;
+    const saved=JSON.stringify(h.context.state);h.launch(0);
+    assert.deepEqual(h.writes.filter(w=>w[1]==='current_monitoring_state'),
+        [[20,'current_monitoring_state',0],[21,'current_monitoring_state',2]]);
+    assert.equal(h.objects.get(20).mute,1);assert.equal(h.objects.get(21).mute,0);
+    assert.equal(h.objects.get(120).value,0);assert.equal(h.objects.get(121).value,1);
+    assert.equal(JSON.stringify(audioIds.map(id=>h.objects.get(id))),audioBefore);
+    assert.ok(h.writes.every(w=>!audioIds.includes(w[0])));
+    assert.ok(h.writes.every(w=>['tempo','root_note','scale_name','current_monitoring_state','selected_track'].includes(w[1])));
+    assert.equal(JSON.stringify(h.context.state),saved);
+    h.writes.length=0;h.context.checkClip();assert.deepEqual(h.writes,[]);
+});
+test('monitor variant reads actual manual changes and never writes Auto', () => {
+    const h=host();h.context.init();const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';
+    r.enabled[h.context.runtime[0].key]=1;
+    h.objects.get(20).current_monitoring_state=1;h.objects.get(21).current_monitoring_state=1;
+    h.launch(0);assert.equal(h.objects.get(20).current_monitoring_state,0);
+    assert.equal(h.objects.get(21).current_monitoring_state,2);
+    h.writes.length=0;h.context.recall(h.context.snapshot());assert.deepEqual(h.writes,[]);
+    h.objects.get(20).current_monitoring_state=2;h.objects.get(21).current_monitoring_state=0;
+    h.launch(1);assert.deepEqual(h.writes,[[20,'current_monitoring_state',0],[21,'current_monitoring_state',2]]);
+    assert.ok(h.writes.every(w=>w[1]!=='current_monitoring_state'||[0,2].includes(w[2])));
+});
+test('unavailable or rejected monitoring reports an error without mute/arm fallback', () => {
+    for(const mode of ['unavailable','rejected']) {
+        const h=host();h.context.init();const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';r.bpm=140;
+        r.enabled[h.context.runtime[0].key]=1;h.objects.get(20).current_monitoring_state=2;
+        if(mode==='unavailable')delete h.objects.get(20).current_monitoring_state;
+        const setter=h.context.LiveAPI.prototype.set;
+        h.context.LiveAPI.prototype.set=function(prop,...args){
+            if(mode==='rejected'&&this.id===20&&prop==='current_monitoring_state')return;
+            setter.call(this,prop,...args);
+        };
+        h.launch(0);
+        assert.ok(h.context.recallWarnings.some(w=>w.includes('current_monitoring_state')),mode);
+        assert.equal(h.objects.get(1).tempo,140);assert.equal(h.objects.get(21).current_monitoring_state,2);
+        assert.ok(h.writes.every(w=>!['mute','arm','volume','value'].includes(w[1])));
+        h.context.LiveAPI.prototype.set=setter;h.objects.get(20).current_monitoring_state=1;
+        h.launch(1);assert.equal(h.objects.get(20).current_monitoring_state,0);
+        assert.equal(h.context.recallWarnings.length,0);
+    }
 });
 test('unknown clips do not apply even BPM and do not replay upon name edits', () => {
     const h=host(); h.context.init(); h.launch(0); assert.equal(h.writes.length,0);
@@ -189,7 +241,7 @@ test('early slot notification binds the pending clip; script is dispatched after
     h.objects.get(1000).is_playing=0; h.launch(0);
     assert.equal(h.context.observedClip,1000); assert.equal(h.context.token,0);
     h.objects.get(1000).is_playing=1; h.context.clipStatusChanged(); h.drain();
-    assert.equal(h.context.token,1); assert.ok(h.writes.some(w=>w[1]==='mute'));
+    assert.equal(h.context.token,1); assert.ok(h.writes.some(w=>w[1]==='current_monitoring_state'));
     const script=h.outputs.find(o=>o[0]===1 && o[1]==='run'); assert.ok(script);
     assert.equal(h.dicts.get(script[2]).context.clip,'SONG_A');
 });
@@ -206,9 +258,9 @@ test('adding an instrument only updates data until the next real launch', () => 
     h.objects.get(1).tracks.push('id',22); h.context.refresh(false);
     assert.equal(h.writes.length,0);
     const t=h.context.runtime.find(t=>t.id===22); assert.equal(h.context.state.rows[0].enabled[t.key],0);
-    h.launch(0); assert.ok(h.writes.some(w=>w[0]===22 && w[1]==='mute' && w[2]===1));
+    h.launch(0); assert.ok(h.writes.some(w=>w[0]===22 && w[1]==='current_monitoring_state' && w[2]===2));
 });
-test('guard revalidates eligibility, deletion and ambiguity at every mute write', () => {
+test('guard revalidates eligibility, deletion and ambiguity at every monitor write', () => {
     const h=host(); h.context.init(); const t=h.context.runtime[0];
     h.objects.get(20).has_midi_input=0; h.objects.get(20).has_audio_input=1;
     assert.throws(()=>h.context.guardedTrack(t)); assert.equal(h.writes.length,0);
@@ -222,7 +274,7 @@ test('recall scans names once at 41/32/15 and 60/51/30, with fresh guards for ev
         for(let i=0;i<total-1;i++) {
             const id=2000+i,isMidi=i<midi;
             h.objects.set(id,{type:'Track',name:'TRACK_'+i,has_midi_input:+isMidi,has_audio_input:+!isMidi,
-                is_foldable:0,is_frozen:0,mute:1,devices:[]});
+                is_foldable:0,is_frozen:0,mute:1,current_monitoring_state:2,devices:[]});
             trackIds.push('id',id);
         }
         h.objects.get(1).tracks=trackIds;h.context.init();
@@ -231,14 +283,14 @@ test('recall scans names once at 41/32/15 and 60/51/30, with fresh guards for ev
         h.context.runtime.forEach(t=>row.enabled[t.key]=1);row.push=h.context.runtime.at(-1).key;
         const saved=JSON.stringify(h.context.state),outlets=h.outputs.length;
         h.reads.length=0;h.launch(0);
-        assert.equal(h.writes.filter(w=>w[1]==='mute').length,midi);
+        assert.equal(h.writes.filter(w=>w[1]==='current_monitoring_state').length,midi);
         assert.equal(h.objects.get(2).selected_track[1],2000+midi-1);
         assert.ok(h.reads.length<12*midi+100,`${h.reads.length} reads for ${midi} MIDI tracks`);
         assert.ok(h.reads.filter(r=>r[1]==='name').length<=2*midi+5);
         assert.equal(h.reads.filter(r=>r[1]==='devices'||r[1]==='type').length,0);
         assert.equal(h.context.recallWarnings.length,0);
         assert.equal(JSON.stringify(h.context.state),saved);assert.equal(h.outputs.length,outlets);
-        assert.ok(h.writes.every(w=>w[1]!=='mute'||(w[0]>=2000&&w[0]<2000+midi)));
+        assert.ok(h.writes.every(w=>w[1]!=='current_monitoring_state'||(w[0]>=2000&&w[0]<2000+midi)));
         assert.ok(h.context.lastRecall.timings.pushSelectedAfterMs>=0);
     }
 });
@@ -250,11 +302,11 @@ test('recall skips guards for read-only no-ops and starts a fresh name scan on t
     const original=h.context.recallTrackContext;let scans=0;
     h.context.recallTrackContext=function(){scans++;return original();};
     h.launch(0);assert.equal(scans,0);assert.deepEqual(h.writes,[]);
-    h.objects.get(20).mute=1;h.context.recall(h.context.snapshot());
-    assert.equal(scans,1);assert.equal(h.objects.get(20).mute,0);
-    h.objects.get(21).name='KEYS';h.objects.get(20).mute=1;h.writes.length=0;
+    h.objects.get(20).current_monitoring_state=2;h.context.recall(h.context.snapshot());
+    assert.equal(scans,1);assert.equal(h.objects.get(20).current_monitoring_state,0);
+    h.objects.get(21).name='KEYS';h.objects.get(20).current_monitoring_state=2;h.writes.length=0;
     h.context.recall(h.context.snapshot());
-    assert.equal(scans,2);assert.equal(h.writes.filter(w=>w[1]==='mute').length,0);
+    assert.equal(scans,2);assert.equal(h.writes.filter(w=>w[1]==='current_monitoring_state').length,0);
     assert.ok(h.context.recallWarnings.some(w=>w.includes('ambiguous')));
 });
 test('recall timing is diagnostic only and never changes saved rows or clip deduplication', () => {
@@ -274,9 +326,9 @@ test('shared recall guards reject audio, control, groups, frozen and absent targ
         const h=host({openEditor:false});h.context.init();
         const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';r.bpm=140;
         r.enabled[h.context.runtime[0].key]=1;r.push=h.context.runtime[0].key;
-        h.objects.get(20).mute=1;
+        h.objects.get(20).current_monitoring_state=2;
         if(mode==='audio'){h.objects.get(20).has_midi_input=0;h.objects.get(20).has_audio_input=1;}
-        if(mode==='control'){h.context.runtime[0].id=10;h.objects.get(10).mute=1;}
+        if(mode==='control'){h.context.runtime[0].id=10;h.objects.get(10).current_monitoring_state=2;}
         if(mode==='group')h.objects.get(20).is_foldable=1;
         if(mode==='frozen')h.objects.get(20).is_frozen=1;
         if(mode==='missing')h.objects.get(1).tracks=['id',10,'id',21,'id',30];
@@ -286,10 +338,10 @@ test('shared recall guards reject audio, control, groups, frozen and absent targ
         }
         h.launch(0);
         assert.ok(h.context.recallWarnings.length>0,mode);
-        assert.ok(!h.writes.some(w=>['mute','selected_track'].includes(w[1])&&
+        assert.ok(!h.writes.some(w=>['current_monitoring_state','selected_track'].includes(w[1])&&
             (w[0]===(mode==='control'?10:(mode==='return'||mode==='master'?80:20))||w[1]==='selected_track')),mode);
         assert.equal(h.objects.get(1).tempo,140,mode);
-        assert.ok(h.writes.every(w=>!['volume','arm','current_monitoring_state'].includes(w[1])));
+        assert.ok(h.writes.every(w=>!['volume','arm','mute'].includes(w[1])));
     }
 });
 test('write guards re-read target eligibility and membership after earlier MIDI writes', () => {
@@ -297,11 +349,11 @@ test('write guards re-read target eligibility and membership after earlier MIDI 
         const h=host({openEditor:false});h.context.init();
         const r=h.context.KLJModel.add(h.context.state,defaults);r.clip='SONG_A';
         h.context.runtime.forEach(t=>r.enabled[t.key]=1);r.push=h.context.runtime[1].key;
-        h.objects.get(20).mute=1;h.objects.get(21).mute=1;
+        h.objects.get(20).current_monitoring_state=2;h.objects.get(21).current_monitoring_state=2;
         const original=h.context.LiveAPI.prototype.set;
         h.context.LiveAPI.prototype.set=function(prop,...args){
             original.call(this,prop,...args);
-            if(this.id===20&&prop==='mute'){
+            if(this.id===20&&prop==='current_monitoring_state'){
                 if(mode==='audio'){h.objects.get(21).has_midi_input=0;h.objects.get(21).has_audio_input=1;}
                 if(mode==='group')h.objects.get(21).is_foldable=1;
                 if(mode==='frozen')h.objects.get(21).is_frozen=1;
@@ -315,8 +367,8 @@ test('write guards re-read target eligibility and membership after earlier MIDI 
             }
         };
         h.launch(0);
-        assert.ok(h.writes.some(w=>w[0]===20&&w[1]==='mute'),mode);
-        assert.ok(!h.writes.some(w=>(w[0]===21&&w[1]==='mute')||w[1]==='selected_track'),mode);
+        assert.ok(h.writes.some(w=>w[0]===20&&w[1]==='current_monitoring_state'),mode);
+        assert.ok(!h.writes.some(w=>(w[0]===21&&w[1]==='current_monitoring_state')||w[1]==='selected_track'),mode);
         assert.ok(h.context.recallWarnings.length>0,mode);
     }
 });
@@ -434,10 +486,10 @@ test('empty MIDI tracks can toggle and receive Push; loading an instrument keeps
     h.objects.get(20).devices=['id',120]; h.context.refresh(false);
     assert.equal(h.context.runtime[0].key,key); assert.equal(h.context.state.rows[0].enabled[key],1);
     assert.equal(h.writes.length,0);
-    h.objects.get(20).mute=1; h.launch(0);
-    assert.ok(h.writes.some(w=>w[0]===20 && w[1]==='mute' && w[2]===0));
+    h.objects.get(20).current_monitoring_state=2; h.launch(0);
+    assert.ok(h.writes.some(w=>w[0]===20 && w[1]==='current_monitoring_state' && w[2]===0));
     assert.ok(h.writes.some(w=>w[0]===2 && w[1]==='selected_track' && w[3]===20));
-    assert.ok(h.writes.every(w=>w[0]!==30 && !['arm','current_monitoring_state','volume'].includes(w[1])));
+    assert.ok(h.writes.every(w=>w[0]!==30 && !['arm','mute','volume'].includes(w[1])));
 });
 
 test('engine restores legacy padded names, preserves data and persists the cleanup', () => {

@@ -4,7 +4,7 @@
 
 ![KLJ Live Set Manager](docs/images/klj-live-set-manager.png)
 
-[Download v1.6.0](https://github.com/scapetone/KLJ-live-set-manager/releases/download/v1.6.0/KLJ-Live-Set-Manager-v1.6.0.zip) · [Installation guide](INSTALLATION.md)
+[Download v1.7.0](https://github.com/scapetone/KLJ-live-set-manager/releases/download/v1.7.0/KLJ-Live-Set-Manager-v1.7.0.zip) · [Installation guide](INSTALLATION.md)
 
 ## Why we built this
 
@@ -37,7 +37,7 @@ Each row in the editor represents a complete configuration for a song or section
 From the editor, we can configure:
 
 - **Tempo, root note and scale**
-- **Which MIDI tracks are active**, including several instruments at once
+- **Which MIDI tracks monitor incoming notes**, using Monitor IN/OFF and allowing several instruments at once
 - **Which track Push 2 should select**
 - **Optional JavaScript actions**, for things like switching effects on or off
 
@@ -67,7 +67,9 @@ The current version is working in our Ableton Live 12 setup, including Push 2 tr
 
 v1.6.0 improves background responsiveness and configuration recall: track changes are observed instead of periodically rescanning the whole Set, the closed editor suspends its visual work, and track-name checks are shared within each recall. **REFRESH TRACKS** provides manual resynchronization. Existing v1.5.1 configuration data keeps the same format; follow the [update instructions](INSTALLATION.md#updating-from-a-previous-version) to retain your configured instance.
 
-The author validated the final development candidate in their Live Set before approving this release. See [release validation](validation/RELEASE-1.6.0.md) for automated checks and the limits of the performance evidence.
+v1.7.0 changes the MIDI matrix from mute control to **Monitor IN/OFF**: ON means IN, OFF means OFF. Track Activators/Mute, Device Activators, Arm and audio tracks are unchanged. If updating from v1.6.0, manually enable MIDI Track Activators left disabled by the previous version; Monitor IN does not unmute a track.
+
+The author validated the Monitor candidate in their real test Live Set with the existing plugin replaced. See [release validation](validation/RELEASE-1.7.0.md) for evidence and [the update instructions](INSTALLATION.md#updating-from-a-previous-version) for retaining saved configurations.
 
 There are still some limitations.
 
