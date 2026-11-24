@@ -15,7 +15,7 @@ function fixture() {
 }
 function host(options = {}) {
     const dicts = new Map(), objects = new Map(), queue = new Set(), writes = [], outputs = [];
-    const uiObjects = new Map(), future = new Set(), reads = [];
+    const uiObjects = new Map(), future = new Set(), reads = [], apiInstances = [];
     const sourcePatch = JSON.parse(fs.readFileSync(path.join(__dirname,'../device/KLJ Live Set Manager.maxpat'),'utf8')).patcher;
     const editorPatch = sourcePatch.boxes.find(x=>x.box.varname==='editor').box.patcher;
     const namedBoxes = new Set(sourcePatch.boxes.concat(editorPatch.boxes).map(x=>x.box.varname).filter(Boolean));
@@ -47,6 +47,7 @@ function host(options = {}) {
     objects.set(500, {type:'ClipSlot',clip:['id',1000]});
     objects.set(501, {type:'ClipSlot',clip:['id',1001]});
     function LiveAPI(callback, target) {
+        apiInstances.push(this);
         this.callback = callback; this.property = ''; this.mode = 0;
         if (target === 'this_device') this.id = 3;
         else if (target === 'live_set') this.id = 1;
@@ -85,7 +86,7 @@ function host(options = {}) {
         initialize();
         if(options.openEditor !== false && context.view.setVisible) context.view.setVisible(true);
     };
-    return {context, objects, writes, outputs, dicts, uiObjects, future, reads,
+    return {context, objects, writes, outputs, dicts, uiObjects, future, reads, apiInstances,
         drain() {for (let i=0; queue.size && i<20; i++) {const tasks=Array.from(queue); queue.clear(); tasks.forEach(t=>t.fn());} assert.equal(queue.size,0);},
         click(col,row=0) {
             context.ui('sync','click',1,0,1,0);
@@ -830,4 +831,68 @@ test('Phase 1: a burst queues one scan, no device-chain observer is installed', 
     for(let i=0;i<30;i++)h.context.scheduleScan();h.drain();assert.equal(scans,1);
     assert.equal(Object.keys(h.context.nameObservers).length,2);
     assert.ok(Object.values(h.context.nameObservers).every(x=>x.property==='name'));
+});
+
+
+test('API efficiency: read no-ops once, retain read-back after writes and refused setters', () => {
+    const h=host({openEditor:false});h.context.init();const api=h.context.apiId(20);
+    h.reads.length=0;h.context.setIfDifferent(api,'current_monitoring_state',0);
+    assert.deepEqual(h.reads,[[20,'current_monitoring_state']]);assert.deepEqual(h.writes,[]);
+    h.reads.length=0;h.context.setIfDifferent(api,'current_monitoring_state',2);
+    assert.deepEqual(h.reads,[[20,'current_monitoring_state'],[20,'current_monitoring_state']]);
+    h.reads.length=0;h.context.LiveAPI.prototype.set=function(){};let observed;
+    assert.throws(()=>h.context.setIfDifferent(api,'current_monitoring_state',0,null,x=>observed=x),/actual=2/);
+    assert.equal(observed,2);assert.equal(h.reads.length,2);
+});
+test('API efficiency: live handles reuse current tracks and clip, prune deletions and clear on shutdown', () => {
+    const h=host({openEditor:false}),c=h.context;c.init();
+    const key=c.runtime[0].key,first=c.apiId(20);assert.equal(c.apiId(20),first);
+    c.refresh(false);assert.equal(c.apiId(20),first);
+    h.objects.get(1).is_playing=1;h.objects.get(10).playing_slot_index=0;c.snapshot();
+    const clip=c.clipHandle,slot=c.slotHandle,count=h.apiInstances.length;
+    for(let i=0;i<10;i++)c.snapshot();assert.equal(h.apiInstances.length,count);
+    assert.equal(c.clipHandle,clip);assert.equal(c.slotHandle,slot);
+    h.objects.get(10).playing_slot_index=1;c.snapshot();assert.notEqual(c.clipHandle,clip);
+    assert.equal(c.clipHandle.id,1001);assert.equal(c.slotHandle.id,501);
+    h.objects.get(1).tracks=['id',10,'id',21,'id',30];c.refresh(false);
+    assert.equal(c.trackHandles[20],undefined);assert.equal(c.knownMidiIds.includes(20),false);
+    assert.equal(c.runtime.some(t=>t.key===key),false);
+    c.shutdown();assert.equal(Object.keys(c.trackHandles).length,0);assert.equal(c.knownMidiIds.length,0);
+    assert.equal(c.clipHandle,null);assert.equal(c.slotHandle,null);
+});
+test('API efficiency: invalid native handles are not reused', () => {
+    const h=host({openEditor:false}),c=h.context;c.init();const old=c.apiId(20);old.id=0;
+    const fresh=c.apiId(20);assert.notEqual(fresh,old);assert.equal(fresh.id,20);
+    c.refresh(false);assert.equal(c.apiId(20).id,20);
+});
+test('API efficiency: callback burst queues one check and preserves observed stop/start', () => {
+    const h=host({openEditor:false}),c=h.context;c.init();
+    c.KLJModel.add(c.state,defaults).clip='SONG_A';h.launch(0);assert.equal(c.token,1);
+    const schedule=c.clipTask.schedule;let scheduled=0;
+    c.clipTask.schedule=function(delay){scheduled++;return schedule.call(this,delay);};
+    for(let i=0;i<10;i++)c.scheduleClip();assert.equal(scheduled,1);
+    h.drain();assert.equal(c.token,1);assert.equal(c.clipCheckPending,false);
+    h.objects.get(1000).is_playing=0;c.clipStatusChanged();
+    h.objects.get(1000).is_playing=1;c.clipStatusChanged();h.drain();
+    assert.equal(scheduled,2);assert.equal(c.token,2);assert.equal(c.clipCheckPending,false);
+});
+test('API efficiency: identity-only confirmation never applies a stale clip and reads no name', () => {
+    const h=host({openEditor:false}),c=h.context;c.init();c.KLJModel.add(c.state,defaults).clip='SONG_A';
+    h.objects.get(1).is_playing=1;h.objects.get(10).playing_slot_index=0;const old=c.snapshot();
+    h.reads.length=0;c.snapshot(false);assert.equal(h.reads.some(r=>r[1]==='name'),false);
+    h.objects.get(10).playing_slot_index=1;c.recall(old);assert.deepEqual(h.writes,[]);assert.equal(c.token,0);
+});
+test('API efficiency: recall diagnostics count actual engine calls without changing stored data', () => {
+    const h=host({openEditor:false}),c=h.context;c.init();
+    const row=c.KLJModel.add(c.state,defaults);row.clip='SONG_A';row.push=c.runtime[0].key;
+    row.enabled[c.runtime[0].key]=1;const saved=JSON.stringify(c.state);
+    h.reads.length=0;h.writes.length=0;const instances=h.apiInstances.length;h.launch(0);
+    assert.deepEqual(JSON.parse(JSON.stringify(c.lastRecall.apiCalls)),{
+        get:h.reads.length,set:h.writes.length,create:h.apiInstances.length-instances});
+    assert.equal(JSON.stringify(c.state),saved);
+    assert.equal(h.reads.filter(r=>r[0]===1000&&r[1]==='name').length,1);
+    // One read for each requested song property, without a second diagnostic read.
+    for(const prop of ['tempo','root_note','scale_name'])assert.equal(h.reads.filter(r=>r[1]===prop).length,1);
+    assert.equal(h.reads.filter(r=>r[0]===20&&r[1]==='current_monitoring_state').length,1);
+    assert.equal(h.reads.some(r=>r[0]===30),false); // no reads from audio targets on recall
 });

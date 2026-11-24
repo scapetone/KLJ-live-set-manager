@@ -1,0 +1,23 @@
+{
+  "version": "1.8.0",
+  "candidate": "1.8.0-dev.1",
+  "runtimeIdenticalToCandidate": true,
+  "runtimeSha256": {
+    "klj.engine.js": "2f0fdf284b1598ad242c90411379aa5b689fbb494997330183aa43dbec7d1b48",
+    "klj.model.js": "033b868896e738e0eba5120e1f085b2e4974351837e407e2fcf0310b29a16545",
+    "klj.runner.js": "3741f33b6430ece07e490380e9b622cd496a7f4d4dcdd55524e65344500f2b26",
+    "klj.ui.js": "947e3de6b432ce6ba2c973f588a58e418d6eed14d966fb02a9f525ad92f04c24"
+  },
+  "archive": "KLJ-Live-Set-Manager-v1.8.0.zip",
+  "sha256": "7b9b4ea93bf74fd9e0b9c92a1284595f5408ad96660f026e5a3a2faf0a74b006",
+  "tests": {
+    "nodePassed": 72,
+    "nodeFailed": 0,
+    "comparisonScenarios": 65,
+    "identicalWriteLogs": 65,
+    "nativeContainer": "passed",
+    "packaging": "six files; extraction and byte comparisons passed"
+  },
+  "nativeLivePushTest": "No new native playback validation performed for this release",
+  "knownIssue": "Scene-start crackles remain under investigation; author reproduced crackles on tempo changes outside the plugin."
+}

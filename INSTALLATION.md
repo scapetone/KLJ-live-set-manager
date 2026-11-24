@@ -40,7 +40,7 @@ A matching clip recalls BPM, root/scale, MIDI activations and Push selection, th
 1. Save and close your Set in Live. Back up the complete Set/project and its currently referenced device folder.
 2. Make a separate test copy of the Set and installation. If you redirect a copy to another installation, ensure Live actually references that copy; do not silently keep loading the original device.
 3. With Live closed, replace the AMXD **at the path referenced by that Set**, retaining its existing filename. Replace all four adjacent `klj.*.js` files together. Do not insert a fresh instance or delete the configured one.
-4. Open the test Set. The compact title must show **V1.7.0**. Verify every row, its order, tempo, root/scale, MIDI states, Push reference and full script. Do not save over your only original Set if rows are missing or a restore warning appears.
+4. Open the test Set. The compact title must show **V1.8.0**. Verify every row, its order, tempo, root/scale, MIDI states, Push reference and full script. Do not save over your only original Set if rows are missing or a restore warning appears.
 5. Save the test Set, close and reopen it. Compare again and run the manual checks in LIVE_TESTS.md. Retain the previous installation and original Set for rollback.
 
 The patch keeps the `state` object ID, `pattr klj_state`, parameter name **KLJ Configurations**, Blob / Stored Only attributes, MIDI effect type and schema **version 1**. No schema conversion is needed for v1.5.1 or v1.6.0. User names, keys, IDs, row order, scripts, unknown legacy metadata and `pushMode` are retained.
@@ -62,3 +62,7 @@ post("Configuration: " + context.clip + "\n");
 Synchronous syntax/runtime exceptions are reported and later recalls remain usable. User JavaScript is not sandboxed: it must never alter audio stems' volume or Track Activators. An infinite loop can block Max/Live, and exceptions in asynchronous tasks created by a script are outside the synchronous error handler.
 
 For a named effect's **Device On** parameter, see [the example](examples/device-on.js). Replace its placeholder track and device names. It searches devices directly on a track; nested racks require an adapted path.
+
+## v1.8.0 update
+
+v1.8.0 preserves the existing state format and Monitor IN/OFF behavior, with tempo recall enabled. Keep the configured instance when updating and replace the AMXD plus all four JS files together with Live closed. After Collect All and Save, verify that all four JS files are adjacent to the AMXD actually referenced by the Set; an AMXD copied without them may not load its engine or editor. Do not recreate missing rows before checking the saved Set and dependencies. The API-efficiency changes do not establish a fix for tempo-related scene crackles. See [release validation](validation/RELEASE-1.8.0.md).

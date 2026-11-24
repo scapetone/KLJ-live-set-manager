@@ -42,7 +42,7 @@
             340,
             24
           ],
-          "text": "KLJ / LIVE MANAGER  V1.7.0",
+          "text": "KLJ / LIVE MANAGER  V1.8.0",
           "presentation": 1,
           "presentation_rect": [
             10,

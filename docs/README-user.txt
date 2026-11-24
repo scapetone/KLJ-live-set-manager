@@ -1,4 +1,4 @@
-KLJ Live Set Manager — v1.7.0
+KLJ Live Set Manager — v1.8.0
 Max for Live MIDI effect for Ableton Live 12 and Push 2
 
 INSTALL
@@ -28,7 +28,7 @@ until its saved configurations have been recovered. A newly inserted device is e
 To retain the instance, close Live and replace its referenced AMXD with this AMXD,
 keeping the old filename, plus the four adjacent JS files. Reopen a copy of the Set
 and verify that all configurations are present before saving. No data migration is
-required. The internal device title must show V1.7.0.
+required. The internal device title must show V1.8.0.
 Complete a save/close/reopen test before relying on this upgrade.
 
 LIMITATIONS
@@ -66,3 +66,10 @@ If monitoring is unavailable or rejected, an error is shown; no mute fallback.
 User scripts remain unchanged and may issue their own LiveAPI commands.
 Check Push/keyboard input isolation and responsiveness, then save/reopen the test
 copy. This release does not address scene-start crackle diagnosis.
+
+API EFFICIENCY
+This release reduces redundant reads and reuses session LiveAPI handles.
+Tempo recall remains enabled. The saved configuration format is unchanged.
+Keep all four JS files beside the AMXD, including after Collect All and Save.
+Scene-start crackles can also occur with tempo changes outside the plugin;
+this release does not claim to eliminate them.

@@ -1,0 +1,223 @@
+{
+  "candidate": "1.8.0-dev.1",
+  "baseline": "v1.7.0",
+  "baselineCommit": "e953ab118ba63469055722405e60b86a6c627e64",
+  "environment": {
+    "node": "v26.0.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "scope": "Explicit get/set/constructor invocation counts in a synchronous simulated API, closed editor. Not native CPU, audio or Push latency. No native observer delivery/bridge cost.",
+  "comparedScenarios": 65,
+  "identicalWriteLogs": 65,
+  "recallComparisons": [
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 1,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiGet": 88,
+        "apiNew": 38,
+        "apiSet": 0
+      },
+      "after": {
+        "apiGet": 47,
+        "apiNew": 0,
+        "apiSet": 0
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 1,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiGet": 359,
+        "apiNew": 144,
+        "apiSet": 36
+      },
+      "after": {
+        "apiGet": 314,
+        "apiNew": 2,
+        "apiSet": 36
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiGet": 88,
+        "apiNew": 38,
+        "apiSet": 0
+      },
+      "after": {
+        "apiGet": 47,
+        "apiNew": 0,
+        "apiSet": 0
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiGet": 359,
+        "apiNew": 144,
+        "apiSet": 36
+      },
+      "after": {
+        "apiGet": 314,
+        "apiNew": 2,
+        "apiSet": 36
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 60,
+      "midi": 51,
+      "rows": 30,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiGet": 126,
+        "apiNew": 57,
+        "apiSet": 0
+      },
+      "after": {
+        "apiGet": 66,
+        "apiNew": 0,
+        "apiSet": 0
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 60,
+      "midi": 51,
+      "rows": 30,
+      "devices": 1,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiGet": 549,
+        "apiNew": 220,
+        "apiSet": 55
+      },
+      "after": {
+        "apiGet": 485,
+        "apiNew": 2,
+        "apiSet": 55
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 8,
+      "scriptBytes": 0,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiGet": 88,
+        "apiNew": 38,
+        "apiSet": 0
+      },
+      "after": {
+        "apiGet": 47,
+        "apiNew": 0,
+        "apiSet": 0
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 8,
+      "scriptBytes": 0,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiGet": 359,
+        "apiNew": 144,
+        "apiSet": 36
+      },
+      "after": {
+        "apiGet": 314,
+        "apiNew": 2,
+        "apiSet": 36
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 8192,
+      "scenario": "recall_already_correct",
+      "before": {
+        "apiGet": 88,
+        "apiNew": 38,
+        "apiSet": 0
+      },
+      "after": {
+        "apiGet": 47,
+        "apiNew": 0,
+        "apiSet": 0
+      },
+      "sameWriteLog": true
+    },
+    {
+      "total": 41,
+      "midi": 32,
+      "rows": 15,
+      "devices": 1,
+      "scriptBytes": 8192,
+      "scenario": "recall_all_changed",
+      "before": {
+        "apiGet": 359,
+        "apiNew": 144,
+        "apiSet": 36
+      },
+      "after": {
+        "apiGet": 314,
+        "apiNew": 2,
+        "apiSet": 36
+      },
+      "sameWriteLog": true
+    }
+  ],
+  "nodeTests": {
+    "passed": 72,
+    "failed": 0
+  },
+  "unchangedRuntimeFiles": [
+    "klj.model.js",
+    "klj.ui.js",
+    "klj.runner.js"
+  ],
+  "archive": "KLJ-Live-Set-Manager-v1.8.0-dev.1.zip",
+  "sha256": "247ab50b1ba1b0e09495121807a3e1ec9ac8b21b1045f4c4345ee594fd7934d5",
+  "runtimeSha256": {
+    "klj.engine.js": "2f0fdf284b1598ad242c90411379aa5b689fbb494997330183aa43dbec7d1b48",
+    "klj.model.js": "033b868896e738e0eba5120e1f085b2e4974351837e407e2fcf0310b29a16545",
+    "klj.runner.js": "3741f33b6430ece07e490380e9b622cd496a7f4d4dcdd55524e65344500f2b26",
+    "klj.ui.js": "947e3de6b432ce6ba2c973f588a58e418d6eed14d966fb02a9f525ad92f04c24"
+  },
+  "nativeMaxLiveTest": "Not performed for this candidate"
+}

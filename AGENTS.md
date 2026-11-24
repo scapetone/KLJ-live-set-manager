@@ -1,6 +1,6 @@
 # KLJ Live Set Manager — maintenance instructions
 
-The English v1.7.0 device with MIDI Monitor IN/OFF activation is validated by the author in Ableton Live 12 with Push 2. Preserve that working baseline; do not redesign the product or refactor the musical engine without an explicit request.
+The English v1.8.0 release retains the v1.7.0 MIDI Monitor IN/OFF behavior validated by the author in Ableton Live 12 with Push 2. v1.8.0 promotes the API-efficiency candidate with identical runtime JS and tempo recall enabled; native crackle elimination is not established. Preserve that working baseline; do not redesign the product or refactor the musical engine without an explicit request.
 
 - Read README.md for the current product and docs/DEVELOPMENT.md for build/test commands. Other design documents in docs/ are historical references; consult them only for a specific need. Current user instructions take precedence.
 - Keep native Max for Live objects, Max v8 JavaScript and LiveAPI. Do not add frameworks, dependencies, ClyphX syntax or tool installations without a concrete need.

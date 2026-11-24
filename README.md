@@ -4,7 +4,7 @@
 
 ![KLJ Live Set Manager](docs/images/klj-live-set-manager.png)
 
-[Download v1.7.0](https://github.com/scapetone/KLJ-live-set-manager/releases/download/v1.7.0/KLJ-Live-Set-Manager-v1.7.0.zip) · [Installation guide](INSTALLATION.md)
+[Download v1.8.0](https://github.com/scapetone/KLJ-live-set-manager/releases/download/v1.8.0/KLJ-Live-Set-Manager-v1.8.0.zip) · [Installation guide](INSTALLATION.md)
 
 ## Why we built this
 
@@ -70,6 +70,8 @@ v1.6.0 improves background responsiveness and configuration recall: track change
 v1.7.0 changes the MIDI matrix from mute control to **Monitor IN/OFF**: ON means IN, OFF means OFF. Track Activators/Mute, Device Activators, Arm and audio tracks are unchanged. If updating from v1.6.0, manually enable MIDI Track Activators left disabled by the previous version; Monitor IN does not unmute a track.
 
 The author validated the Monitor candidate in their real test Live Set with the existing plugin replaced. See [release validation](validation/RELEASE-1.7.0.md) for evidence and [the update instructions](INSTALLATION.md#updating-from-a-previous-version) for retaining saved configurations.
+
+v1.8.0 reduces redundant LiveAPI reads and reuses session API handles while preserving tempo recall, MIDI Monitor IN/OFF and the saved configuration format. The release uses the same runtime as the API-efficiency candidate. These changes reduce simulated operation counts; they do not claim to eliminate scene-start crackles, which the author also reproduced when changing tempo outside the plugin. See [release validation](validation/RELEASE-1.8.0.md). Keep all four JavaScript files beside the AMXD after collecting a project.
 
 There are still some limitations.
 

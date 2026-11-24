@@ -24,7 +24,7 @@ python3 tools/package.py
 
 The AMXD builder replaces the complete `ptch` payload in the project's native MIDI template, retaining AMPF metadata. The template was originally exported from Max and contains no musician state or third-party runtime. It is not a JSON file renamed to AMXD. The validator compares the embedded editor to its source, checks patch cords, dependencies, MIDI container metadata and the Blob / Stored Only parameter.
 
-Packaging creates `dist/KLJ-Live-Set-Manager-v1.7.0.zip` with only the AMXD, four JS files and `README.txt`. It extracts the ZIP into a clean temporary directory and compares every file byte for byte. Timestamps and permissions are fixed for reproducible output. Keep development sources out of the user archive.
+Packaging creates `dist/KLJ-Live-Set-Manager-v1.8.0.zip` with only the AMXD, four JS files and `README.txt`. It extracts the ZIP into a clean temporary directory and compares every file byte for byte. Timestamps and permissions are fixed for reproducible output. Keep development sources out of the user archive.
 
 v1.7.0 promotes the author-approved Monitor candidate, with all four runtime JS files byte-identical to 1.7.0-dev.1. See [release validation](../validation/RELEASE-1.7.0.md) and [the original scope](MONITOR-TEST.md). Compared with v1.6.0 only the LiveAPI activation adapter changes; the model, UI and runner remain identical. Retain previous release assets unchanged.
 
@@ -57,3 +57,35 @@ KLJ_AUDIT_CLOSED=1 node tests/performance/audit.cjs > validation/local/performan
 The audit can load a separately extracted source baseline using KLJ_AUDIT_DEVICE. It reports simulated operation counts, not Live latency. The current Node fixture acknowledges the new-install pattr default explicitly and opens the editor by default; safety tests opt out to verify unknown/late restore ordering.
 
 The recall scenarios include already-correct values and a recall changing every managed MIDI activator plus tempo/root/scale and Push selection. `lastRecall.timings` and the existing `KLJ recall` console line report millisecond wall-clock durations in Max. `notificationToRecallMs` starts at the first received notification for that deferred check, not at physical clip start; retries can omit it. `pushSelectedAfterMs` confirms Live's selected_track property, not hardware playability. `nameScanMs` is included in `applyMs`. `totalMs` ends before logging and includes UI/status work and synchronous script dispatch; it cannot measure asynchronous work a user script schedules, MIDI/audio latency or Push readiness. No timer is added for profiling.
+
+
+## API-efficiency candidate (v1.8.0-dev.1)
+
+v1.8.0 promotes this candidate without runtime changes. See [the optimization plan and measured simulated
+counts](../validation/API-EFFICIENCY-1.8.0-dev.1.md). The editor, model, runner,
+parameter identity and data schema are unchanged.
+
+To reproduce the comparison, extract the stable v1.7.0 ZIP into an ignored local
+folder and run the same harness against both runtimes:
+
+```sh
+mkdir -p validation/local/api-efficiency
+KLJ_AUDIT_CLOSED=1 KLJ_AUDIT_DEVICE=validation/local/stable-1.7.0 node tests/performance/audit.cjs > validation/local/api-efficiency/baseline.json
+KLJ_AUDIT_CLOSED=1 node tests/performance/audit.cjs > validation/local/api-efficiency/candidate.json
+node tests/performance/compare.cjs validation/local/api-efficiency/baseline.json validation/local/api-efficiency/candidate.json
+```
+
+The existing `KLJ recall` console line now includes `apiCalls: {get, set, create}`.
+For clip-triggered recalls it counts explicit engine `.get()`, `.set()` and
+LiveAPI constructor invocations from the start of the successful deferred clip
+check through synchronous script dispatch. Direct `recall()` calls count from
+entry instead. This includes inventory refresh if needed but excludes earlier
+callbacks, subsequent checks, property accessors (`id`, `type`, etc.), observer
+attribute assignments, Max's internal work, user-script API calls in the separate
+runner, and asynchronous work. Counts include failed attempts. No timer, file
+I/O or per-call log is added. These are operation counts, not CPU/audio latency.
+
+
+## v1.8.0 release
+
+The four runtime JS files are byte-identical to the API-efficiency dev.1 candidate. The compact version title and distribution documentation change for release. Tempo recall remains active. Run the 72-test Node suite, container validator and six-file packaging checks above; see [release validation](../validation/RELEASE-1.8.0.md). No native crackle fix is claimed.
